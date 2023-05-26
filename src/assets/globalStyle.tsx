@@ -7,6 +7,10 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
   }
 
+  body {
+    font-size : 62.5%;
+    background-color: #f5f6ff;
+  }
 `;
 
 export default GlobalStyle;
