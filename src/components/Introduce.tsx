@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const IntroduceContainer = styled.div`
-  height: 38rem;
+  height: 37rem;
   padding: 2rem;
   border-radius: 1.3rem;
   border: none;

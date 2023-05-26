@@ -1,19 +1,158 @@
 import styled from "styled-components";
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import emoji from "../assets/images/emoji.png";
 
-const IndexContainer = styled.div`
+import { FaUser, FaRegUser, FaLightbulb, FaRegLightbulb } from "react-icons/fa";
+import { BsInboxesFill, BsInboxes, BsPencilFill, BsPencil } from "react-icons/bs";
+import { IoSettings, IoSettingsOutline, IoSchool, IoSchoolOutline } from "react-icons/io5";
+import { MdFactCheck, MdOutlineFactCheck } from "react-icons/md";
+import { SiGithub, SiVelog } from "react-icons/si";
+
+const IndexContainer = styled.nav`
   width: 17rem;
-  height: 38rem;
-  padding: 1.5rem;
+  height: 37rem;
+  padding: 3rem 1.6rem 3rem 1.6rem;
   position: sticky;
   top: 5rem;
   border-radius: 1.3rem;
   color: white;
-  background-color: #9384d1;
+  background-color: ${(props) => props.theme.color.mainColor};
   box-shadow: 0px 6px 15px 0px rgba(74, 99, 231, 0.1);
 `;
 
+const ProfileWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  > img {
+    width: 3.8rem;
+    height: 3.8rem;
+    border-radius: 5rem;
+  }
+`;
+
+const NameArea = styled.div`
+  > .name {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+  }
+
+  > .dev {
+    font-size: 0.8rem;
+  }
+`;
+
+const MenuWrapper = styled.ul`
+  display: flex;
+  flex-direction: column;
+  font-weight: 500;
+  list-style: none;
+  row-gap: 0.5rem;
+  margin: 3rem 0 3rem 0;
+`;
+
+const MenuList = styled.li`
+  display: flex;
+  align-items: center;
+  width: 10rem;
+  height: 2rem;
+  transition: 0.2s ease-in-out;
+  cursor: pointer;
+
+  > .el {
+    margin-left: 1.1rem;
+  }
+
+  &:hover {
+    font-size: 1.05rem;
+  }
+`;
+
+const LinkWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  column-gap: 1.5rem;
+
+  > a {
+    color: white;
+
+    > .githubIcon {
+      cursor: pointer;
+    }
+
+    > .velogIcon {
+      border-radius: 5rem;
+      cursor: pointer;
+    }
+  }
+`;
+
+const VerWrapper = styled.div`
+  font-size: 0.8rem;
+  margin-top: 1rem;
+`;
+
 function Index() {
-  return <IndexContainer>Index Area</IndexContainer>;
+  const [currentMenu, setCurrentMenu] = useState<number>(0);
+
+  // 매뉴 선택 이벤트 핸들러
+  const selectMenuHandler = (index: number) => {
+    setCurrentMenu(index);
+  };
+
+  return (
+    <IndexContainer>
+      <ProfileWrapper>
+        <img src={emoji} alt='emoji' />
+        <NameArea>
+          <div className='name'>김동구</div>
+          <div className='dev'>FRONTEND DEVELOPER</div>
+        </NameArea>
+      </ProfileWrapper>
+      <MenuWrapper>
+        <MenuList onClick={() => selectMenuHandler(0)}>
+          {currentMenu === 0 ? <FaUser /> : <FaRegUser />}
+          <span className='el'>Introduce</span>
+        </MenuList>
+        <MenuList onClick={() => selectMenuHandler(1)}>
+          {currentMenu === 1 ? <IoSettings /> : <IoSettingsOutline />}
+          <span className='el'>Stack</span>
+        </MenuList>
+        <MenuList onClick={() => selectMenuHandler(2)}>
+          {currentMenu === 2 ? <BsInboxesFill /> : <BsInboxes />}
+          <span className='el'>Project</span>
+        </MenuList>
+        <MenuList onClick={() => selectMenuHandler(3)}>
+          {currentMenu === 3 ? <FaLightbulb /> : <FaRegLightbulb />}
+          <span className='el'>Experience</span>
+        </MenuList>
+        <MenuList onClick={() => selectMenuHandler(4)}>
+          {currentMenu === 4 ? <BsPencilFill /> : <BsPencil />}
+          <span className='el'>Study</span>
+        </MenuList>
+        <MenuList onClick={() => selectMenuHandler(5)}>
+          {currentMenu === 5 ? <IoSchool /> : <IoSchoolOutline />}
+          <span className='el'>Education</span>
+        </MenuList>
+        <MenuList onClick={() => selectMenuHandler(6)}>
+          {currentMenu === 6 ? <MdFactCheck /> : <MdOutlineFactCheck />}
+          <span className='el'>Certificate</span>
+        </MenuList>
+      </MenuWrapper>
+      <LinkWrapper>
+        <Link to='https://github.com/kimdonggu42' target='_blank'>
+          <SiGithub className='githubIcon' size={30} />
+        </Link>
+        <Link to='https://velog.io/@donggoo' target='_blank'>
+          <SiVelog className='velogIcon' size={30} />
+        </Link>
+      </LinkWrapper>
+      <VerWrapper>Ver 0.2</VerWrapper>
+    </IndexContainer>
+  );
 }
 
 export default Index;
