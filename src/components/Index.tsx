@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+
 import emoji from "../assets/images/emoji.png";
 
 import { FaUser, FaRegUser, FaLightbulb, FaRegLightbulb } from "react-icons/fa";

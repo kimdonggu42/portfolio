@@ -24,8 +24,8 @@ const StackTitle = styled.div`
 const UnderBar = styled.div`
   width: 4.5rem;
   height: 0.3rem;
-  margin: 0.5rem 0 3.5rem 0;
-  border-radius: 50px;
+  margin: 0.5rem 0 3rem 0;
+  border-radius: 5rem;
   background-color: ${(props) => props.theme.color.mainColor};
 `;
 

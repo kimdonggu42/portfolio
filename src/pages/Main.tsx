@@ -20,6 +20,7 @@ const InfoWrapper = styled.div`
   display: flex;
   flex-direction: column;
   width: 58rem;
+  /* width: 928px; */
   row-gap: 2rem;
 `;
 

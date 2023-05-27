@@ -16,7 +16,7 @@ const ExperienceTitle = styled.div`
 const UnderBar = styled.div`
   width: 8.7rem;
   height: 0.3rem;
-  margin-top: 0.5rem;
+  margin: 0.5rem 0 3rem 0;
   border-radius: 50px;
   background-color: ${(props) => props.theme.color.mainColor};
 `;
