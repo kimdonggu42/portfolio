@@ -15,7 +15,6 @@ import { RiGithubFill } from "react-icons/ri";
 
 const ProjectContainer = styled.div`
   padding: 3.5rem 3rem 3.5rem 3rem;
-  /* padding: 3.5rem 48px 3.5rem 48px; */
   border-radius: 1.3rem;
   border: none;
   background-color: white;
@@ -73,16 +72,20 @@ const SlideArea = styled.div`
   /* border: 1px solid blue; */
   > img {
     margin: auto;
+    margin-top: 0.2rem;
     width: 51rem;
     height: 20rem;
     border-radius: 1.3rem;
     object-fit: cover;
-    /* height: 320px; */
+    transition: 0.2s ease-in-out;
+
+    &:hover {
+      transform: scale(1.01);
+    }
   }
 `;
 
 const SlideTextArea = styled.div`
-  /* border: 1px solid blue; */
   padding: 0 0.5rem 0 0.5rem;
   margin-top: 0.7rem;
   height: 15rem;
@@ -93,7 +96,6 @@ const SlideTitle = styled.div`
   align-items: center;
   font-size: 2rem;
   font-weight: 600;
-  /* border: 1px solid red; */
 
   > a {
     display: flex;
@@ -101,7 +103,6 @@ const SlideTitle = styled.div`
     color: #454545;
 
     > .homepageIcon {
-      /* border: 1px solid red; */
       margin-left: 1rem;
       margin-top: 0.25rem;
       cursor: pointer;
@@ -150,10 +151,59 @@ const SlideTag = styled.ul`
 
   > li {
     font-size: 0.8rem;
-    padding: 0.2rem 0.45rem 0.3rem 0.45rem;
+    padding: 0.2rem 0.45rem 0.2rem 0.45rem;
     color: ${(props) => props.theme.color.mainColor};
     border-radius: 5rem;
     border: 1px solid ${(props) => props.theme.color.mainColor};
+    font-weight: 500;
+
+    &.javaScript {
+      color: white;
+      background-color: #f7df1e;
+      border: 1px solid #f7df1e;
+    }
+
+    &.typeScript {
+      color: white;
+      background-color: #3178c6;
+      border: 1px solid #3178c6;
+    }
+
+    &.react {
+      color: white;
+      background-color: #61dafb;
+      border: 1px solid #61dafb;
+    }
+
+    &.recoil {
+      color: white;
+      background-color: black;
+      border: 1px solid black;
+    }
+
+    &.styledComponents {
+      color: white;
+      background-color: #db7093;
+      border: 1px solid #db7093;
+    }
+
+    &.redux {
+      color: white;
+      background-color: #764abc;
+      border: 1px solid #764abc;
+    }
+
+    &.firebase {
+      color: white;
+      background-color: #ffca28;
+      border: 1px solid #ffca28;
+    }
+
+    &.aws {
+      color: white;
+      background-color: #569a31;
+      border: 1px solid #569a31;
+    }
   }
 `;
 
@@ -225,10 +275,12 @@ function Project() {
               </Link>
             </SlideTitle>
             <SlideTag>
-              <li>TypeScript</li>
-              <li>React</li>
-              <li>Recoil</li>
-              <li>Styled Components</li>
+              <li>개인 프로젝트</li>
+              <li className='typeScript'>TypeScript</li>
+              <li className='react'>React</li>
+              <li className='recoil'>Recoil</li>
+              <li className='styledComponents'>Styled Components</li>
+              <li className='firebase'>Firebase</li>
             </SlideTag>
             <SlideComment>
               <p className='mainText'>
@@ -273,10 +325,12 @@ function Project() {
               </Link>
             </SlideTitle>
             <SlideTag>
-              <li>TypeScript</li>
-              <li>React</li>
-              <li>Redux Toolkit</li>
-              <li>Styled Components</li>
+              <li>팀 프로젝트</li>
+              <li className='typeScript'>TypeScript</li>
+              <li className='react'>React</li>
+              <li className='redux'>Redux Toolkit</li>
+              <li className='styledComponents'>Styled Components</li>
+              <li className='aws'>aws S3</li>
             </SlideTag>
             <SlideComment>
               <p className='mainText'>
@@ -317,10 +371,11 @@ function Project() {
               </Link>
             </SlideTitle>
             <SlideTag>
-              <li>JavaScript</li>
-              <li>React</li>
-              <li>Context API</li>
-              <li>Styled Components</li>
+              <li>개인 프로젝트</li>
+              <li className='javaScript'>JavaScript</li>
+              <li className='react'>React</li>
+              <li className='recoil'>Context API</li>
+              <li className='styledComponents'>Styled Components</li>
             </SlideTag>
             <SlideComment>
               <p className='mainText'>Todo!t은 할 일을 등록하고 관리할 수 있는 서비스입니다.</p>
