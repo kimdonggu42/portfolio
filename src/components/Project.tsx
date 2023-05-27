@@ -10,8 +10,8 @@ import Todoit from "../assets/images/Todoit.png";
 
 import { GrFormPrevious, GrFormNext } from "react-icons/gr";
 import { BsLink } from "react-icons/bs";
-import { SiGithub } from "react-icons/si";
-import { RxNotionLogo } from "react-icons/rx";
+import { HiMagnifyingGlassCircle } from "react-icons/hi2";
+import { RiGithubFill } from "react-icons/ri";
 
 const ProjectContainer = styled.div`
   padding: 3.5rem 3rem 3.5rem 3rem;
@@ -28,16 +28,11 @@ const ProjectTitle = styled.div`
 `;
 
 const UnderBar = styled.div`
-  width: 5.7rem;
+  width: 6.3rem;
   height: 0.3rem;
   margin: 0.5rem 0 3rem 0;
   border-radius: 5rem;
   background-color: ${(props) => props.theme.color.mainColor};
-`;
-
-const StyledSlider = styled(Slider)`
-  height: 37rem;
-  /* border: 1px solid red; */
 `;
 
 const PrevBtn = styled.button`
@@ -91,39 +86,57 @@ const SlideTextArea = styled.div`
   padding: 0 0.5rem 0 0.5rem;
   margin-top: 0.7rem;
   height: 15rem;
+`;
 
-  > .projectTitle {
+const SlideTitle = styled.div`
+  display: flex;
+  align-items: center;
+  font-size: 2rem;
+  font-weight: 600;
+  /* border: 1px solid red; */
+
+  > a {
     display: flex;
     align-items: center;
-    font-size: 2rem;
-    font-weight: 600;
-    /* border: 1px solid red; */
+    color: #454545;
 
-    > a {
-      display: flex;
-      align-items: center;
-      color: #454545;
+    > .homepageIcon {
+      /* border: 1px solid red; */
+      margin-left: 1rem;
+      margin-top: 0.25rem;
+      cursor: pointer;
 
-      > .homepageIcon {
-        /* border: 1px solid red; */
-        margin-left: 1rem;
-        margin-top: 0.25rem;
-        cursor: pointer;
-
-        &:hover {
-          color: gray;
-        }
+      &:hover {
+        color: gray;
       }
     }
-  }
 
-  > .projectComment {
-    font-size: 1.1rem;
-    /* color: #666666; */
-    word-break: keep-all;
-
-    > .mainText {
+    > p {
+      display: none;
+      background-color: #222222;
+      padding: 6px;
+      text-align: center;
+      width: 3.8rem;
+      position: absolute;
+      border-radius: 4px;
+      box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 16px 0px;
+      font-size: 12px;
+      color: white;
       font-weight: 500;
+
+      &::before {
+        position: absolute;
+        content: "";
+        border: 5px solid transparent;
+        border-bottom-color: #222222;
+        top: -10px;
+        left: 1.5rem;
+      }
+    }
+
+    &:hover p {
+      top: 23.4rem;
+      display: block;
     }
   }
 `;
@@ -137,10 +150,20 @@ const SlideTag = styled.ul`
 
   > li {
     font-size: 0.8rem;
-    padding: 0.15rem 0.4rem 0.15rem 0.4rem;
+    padding: 0.2rem 0.45rem 0.3rem 0.45rem;
     color: ${(props) => props.theme.color.mainColor};
     border-radius: 5rem;
     border: 1px solid ${(props) => props.theme.color.mainColor};
+  }
+`;
+
+const SlideComment = styled.div`
+  font-size: 1.1rem;
+  /* color: #666666; */
+  word-break: keep-all;
+
+  > .mainText {
+    font-weight: 500;
   }
 `;
 
@@ -162,7 +185,7 @@ function Project() {
   };
 
   const settings = {
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 500,
     slidesToShow: 1,
@@ -173,34 +196,41 @@ function Project() {
 
   return (
     <ProjectContainer>
-      <ProjectTitle>Project</ProjectTitle>
+      <ProjectTitle>Projects</ProjectTitle>
       <UnderBar></UnderBar>
-      <StyledSlider {...settings}>
+      <Slider {...settings}>
         <SlideArea>
           <img src={saveme} alt='첫번째 프로젝트' />
           <SlideTextArea>
-            <div className='projectTitle'>
+            <SlideTitle>
               saveme
               <Link to='https://save-me-bd34d.web.app/' target='_blank'>
                 <BsLink className='homepageIcon' size={25} />
+                <p>웹사이트</p>
               </Link>
               <Link to='https://github.com/kimdonggu42/saveme' target='_blank'>
-                <SiGithub className='homepageIcon' size={20} />
+                <RiGithubFill className='homepageIcon' size={25} />
+                <p>깃허브</p>
               </Link>
               <Link
                 to='https://www.notion.so/saveme-97b2ceaac7204ceca7d5d88cbed908c6?pvs=4'
                 target='_blank'
               >
-                <RxNotionLogo className='homepageIcon' size={20} />
+                <HiMagnifyingGlassCircle className='homepageIcon' size={25} />
+                <p>
+                  자세히
+                  <br />
+                  보기
+                </p>
               </Link>
-            </div>
+            </SlideTitle>
             <SlideTag>
               <li>TypeScript</li>
               <li>React</li>
               <li>Recoil</li>
               <li>Styled Components</li>
             </SlideTag>
-            <div className='projectComment'>
+            <SlideComment>
               <p className='mainText'>
                 saveme는 별도의 검색 없이 바로 내 주변의 공공 화장실을 찾아주는 서비스입니다.
               </p>
@@ -214,34 +244,41 @@ function Project() {
                 재가공했습니다. 이를 활용해 나와 제일 가까운 위치의 화장실 100개를 지도 위에 마커로
                 표시해 주었습니다.
               </p>
-            </div>
+            </SlideComment>
           </SlideTextArea>
         </SlideArea>
         <SlideArea>
           <img src={mariple} alt='두번째 프로젝트' />
           <SlideTextArea>
-            <div className='projectTitle'>
+            <SlideTitle>
               Mariple
               <Link to='https://www.mariple.com/' target='_blank'>
                 <BsLink className='homepageIcon' size={25} />
+                <p>웹사이트</p>
               </Link>
               <Link to='https://github.com/kimdonggu42/Mariple' target='_blank'>
-                <SiGithub className='homepageIcon' size={20} />
+                <RiGithubFill className='homepageIcon' size={25} />
+                <p>깃허브</p>
               </Link>
               <Link
                 to='https://www.notion.so/Mariple-d09e017dfb30417384c8aa0107653fe2?pvs=4'
                 target='_blank'
               >
-                <RxNotionLogo className='homepageIcon' size={20} />
+                <HiMagnifyingGlassCircle className='homepageIcon' size={25} />
+                <p>
+                  자세히
+                  <br />
+                  보기
+                </p>
               </Link>
-            </div>
+            </SlideTitle>
             <SlideTag>
               <li>TypeScript</li>
               <li>React</li>
               <li>Redux Toolkit</li>
               <li>Styled Components</li>
             </SlideTag>
-            <div className='projectComment'>
+            <SlideComment>
               <p className='mainText'>
                 Mariple은 나만의 플레이리스트를 소개하거나 그 플레이리스트에 담겨있는 추억을
                 공유하는 블로그와 뮤직 플레이리스트가 결합된 서비스입니다.
@@ -255,41 +292,47 @@ function Project() {
                 로컬스토리지에 저장해 새로고침 시에도 사용자가 보고 있던 페이지가 유지되도록
                 개선했습니다.
               </p>
-            </div>
+            </SlideComment>
           </SlideTextArea>
         </SlideArea>
         <SlideArea>
           <img src={Todoit} alt='세번째 프로젝트' />
           <SlideTextArea>
-            <div className='projectTitle'>
+            <SlideTitle>
               Todo!t
               <Link to='https://github.com/kimdonggu42/sp-todolist-client-react' target='_blank'>
-                <SiGithub className='homepageIcon' size={20} />
+                <RiGithubFill className='homepageIcon' size={25} />
+                <p>깃허브</p>
               </Link>
               <Link
                 to='https://www.notion.so/Todo-t-4522b7df134942d7aceea8a5c682724a?pvs=4'
                 target='_blank'
               >
-                <RxNotionLogo className='homepageIcon' size={20} />
+                <HiMagnifyingGlassCircle className='homepageIcon' size={25} />
+                <p>
+                  자세히
+                  <br />
+                  보기
+                </p>
               </Link>
-            </div>
+            </SlideTitle>
             <SlideTag>
               <li>JavaScript</li>
               <li>React</li>
               <li>Context API</li>
               <li>Styled Components</li>
             </SlideTag>
-            <div className='projectComment'>
+            <SlideComment>
               <p className='mainText'>Todo!t은 할 일을 등록하고 관리할 수 있는 서비스입니다.</p>
               <p>
                 Context API를 이용하여 light, dark 테마를 전역 상태로 관리하여 props drilling 문제를
                 방지했습니다.
               </p>
               <p>반응형 스타일을 적용하여 다양한 사이즈의 기기에 대응할 수 있도록 했습니다.</p>
-            </div>
+            </SlideComment>
           </SlideTextArea>
         </SlideArea>
-      </StyledSlider>
+      </Slider>
     </ProjectContainer>
   );
 }
