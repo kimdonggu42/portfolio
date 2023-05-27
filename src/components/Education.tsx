@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const EducationContainer = styled.div`
   border: 1px solid #9384d1;
-  padding: 4rem 3rem 4rem 3rem;
+  padding: 3.5rem 3rem 3.5rem 3rem;
   border-radius: 1.3rem;
   border: none;
   background-color: white;
