@@ -36,7 +36,7 @@ const ProfileWrapper = styled.div`
 const NameArea = styled.div`
   > .name {
     font-size: 1.5rem;
-    font-weight: 500;
+    font-weight: 600;
     margin-bottom: 0.5rem;
   }
 
@@ -81,11 +81,19 @@ const LinkWrapper = styled.div`
 
     > .githubIcon {
       cursor: pointer;
+
+      &:hover {
+        opacity: 0.8;
+      }
     }
 
     > .velogIcon {
       border-radius: 5rem;
       cursor: pointer;
+
+      &:hover {
+        opacity: 0.8;
+      }
     }
   }
 `;
