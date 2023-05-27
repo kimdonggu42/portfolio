@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { FcBookmark, FcIdea, FcAddressBook, FcPhoneAndroid } from "react-icons/fc";
 
 const IntroduceContainer = styled.div`
-  height: 37rem;
+  height: 36rem;
   padding: 3.5rem 3rem 3.5rem 3rem;
   border-radius: 1.3rem;
   border: none;
@@ -21,7 +21,7 @@ const IntroduceTitle = styled.div`
 const UnderBar = styled.div`
   width: 7.5rem;
   height: 0.3rem;
-  margin-top: 0.5rem;
+  margin: 0.5rem 0 3.5rem 0;
   border-radius: 50px;
   background-color: ${(props) => props.theme.color.mainColor};
 `;
@@ -29,7 +29,6 @@ const UnderBar = styled.div`
 const IntroduceWrapper = styled.div`
   display: flex;
   align-items: center;
-  margin-top: 4rem;
   /* border: 1px solid red; */
 
   > img {
@@ -133,17 +132,17 @@ function Introduce() {
         <img src={profile} alt='프로필' />
         <KeywordArea>
           <div className='mainSentence'>
-            안녕하세요
+            안녕하세요 👋🏻
             <br />
             <span className='highlight'>주도적인 자세로 문제 해결</span>
             하기 좋아하는 김동구입니다.
           </div>
           <div className='firstSubSentence'>
-            끝난 프로젝트라도 개선할 수 있는 부분이 있는지 찾아보고 <br />{" "}
+            끝난 프로젝트라도 개선할 수 있는 부분이 있는지 찾아보고 <br />
             <span className='highlight'>더 나은 방향으로 발전</span>시키는 걸 좋아합니다.
           </div>
           <div className='secondSubSentence'>
-            원활한 의사소통을 도와줄 수 있는 징검다리 개발자가 될 수 있도록 <br />팀 프로젝트와
+            원활한 의사소통을 도와줄 수 있는 징검다리 역할을 할 수 있도록 <br />팀 프로젝트와
             스터디를 하며 <span className='highlight'>협업 능력과 커뮤니케이션 능력</span>을 키우고
             있습니다.
           </div>

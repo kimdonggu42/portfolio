@@ -8,10 +8,11 @@ import { BsInboxesFill, BsInboxes, BsPencilFill, BsPencil } from "react-icons/bs
 import { IoSettings, IoSettingsOutline, IoSchool, IoSchoolOutline } from "react-icons/io5";
 import { MdFactCheck, MdOutlineFactCheck } from "react-icons/md";
 import { SiGithub, SiVelog } from "react-icons/si";
+import { BiCopyright } from "react-icons/bi";
 
 const IndexContainer = styled.nav`
   width: 17rem;
-  height: 37rem;
+  height: 36rem;
   padding: 3rem 1.6rem 3rem 1.6rem;
   position: sticky;
   top: 5rem;
@@ -51,7 +52,7 @@ const MenuWrapper = styled.ul`
   font-weight: 500;
   list-style: none;
   row-gap: 0.5rem;
-  margin: 3rem 0 3rem 0;
+  margin: 2.5rem 0 2.5rem 0;
 `;
 
 const MenuList = styled.li`
@@ -99,8 +100,15 @@ const LinkWrapper = styled.div`
 `;
 
 const VerWrapper = styled.div`
+  /* text-align: right; */
+  display: flex;
+  align-items: center;
   font-size: 0.8rem;
   margin-top: 1rem;
+
+  > .copyrightIcon {
+    margin: 0.1rem 0.2rem 0 0;
+  }
 `;
 
 function Index() {
@@ -158,7 +166,10 @@ function Index() {
           <SiVelog className='velogIcon' size={30} />
         </Link>
       </LinkWrapper>
-      <VerWrapper>Ver 0.2</VerWrapper>
+      <VerWrapper>
+        <BiCopyright className='copyrightIcon' />
+        Developed by kimdonggu42
+      </VerWrapper>
     </IndexContainer>
   );
 }
