@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 import emoji from "../assets/images/emoji.png";
@@ -114,11 +114,52 @@ const VerWrapper = styled.div`
 
 function Index() {
   const [currentMenu, setCurrentMenu] = useState<number>(0);
+  const [position, setPosition] = useState(0);
+
+  function onScroll() {
+    setPosition(window.scrollY);
+  }
+  useEffect(() => {
+    window.addEventListener("scroll", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+    };
+  }, []);
 
   // 매뉴 선택 이벤트 핸들러
   const selectMenuHandler = (index: number) => {
     setCurrentMenu(index);
   };
+
+  const scrollToIntroduce = () => {
+    window.scroll({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
+  const scrollToStack = () => {
+    window.scroll({
+      top: 608,
+      behavior: "smooth",
+    });
+  };
+
+  const scrollToProjects = () => {
+    window.scroll({
+      top: 1255,
+      behavior: "smooth",
+    });
+  };
+
+  const scrollToExperience = () => {
+    window.scroll({
+      top: 2066,
+      behavior: "smooth",
+    });
+  };
+
+  // console.log(position);
 
   return (
     <IndexContainer>
@@ -130,20 +171,40 @@ function Index() {
         </NameArea>
       </ProfileWrapper>
       <MenuWrapper>
-        <MenuList onClick={() => selectMenuHandler(0)}>
-          {currentMenu === 0 ? <FaUser /> : <FaRegUser />}
+        <MenuList
+          onClick={() => {
+            selectMenuHandler(0);
+            scrollToIntroduce();
+          }}
+        >
+          {position <= 607 ? <FaUser /> : <FaRegUser />}
           <span className='el'>Introduce</span>
         </MenuList>
-        <MenuList onClick={() => selectMenuHandler(1)}>
-          {currentMenu === 1 ? <IoSettings /> : <IoSettingsOutline />}
+        <MenuList
+          onClick={() => {
+            selectMenuHandler(1);
+            scrollToStack();
+          }}
+        >
+          {position >= 608 && position <= 1254 ? <IoSettings /> : <IoSettingsOutline />}
           <span className='el'>Stack</span>
         </MenuList>
-        <MenuList onClick={() => selectMenuHandler(2)}>
-          {currentMenu === 2 ? <BsInboxesFill /> : <BsInboxes />}
+        <MenuList
+          onClick={() => {
+            selectMenuHandler(2);
+            scrollToProjects();
+          }}
+        >
+          {position >= 1255 && position <= 2065 ? <BsInboxesFill /> : <BsInboxes />}
           <span className='el'>Project</span>
         </MenuList>
-        <MenuList onClick={() => selectMenuHandler(3)}>
-          {currentMenu === 3 ? <FaLightbulb /> : <FaRegLightbulb />}
+        <MenuList
+          onClick={() => {
+            selectMenuHandler(3);
+            scrollToExperience();
+          }}
+        >
+          {position >= 2066 ? <FaLightbulb /> : <FaRegLightbulb />}
           <span className='el'>Experience</span>
         </MenuList>
         <MenuList onClick={() => selectMenuHandler(4)}>

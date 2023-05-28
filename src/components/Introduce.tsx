@@ -55,23 +55,7 @@ const KeywordArea = styled.div`
     }
   }
 
-  > .firstSubSentence {
-    font-size: 1.1rem;
-
-    > .highlight {
-      background-color: #fff5b8;
-    }
-  }
-
-  > .secondSubSentence {
-    font-size: 1.1rem;
-
-    > .highlight {
-      background-color: #fff5b8;
-    }
-  }
-
-  > .thirdSubSentence {
+  > .subSentence {
     font-size: 1.1rem;
 
     > .highlight {
@@ -137,18 +121,22 @@ function Introduce() {
             <span className='highlight'>주도적인 자세로 문제 해결</span>
             하기 좋아하는 김동구입니다.
           </div>
-          <div className='firstSubSentence'>
-            끝난 프로젝트라도 개선할 수 있는 부분이 있는지 찾아보고 <br />
-            <span className='highlight'>더 나은 방향으로 발전</span>시키는 걸 좋아합니다.
+          <div className='subSentence'>
+            끝난 프로젝트라도&nbsp;
+            <span className='highlight'>개선할 수 있는 부분이 있는지 찾아보며 발전</span>시키는 것을
+            좋아합니다.
           </div>
-          <div className='secondSubSentence'>
-            원활한 의사소통을 도와줄 수 있는 징검다리 역할을 할 수 있도록 <br />팀 프로젝트와
-            스터디를 하며 <span className='highlight'>협업 능력과 커뮤니케이션 능력</span>을 키우고
-            있습니다.
+          <div className='subSentence'>
+            <span className='highlight'>협업 능력과 커뮤니케이션 능력</span>은 개발 능력 못지않게
+            중요하다고 생각합니다.
           </div>
-          <div className='thirdSubSentence'>
-            <span className='highlight'>스스로 부족한 점</span>이 무엇인지 끊임없이 생각해 보며
-            개선하기 위해 노력합니다.
+          <div className='subSentence'>
+            항상 사용자 경험을 생각하며 <span className='highlight'>더 나은 경험</span>을 제공할 수
+            있도록 고민합니다.
+          </div>
+          <div className='subSentence'>
+            담당한 부분만 해결하고 끝이 아닌,{" "}
+            <span className='highlight'>함께 고민하며 같이 성장</span>할 수 있도록 노력합니다.
           </div>
         </KeywordArea>
       </IntroduceWrapper>
