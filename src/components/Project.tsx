@@ -106,6 +106,7 @@ const SlideTitle = styled.div`
       margin-left: 1rem;
       margin-top: 0.25rem;
       cursor: pointer;
+      /* border: 1px solid red; */
 
       &:hover {
         color: gray;
@@ -117,13 +118,14 @@ const SlideTitle = styled.div`
       background-color: #222222;
       padding: 6px;
       text-align: center;
-      width: 3.8rem;
+      width: 4.5rem;
       position: absolute;
       border-radius: 4px;
       box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 16px 0px;
       font-size: 12px;
       color: white;
       font-weight: 500;
+      margin-left: -0.4rem;
 
       &::before {
         position: absolute;
@@ -131,7 +133,7 @@ const SlideTitle = styled.div`
         border: 5px solid transparent;
         border-bottom-color: #222222;
         top: -10px;
-        left: 1.5rem;
+        left: 1.9rem;
       }
     }
 
@@ -267,11 +269,7 @@ function Project() {
                 target='_blank'
               >
                 <HiMagnifyingGlassCircle className='homepageIcon' size={25} />
-                <p>
-                  자세히
-                  <br />
-                  보기
-                </p>
+                <p>자세히 보기</p>
               </Link>
             </SlideTitle>
             <SlideTag>
@@ -317,11 +315,7 @@ function Project() {
                 target='_blank'
               >
                 <HiMagnifyingGlassCircle className='homepageIcon' size={25} />
-                <p>
-                  자세히
-                  <br />
-                  보기
-                </p>
+                <p>자세히 보기</p>
               </Link>
             </SlideTitle>
             <SlideTag>
@@ -363,11 +357,7 @@ function Project() {
                 target='_blank'
               >
                 <HiMagnifyingGlassCircle className='homepageIcon' size={25} />
-                <p>
-                  자세히
-                  <br />
-                  보기
-                </p>
+                <p>자세히 보기</p>
               </Link>
             </SlideTitle>
             <SlideTag>
