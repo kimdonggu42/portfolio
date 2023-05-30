@@ -69,18 +69,26 @@ const NextBtn = styled.button`
 `;
 
 const SlideArea = styled.div`
+  word-break: keep-all;
   /* border: 1px solid blue; */
+`;
+
+const SlideImg = styled.div`
+  width: 51rem;
+  height: 20rem;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 1.3rem;
+
   > img {
-    margin: auto;
-    margin-top: 0.2rem;
-    width: 51rem;
-    height: 20rem;
+    width: 100%;
+    height: 100%;
     border-radius: 1.3rem;
     object-fit: cover;
-    transition: 0.2s ease-in-out;
+    transition: 0.3s ease-in-out;
 
     &:hover {
-      transform: scale(1.01);
+      transform: scale(1.02);
     }
   }
 `;
@@ -212,7 +220,6 @@ const SlideTag = styled.ul`
 const SlideComment = styled.div`
   font-size: 1.1rem;
   color: #3d3f41;
-  word-break: keep-all;
 
   > .mainText {
     font-weight: 500;
@@ -252,7 +259,9 @@ function Project() {
       <UnderBar></UnderBar>
       <Slider {...settings}>
         <SlideArea>
-          <img src={mariple} alt='mariple' />
+          <SlideImg>
+            <img src={mariple} alt='mariple' />
+          </SlideImg>
           <SlideTextArea>
             <SlideTitle>
               Mariple
@@ -298,7 +307,9 @@ function Project() {
           </SlideTextArea>
         </SlideArea>
         <SlideArea>
-          <img src={saveme} alt='saveme' />
+          <SlideImg>
+            <img src={saveme} alt='saveme' />
+          </SlideImg>
           <SlideTextArea>
             <SlideTitle>
               saveme
@@ -344,7 +355,9 @@ function Project() {
           </SlideTextArea>
         </SlideArea>
         <SlideArea>
-          <img src={Todoit} alt='todoit' />
+          <SlideImg>
+            <img src={Todoit} alt='todoit' />
+          </SlideImg>
           <SlideTextArea>
             <SlideTitle>
               Todo!t
