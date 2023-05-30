@@ -119,6 +119,7 @@ function Index() {
   function onScroll() {
     setPosition(window.scrollY);
   }
+
   useEffect(() => {
     window.addEventListener("scroll", onScroll);
     return () => {
@@ -140,26 +141,45 @@ function Index() {
 
   const scrollToStack = () => {
     window.scroll({
-      top: 608,
+      top: 605,
       behavior: "smooth",
     });
   };
 
   const scrollToProjects = () => {
     window.scroll({
-      top: 1255,
+      top: 1250,
       behavior: "smooth",
     });
   };
 
   const scrollToExperience = () => {
     window.scroll({
-      top: 2066,
+      top: 2060,
       behavior: "smooth",
     });
   };
 
-  // console.log(position);
+  const scrollToStudy = () => {
+    window.scroll({
+      top: 2400,
+      behavior: "smooth",
+    });
+  };
+
+  const scrollToEducation = () => {
+    window.scroll({
+      top: 2550,
+      behavior: "smooth",
+    });
+  };
+
+  const scrollToCertificate = () => {
+    window.scroll({
+      top: 2570,
+      behavior: "smooth",
+    });
+  };
 
   return (
     <IndexContainer>
@@ -177,46 +197,67 @@ function Index() {
             scrollToIntroduce();
           }}
         >
-          {position <= 607 ? <FaUser /> : <FaRegUser />}
+          {position <= 604 ? <FaUser /> : <FaRegUser />}
           <span className='el'>Introduce</span>
         </MenuList>
+
         <MenuList
           onClick={() => {
             selectMenuHandler(1);
             scrollToStack();
           }}
         >
-          {position >= 608 && position <= 1254 ? <IoSettings /> : <IoSettingsOutline />}
+          {position >= 605 && position <= 1249 ? <IoSettings /> : <IoSettingsOutline />}
           <span className='el'>Stack</span>
         </MenuList>
+
         <MenuList
           onClick={() => {
             selectMenuHandler(2);
             scrollToProjects();
           }}
         >
-          {position >= 1255 && position <= 2065 ? <BsInboxesFill /> : <BsInboxes />}
+          {position >= 1250 && position <= 2059 ? <BsInboxesFill /> : <BsInboxes />}
           <span className='el'>Project</span>
         </MenuList>
+
         <MenuList
           onClick={() => {
             selectMenuHandler(3);
             scrollToExperience();
           }}
         >
-          {position >= 2066 ? <FaLightbulb /> : <FaRegLightbulb />}
+          {position >= 2060 && position <= 2399 ? <FaLightbulb /> : <FaRegLightbulb />}
           <span className='el'>Experience</span>
         </MenuList>
-        <MenuList onClick={() => selectMenuHandler(4)}>
-          {currentMenu === 4 ? <BsPencilFill /> : <BsPencil />}
+
+        <MenuList
+          onClick={() => {
+            selectMenuHandler(4);
+            scrollToStudy();
+          }}
+        >
+          {position >= 2400 && position <= 2549 ? <BsPencilFill /> : <BsPencil />}
           <span className='el'>Study</span>
         </MenuList>
-        <MenuList onClick={() => selectMenuHandler(5)}>
-          {currentMenu === 5 ? <IoSchool /> : <IoSchoolOutline />}
+
+        <MenuList
+          onClick={() => {
+            selectMenuHandler(5);
+            scrollToEducation();
+          }}
+        >
+          {position >= 2550 && position <= 2569 ? <IoSchool /> : <IoSchoolOutline />}
           <span className='el'>Education</span>
         </MenuList>
-        <MenuList onClick={() => selectMenuHandler(6)}>
-          {currentMenu === 6 ? <MdFactCheck /> : <MdOutlineFactCheck />}
+
+        <MenuList
+          onClick={() => {
+            selectMenuHandler(6);
+            scrollToCertificate();
+          }}
+        >
+          {position >= 2570 ? <MdFactCheck /> : <MdOutlineFactCheck />}
           <span className='el'>Certificate</span>
         </MenuList>
       </MenuWrapper>

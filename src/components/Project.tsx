@@ -209,7 +209,7 @@ const SlideTag = styled.ul`
 
 const SlideComment = styled.div`
   font-size: 1.1rem;
-  /* color: #666666; */
+  color: #3d3f41;
   word-break: keep-all;
 
   > .mainText {
