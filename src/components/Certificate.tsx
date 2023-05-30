@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import * as Experience from "./Experience";
 
 const CertificateContainer = styled.div`
   padding: 3.5rem 3rem 3.5rem 3rem;
@@ -26,6 +27,17 @@ function Certificate() {
     <CertificateContainer>
       <CertificateTitle>Certificate</CertificateTitle>
       <UnderBar></UnderBar>
+      <Experience.ExperieceArea>
+        <Experience.ExperienceList>
+          <Experience.ListTitle>
+            <div className='date'>2020.07</div>
+          </Experience.ListTitle>
+          <Experience.ListText>
+            <div className='subTitle'>데이터분석 준전문가(ADsP)</div>
+            <div className='subText'>- 한국데이터산업진흥원</div>
+          </Experience.ListText>
+        </Experience.ExperienceList>
+      </Experience.ExperieceArea>
     </CertificateContainer>
   );
 }

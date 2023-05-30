@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import * as Experience from "./Experience";
 
 const EducationContainer = styled.div`
   padding: 3.5rem 3rem 3.5rem 3rem;
@@ -26,6 +27,17 @@ function Education() {
     <EducationContainer>
       <EducationTitle>Education</EducationTitle>
       <UnderBar></UnderBar>
+      <Experience.ExperieceArea>
+        <Experience.ExperienceList>
+          <Experience.ListTitle>
+            <div className='date'>2015.03 ~ 2021.02</div>
+          </Experience.ListTitle>
+          <Experience.ListText>
+            <div className='subTitle'>평택대학교</div>
+            <div className='subText'>- 통계학 전공</div>
+          </Experience.ListText>
+        </Experience.ExperienceList>
+      </Experience.ExperieceArea>
     </EducationContainer>
   );
 }
