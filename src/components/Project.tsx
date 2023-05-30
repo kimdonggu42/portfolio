@@ -250,57 +250,7 @@ function Project() {
       <UnderBar></UnderBar>
       <Slider {...settings}>
         <SlideArea>
-          <img src={saveme} alt='첫번째 프로젝트' />
-          <SlideTextArea>
-            <SlideTitle>
-              saveme
-              <Link to='https://save-me-bd34d.web.app/' target='_blank'>
-                <BsLink className='homepageIcon' size={25} />
-                <p>웹사이트</p>
-              </Link>
-              <Link to='https://github.com/kimdonggu42/saveme' target='_blank'>
-                <RiGithubFill className='homepageIcon' size={25} />
-                <p>깃허브</p>
-              </Link>
-              <Link
-                to='https://www.notion.so/saveme-97b2ceaac7204ceca7d5d88cbed908c6?pvs=4'
-                target='_blank'
-              >
-                <HiMagnifyingGlassCircle className='homepageIcon' size={25} />
-                <p>
-                  자세히
-                  <br />
-                  보기
-                </p>
-              </Link>
-            </SlideTitle>
-            <SlideTag>
-              <li>개인 프로젝트</li>
-              <li className='typeScript'>TypeScript</li>
-              <li className='react'>React</li>
-              <li className='recoil'>Recoil</li>
-              <li className='styledComponents'>Styled Components</li>
-              <li className='firebase'>Firebase</li>
-            </SlideTag>
-            <SlideComment>
-              <p className='mainText'>
-                saveme는 별도의 검색 없이 바로 내 주변의 공공 화장실을 찾아주는 서비스입니다.
-              </p>
-              <p>
-                Naver Maps API를 활용하여 현재 내 위치를 중심으로 하는 지도를 구현하였고, 한 화면에
-                많은 수의 마커가 표시되면 성능 저하가 발생하므로 현재 사용자가 보고 있는 화면 밖에
-                있는 마커들은 숨김 처리를 시켜주어 렌더링 성능 저하를 방지했습니다.
-              </p>
-              <p>
-                공공 화장실 데이터를 불러와 나와의 거리를 계산하는 알고리즘을 추가하여 데이터를
-                재가공했습니다. 이를 활용해 나와 제일 가까운 위치의 화장실 100개를 지도 위에 마커로
-                표시해 주었습니다.
-              </p>
-            </SlideComment>
-          </SlideTextArea>
-        </SlideArea>
-        <SlideArea>
-          <img src={mariple} alt='두번째 프로젝트' />
+          <img src={mariple} alt='mariple' />
           <SlideTextArea>
             <SlideTitle>
               Mariple
@@ -350,7 +300,57 @@ function Project() {
           </SlideTextArea>
         </SlideArea>
         <SlideArea>
-          <img src={Todoit} alt='세번째 프로젝트' />
+          <img src={saveme} alt='saveme' />
+          <SlideTextArea>
+            <SlideTitle>
+              saveme
+              <Link to='https://save-me-bd34d.web.app/' target='_blank'>
+                <BsLink className='homepageIcon' size={25} />
+                <p>웹사이트</p>
+              </Link>
+              <Link to='https://github.com/kimdonggu42/saveme' target='_blank'>
+                <RiGithubFill className='homepageIcon' size={25} />
+                <p>깃허브</p>
+              </Link>
+              <Link
+                to='https://www.notion.so/saveme-97b2ceaac7204ceca7d5d88cbed908c6?pvs=4'
+                target='_blank'
+              >
+                <HiMagnifyingGlassCircle className='homepageIcon' size={25} />
+                <p>
+                  자세히
+                  <br />
+                  보기
+                </p>
+              </Link>
+            </SlideTitle>
+            <SlideTag>
+              <li>개인 프로젝트</li>
+              <li className='typeScript'>TypeScript</li>
+              <li className='react'>React</li>
+              <li className='recoil'>Recoil</li>
+              <li className='styledComponents'>Styled Components</li>
+              <li className='firebase'>Firebase</li>
+            </SlideTag>
+            <SlideComment>
+              <p className='mainText'>
+                saveme는 별도의 검색 없이 바로 내 주변의 공공 화장실을 찾아주는 서비스입니다.
+              </p>
+              <p>
+                Naver Maps API를 활용하여 현재 내 위치를 중심으로 하는 지도를 구현하였고, 한 화면에
+                많은 수의 마커가 표시되면 성능 저하가 발생하므로 현재 사용자가 보고 있는 화면 밖에
+                있는 마커들은 숨김 처리를 시켜주어 렌더링 성능 저하를 방지했습니다.
+              </p>
+              <p>
+                공공 화장실 데이터를 불러와 나와의 거리를 계산하는 알고리즘을 추가하여 데이터를
+                재가공했습니다. 이를 활용해 나와 제일 가까운 위치의 화장실 100개를 지도 위에 마커로
+                표시해 주었습니다.
+              </p>
+            </SlideComment>
+          </SlideTextArea>
+        </SlideArea>
+        <SlideArea>
+          <img src={Todoit} alt='todoit' />
           <SlideTextArea>
             <SlideTitle>
               Todo!t
