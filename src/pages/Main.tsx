@@ -14,13 +14,17 @@ const MainContainer = styled.div`
   font-size: 1rem;
   column-gap: 2rem;
   margin: 5rem 1rem 5rem 1rem;
+
+  @media screen and (max-width: 1275px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 const InfoWrapper = styled.div`
   display: flex;
   flex-direction: column;
   width: 58rem;
-  /* width: 928px; */
   row-gap: 2rem;
 `;
 

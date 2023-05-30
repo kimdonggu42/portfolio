@@ -21,17 +21,38 @@ const IndexContainer = styled.nav`
   color: white;
   background-color: ${(props) => props.theme.color.mainColor};
   box-shadow: 0px 6px 15px 0px rgba(74, 99, 231, 0.1);
+
+  @media screen and (max-width: 1275px) {
+    display: flex;
+    width: 58rem;
+    height: 4rem;
+    padding: 0 3rem 0 3rem;
+    position: static;
+    margin-bottom: 2rem;
+    border-radius: 1.1rem;
+  }
 `;
 
 const ProfileWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  /* border: 1px solid red; */
 
   > img {
     width: 3.8rem;
     height: 3.8rem;
     border-radius: 5rem;
+
+    @media screen and (max-width: 1275px) {
+      width: 2.5rem;
+      height: 2.5rem;
+      margin-right: 1rem;
+    }
+  }
+
+  @media screen and (max-width: 1275px) {
+    justify-content: flex-start;
   }
 `;
 
@@ -40,10 +61,21 @@ const NameArea = styled.div`
     font-size: 1.5rem;
     font-weight: 600;
     margin-bottom: 0.5rem;
+
+    @media screen and (max-width: 1275px) {
+      font-size: 1.3rem;
+      margin-right: 1rem;
+      margin-bottom: 0;
+    }
   }
 
   > .dev {
     font-size: 0.8rem;
+  }
+
+  @media screen and (max-width: 1275px) {
+    display: flex;
+    align-items: center;
   }
 `;
 
@@ -54,6 +86,10 @@ const MenuWrapper = styled.ul`
   list-style: none;
   row-gap: 0.5rem;
   margin: 2.5rem 0 2.5rem 0;
+
+  @media screen and (max-width: 1275px) {
+    display: none;
+  }
 `;
 
 const MenuList = styled.li`
@@ -98,6 +134,10 @@ const LinkWrapper = styled.div`
       }
     }
   }
+
+  @media screen and (max-width: 1275px) {
+    display: none;
+  }
 `;
 
 const VerWrapper = styled.div`
@@ -109,6 +149,10 @@ const VerWrapper = styled.div`
 
   > .copyrightIcon {
     margin: 0.1rem 0.2rem 0 0;
+  }
+
+  @media screen and (max-width: 1275px) {
+    display: none;
   }
 `;
 
