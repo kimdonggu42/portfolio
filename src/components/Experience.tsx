@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+// import { FaDotCircle } from "react-icons/fa";
+
 const ExperienceContainer = styled.div`
   padding: 3.5rem 3rem 3.5rem 3rem;
   border-radius: 1.3rem;
@@ -21,25 +23,26 @@ const UnderBar = styled.div`
   background-color: ${(props) => props.theme.color.mainColor};
 `;
 
-const ExperieceArea = styled.ol`
-  width: 50rem;
-  /* border: 1px solid red; */
+export const ExperieceArea = styled.ol`
+  display: flex;
+  flex-direction: column;
+  row-gap: 3rem;
   list-style: none;
+  /* border: 1px solid red; */
 `;
 
-const ExperienceList = styled.li`
+export const ExperienceList = styled.li`
   display: flex;
   word-break: keep-all;
-  padding: 0 1.5rem 0 1.5rem;
 `;
 
-const ListTitle = styled.div`
+export const ListTitle = styled.div`
   width: 12rem;
   margin-right: 5rem;
   /* border: 1px solid red; */
 
   > .main {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: 600;
     margin-bottom: 0.4rem;
   }
@@ -49,10 +52,10 @@ const ListTitle = styled.div`
   }
 `;
 
-const ListText = styled.div`
+export const ListText = styled.div`
   display: flex;
   flex-direction: column;
-  row-gap: 0.4rem;
+  row-gap: 0.5rem;
   word-break: keep-all;
   /* border: 1px solid blue; */
 
@@ -85,7 +88,7 @@ function Experience() {
               - 다수의 페어프로그래밍과 팀 프로젝트를 통해 버전 관리 및 개발 프로세스, 커뮤니케이션
               역량 강화
             </div>
-            <div className='subText'>- 알고리즘 문제 풀이 및 cs 지식 학습</div>
+            <div className='subText'>- 다양한 알고리즘 및 CS 지식학습</div>
           </ListText>
         </ExperienceList>
       </ExperieceArea>
