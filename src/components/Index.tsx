@@ -225,6 +225,8 @@ function Index() {
     });
   };
 
+  console.log(window.scrollY);
+
   return (
     <IndexContainer>
       <ProfileWrapper>
@@ -241,7 +243,7 @@ function Index() {
             scrollToIntroduce();
           }}
         >
-          {position <= 604 ? <FaUser /> : <FaRegUser />}
+          {position <= 604.9 ? <FaUser /> : <FaRegUser />}
           <span className='el'>Introduce</span>
         </MenuList>
 
@@ -251,7 +253,7 @@ function Index() {
             scrollToStack();
           }}
         >
-          {position >= 605 && position <= 1249 ? <IoSettings /> : <IoSettingsOutline />}
+          {position >= 605 && position <= 1249.9 ? <IoSettings /> : <IoSettingsOutline />}
           <span className='el'>Stack</span>
         </MenuList>
 
@@ -261,7 +263,7 @@ function Index() {
             scrollToProjects();
           }}
         >
-          {position >= 1250 && position <= 2059 ? <BsInboxesFill /> : <BsInboxes />}
+          {position >= 1250 && position <= 2059.9 ? <BsInboxesFill /> : <BsInboxes />}
           <span className='el'>Project</span>
         </MenuList>
 
@@ -271,7 +273,7 @@ function Index() {
             scrollToExperience();
           }}
         >
-          {position >= 2060 && position <= 2399 ? <FaLightbulb /> : <FaRegLightbulb />}
+          {position >= 2060 && position <= 2399.9 ? <FaLightbulb /> : <FaRegLightbulb />}
           <span className='el'>Experience</span>
         </MenuList>
 
@@ -281,7 +283,7 @@ function Index() {
             scrollToStudy();
           }}
         >
-          {position >= 2400 && position <= 2549 ? <BsPencilFill /> : <BsPencil />}
+          {position >= 2400 && position <= 2549.9 ? <BsPencilFill /> : <BsPencil />}
           <span className='el'>Study</span>
         </MenuList>
 
@@ -291,7 +293,7 @@ function Index() {
             scrollToEducation();
           }}
         >
-          {position >= 2550 && position <= 2569 ? <IoSchool /> : <IoSchoolOutline />}
+          {position >= 2550 && position <= 2569.9 ? <IoSchool /> : <IoSchoolOutline />}
           <span className='el'>Education</span>
         </MenuList>
 
