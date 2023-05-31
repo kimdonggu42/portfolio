@@ -19,6 +19,7 @@ const ProjectContainer = styled.div`
   border: none;
   background-color: white;
   box-shadow: 0px 6px 15px 0px rgba(74, 99, 231, 0.1);
+  margin: 0 1rem 0 1rem;
 `;
 
 const ProjectTitle = styled.div`
@@ -74,7 +75,7 @@ const SlideArea = styled.div`
 `;
 
 const SlideImg = styled.div`
-  width: 51rem;
+  width: 49rem;
   height: 20rem;
   margin: auto;
   overflow: hidden;

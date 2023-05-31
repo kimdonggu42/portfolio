@@ -1,16 +1,14 @@
 import styled from "styled-components";
 import profile from "../assets/images/profile.png";
-import { Link } from "react-router-dom";
-
-import { FcBookmark, FcIdea, FcAddressBook, FcPhoneAndroid } from "react-icons/fc";
 
 const IntroduceContainer = styled.div`
-  height: 36rem;
+  min-height: 36rem;
   padding: 3.5rem 3rem 3.5rem 3rem;
   border-radius: 1.3rem;
   border: none;
   background-color: white;
   box-shadow: 0px 6px 15px 0px rgba(74, 99, 231, 0.1);
+  margin: 0 1rem 0 1rem;
 `;
 
 const IntroduceTitle = styled.div`
@@ -64,49 +62,6 @@ const KeywordArea = styled.div`
   }
 `;
 
-const ContackWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  margin-top: 4rem;
-  /* border: 1px solid red; */
-`;
-
-const LeftLine = styled.div`
-  > .phone {
-    display: flex;
-    align-items: center;
-  }
-
-  > .github {
-    display: flex;
-    align-items: center;
-    margin-top: 1.5rem;
-
-    > a {
-      color: black;
-    }
-  }
-`;
-
-const RightLine = styled.div`
-  margin-left: 5rem;
-
-  > .email {
-    display: flex;
-    align-items: center;
-  }
-
-  > .blog {
-    display: flex;
-    align-items: center;
-    margin-top: 1.5rem;
-
-    > a {
-      color: black;
-    }
-  }
-`;
-
 function Introduce() {
   return (
     <IntroduceContainer>
@@ -140,34 +95,6 @@ function Introduce() {
           </div>
         </KeywordArea>
       </IntroduceWrapper>
-      <ContackWrapper>
-        <LeftLine>
-          <div className='phone'>
-            <FcPhoneAndroid size={20} />
-            &nbsp;Phone : 010-9039-7962
-          </div>
-          <div className='github'>
-            <FcIdea size={20} />
-            &nbsp;Github :&nbsp;
-            <Link to='https://github.com/kimdonggu42' target='_blank'>
-              https://github.com/kimdonggu42
-            </Link>
-          </div>
-        </LeftLine>
-        <RightLine>
-          <div className='email'>
-            <FcAddressBook size={20} />
-            &nbsp;Email : kdonggoo44@gmail.com
-          </div>
-          <div className='blog'>
-            <FcBookmark size={20} />
-            &nbsp;Blog :&nbsp;
-            <Link to='https://velog.io/@donggoo' target='_blank'>
-              https://velog.io/@donggoo
-            </Link>
-          </div>
-        </RightLine>
-      </ContackWrapper>
     </IntroduceContainer>
   );
 }

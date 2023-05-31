@@ -8,6 +8,7 @@ const ExperienceContainer = styled.div`
   border: none;
   background-color: white;
   box-shadow: 0px 6px 15px 0px rgba(74, 99, 231, 0.1);
+  margin: 0 1rem 0 1rem;
 `;
 
 const ExperienceTitle = styled.div`
@@ -37,7 +38,7 @@ export const ExperienceList = styled.li`
 `;
 
 export const ListTitle = styled.div`
-  width: 12rem;
+  min-width: 12rem;
   margin-right: 5rem;
   /* border: 1px solid red; */
 

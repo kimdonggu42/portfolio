@@ -6,14 +6,21 @@ import emoji from "../assets/images/emoji.png";
 
 import { FaUser, FaRegUser, FaLightbulb, FaRegLightbulb } from "react-icons/fa";
 import { BsInboxesFill, BsInboxes, BsPencilFill, BsPencil } from "react-icons/bs";
-import { IoSettings, IoSettingsOutline, IoSchool, IoSchoolOutline } from "react-icons/io5";
+import {
+  IoSettings,
+  IoSettingsOutline,
+  IoSchool,
+  IoSchoolOutline,
+  IoPhonePortrait,
+} from "react-icons/io5";
 import { MdFactCheck, MdOutlineFactCheck } from "react-icons/md";
-import { SiGithub, SiVelog } from "react-icons/si";
+import { SiGithub, SiVelog, SiGmail } from "react-icons/si";
 import { BiCopyright } from "react-icons/bi";
 
 const IndexContainer = styled.nav`
   width: 17rem;
   height: 36rem;
+  font-size: 1rem;
   padding: 3rem 1.6rem 3rem 1.6rem;
   position: sticky;
   top: 5rem;
@@ -24,11 +31,13 @@ const IndexContainer = styled.nav`
 
   @media screen and (max-width: 1275px) {
     display: flex;
-    width: 58rem;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 56rem;
     height: 4rem;
     padding: 0 3rem 0 3rem;
     position: static;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     border-radius: 1.1rem;
   }
 `;
@@ -37,7 +46,7 @@ const ProfileWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* border: 1px solid red; */
+  /* border: 1px solid yellow; */
 
   > img {
     width: 3.8rem;
@@ -67,10 +76,18 @@ const NameArea = styled.div`
       margin-right: 1rem;
       margin-bottom: 0;
     }
+
+    @media screen and (max-width: 450px) {
+      display: none;
+    }
   }
 
   > .dev {
     font-size: 0.8rem;
+
+    @media screen and (max-width: 610px) {
+      display: none;
+    }
   }
 
   @media screen and (max-width: 1275px) {
@@ -113,7 +130,119 @@ const LinkWrapper = styled.div`
   display: flex;
   flex-direction: row;
   column-gap: 1.5rem;
+  /* border: 1px solid red; */
 
+  @media screen and (max-width: 1275px) {
+    display: flex;
+    align-items: center;
+  }
+`;
+
+const PhoneIconArea = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.9rem;
+  height: 1.9rem;
+  background-color: white;
+  border-radius: 5rem;
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+
+  > .phoneIcon {
+    color: ${(props) => props.theme.color.mainColor};
+    padding: 0.25rem;
+  }
+
+  > p {
+    display: none;
+    background-color: #222222;
+    padding: 0.5rem;
+    text-align: center;
+    position: absolute;
+    border-radius: 0.5rem;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 16px 0px;
+    font-size: 0.7rem;
+    color: white;
+    font-weight: 500;
+    white-space: nowrap;
+
+    &::before {
+      position: absolute;
+      content: "";
+      border: 5px solid transparent;
+      border-bottom-color: #222222;
+      top: -10px;
+      left: 2.95rem;
+    }
+  }
+
+  &:hover p {
+    top: 31.3rem;
+    display: block;
+
+    @media screen and (max-width: 1275px) {
+      top: 8.5rem;
+    }
+  }
+`;
+
+const MailIconArea = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.9rem;
+  height: 1.9rem;
+  background-color: white;
+  border-radius: 5rem;
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+
+  > .mailIcon {
+    color: ${(props) => props.theme.color.mainColor};
+    padding: 0.3rem;
+  }
+
+  > p {
+    display: none;
+    background-color: #222222;
+    padding: 0.5rem;
+    text-align: center;
+    position: absolute;
+    border-radius: 0.5rem;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 16px 0px;
+    font-size: 0.7rem;
+    color: white;
+    font-weight: 500;
+    white-space: nowrap;
+
+    &::before {
+      position: absolute;
+      content: "";
+      border: 5px solid transparent;
+      border-bottom-color: #222222;
+      top: -10px;
+      left: 4.45rem;
+    }
+  }
+
+  &:hover p {
+    top: 31.3rem;
+    display: block;
+
+    @media screen and (max-width: 1275px) {
+      top: 8.5rem;
+    }
+  }
+`;
+
+const GibhubIconArea = styled.div`
   > a {
     color: white;
 
@@ -125,6 +254,45 @@ const LinkWrapper = styled.div`
       }
     }
 
+    > p {
+      display: none;
+      background-color: #222222;
+      padding: 0.5rem;
+      text-align: center;
+      position: absolute;
+      border-radius: 0.5rem;
+      box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 16px 0px;
+      font-size: 0.7rem;
+      color: white;
+      font-weight: 500;
+      white-space: nowrap;
+      margin-left: -0.7rem;
+
+      &::before {
+        position: absolute;
+        content: "";
+        border: 5px solid transparent;
+        border-bottom-color: #222222;
+        top: -10px;
+        left: 1.35rem;
+      }
+    }
+
+    &:hover p {
+      top: 31.3rem;
+      display: block;
+
+      @media screen and (max-width: 1275px) {
+        top: 8.5rem;
+      }
+    }
+  }
+`;
+
+const BlogIconArea = styled.div`
+  > a {
+    color: white;
+
     > .velogIcon {
       border-radius: 5rem;
       cursor: pointer;
@@ -133,15 +301,42 @@ const LinkWrapper = styled.div`
         opacity: 0.8;
       }
     }
-  }
 
-  @media screen and (max-width: 1275px) {
-    display: none;
+    > p {
+      display: none;
+      background-color: #222222;
+      padding: 0.5rem;
+      text-align: center;
+      position: absolute;
+      border-radius: 0.5rem;
+      box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 16px 0px;
+      font-size: 0.7rem;
+      color: white;
+      font-weight: 500;
+      margin-left: -0.3rem;
+
+      &::before {
+        position: absolute;
+        content: "";
+        border: 5px solid transparent;
+        border-bottom-color: #222222;
+        top: -10px;
+        left: 0.95rem;
+      }
+    }
+
+    &:hover p {
+      top: 31.3rem;
+      display: block;
+
+      @media screen and (max-width: 1275px) {
+        top: 8.5rem;
+      }
+    }
   }
 `;
 
 const VerWrapper = styled.div`
-  /* text-align: right; */
   display: flex;
   align-items: center;
   font-size: 0.8rem;
@@ -225,8 +420,6 @@ function Index() {
     });
   };
 
-  console.log(window.scrollY);
-
   return (
     <IndexContainer>
       <ProfileWrapper>
@@ -308,12 +501,26 @@ function Index() {
         </MenuList>
       </MenuWrapper>
       <LinkWrapper>
-        <Link to='https://github.com/kimdonggu42' target='_blank'>
-          <SiGithub className='githubIcon' size={30} />
-        </Link>
-        <Link to='https://velog.io/@donggoo' target='_blank'>
-          <SiVelog className='velogIcon' size={30} />
-        </Link>
+        <PhoneIconArea>
+          <IoPhonePortrait className='phoneIcon' size={30} />
+          <p>010-9039-7962</p>
+        </PhoneIconArea>
+        <MailIconArea>
+          <SiGmail className='mailIcon' size={30} />
+          <p>kdonggoo44@gmail.com</p>
+        </MailIconArea>
+        <GibhubIconArea>
+          <Link to='https://github.com/kimdonggu42' target='_blank'>
+            <SiGithub className='githubIcon' size={30} />
+            <p>Github</p>
+          </Link>
+        </GibhubIconArea>
+        <BlogIconArea>
+          <Link to='https://velog.io/@donggoo' target='_blank'>
+            <SiVelog className='velogIcon' size={30} />
+            <p>Blog</p>
+          </Link>
+        </BlogIconArea>
       </LinkWrapper>
       <VerWrapper>
         <BiCopyright className='copyrightIcon' />

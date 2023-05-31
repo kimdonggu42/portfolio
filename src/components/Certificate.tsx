@@ -7,6 +7,7 @@ const CertificateContainer = styled.div`
   border: none;
   background-color: white;
   box-shadow: 0px 6px 15px 0px rgba(74, 99, 231, 0.1);
+  margin: 0 1rem 0 1rem;
 `;
 
 const CertificateTitle = styled.div`

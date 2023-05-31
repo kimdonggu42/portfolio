@@ -11,9 +11,9 @@ import Certificate from "../components/Certificate";
 const MainContainer = styled.div`
   display: flex;
   justify-content: center;
-  font-size: 1rem;
-  column-gap: 2rem;
-  margin: 5rem 1rem 5rem 1rem;
+  column-gap: 1rem;
+  margin: 5rem 0.5rem 5rem 0.5rem;
+  /* border: 1px solid red; */
 
   @media screen and (max-width: 1275px) {
     flex-direction: column;
@@ -24,7 +24,8 @@ const MainContainer = styled.div`
 const InfoWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  width: 58rem;
+  width: 100vw;
+  max-width: 58rem;
   row-gap: 2rem;
 `;
 
