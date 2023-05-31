@@ -26,13 +26,21 @@ const UnderBar = styled.div`
 
 const IntroduceWrapper = styled.div`
   display: flex;
-  align-items: center;
   /* border: 1px solid red; */
 
   > img {
     width: 13rem;
     height: 13rem;
     border-radius: 1.3rem;
+
+    @media screen and (max-width: 650px) {
+      width: 9rem;
+      height: 9rem;
+    }
+  }
+
+  @media screen and (max-width: 650px) {
+    flex-direction: column;
   }
 `;
 
@@ -43,6 +51,7 @@ const KeywordArea = styled.div`
   margin-left: 3rem;
   row-gap: 1rem;
   word-break: keep-all;
+  /* border: 1px solid blue; */
 
   > .mainSentence {
     font-size: 1.4rem;
@@ -51,14 +60,27 @@ const KeywordArea = styled.div`
       font-weight: 600;
       background-color: #fff5b8;
     }
+
+    @media screen and (max-width: 650px) {
+      font-size: 1.2rem;
+    }
   }
 
   > .subSentence {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
 
     > .highlight {
       background-color: #fff5b8;
     }
+
+    @media screen and (max-width: 650px) {
+      font-size: 1rem;
+    }
+  }
+
+  @media screen and (max-width: 650px) {
+    margin-top: 2rem;
+    margin-left: 0;
   }
 `;
 

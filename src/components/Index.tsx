@@ -85,7 +85,7 @@ const NameArea = styled.div`
   > .dev {
     font-size: 0.8rem;
 
-    @media screen and (max-width: 610px) {
+    @media screen and (max-width: 650px) {
       display: none;
     }
   }
