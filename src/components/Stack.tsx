@@ -1,15 +1,19 @@
 import styled from "styled-components";
+
 import JavaScriptLogo from "../assets/images/JavaScriptLogo.png";
 import TypeScriptLogo from "../assets/images/TypeScriptLogo.png";
 import ReactLogo from "../assets/images/ReactLogo.png";
 import ReduxLogo from "../assets/images/ReduxLogo.png";
 import RecoilLogo from "../assets/images/RecoilLogo.png";
 import StyledComponentsLogo from "../assets/images/StyledComponentsLogo.png";
+import NotionLogo from "../assets/images/NotionLogo.png";
+import SlackLogo from "../assets/images/SlackLogo.png";
+import FigmaLogo from "../assets/images/FigmaLogo.png";
 
 import { BsStarFill, BsStarHalf, BsStar } from "react-icons/bs";
 
 const StackContainer = styled.div`
-  padding: 3.5rem 3rem 3.5rem 3rem;
+  padding: 3rem;
   border-radius: 1.3rem;
   border: none;
   background-color: white;
@@ -172,6 +176,24 @@ function Stack() {
               <BsStar className='starIcon' />
               <BsStar className='starIcon' />
             </div>
+          </StackSetting>
+        </LanguageList>
+      </LanguageArea>
+
+      <LanguageArea>
+        <div className='stackTitle'>Cooperation Tool</div>
+        <LanguageList>
+          <StackSetting>
+            <img className='stackImg' src={NotionLogo} alt='stackImg' />
+            <div>Notion</div>
+          </StackSetting>
+          <StackSetting>
+            <img className='stackImg' src={SlackLogo} alt='stackImg' />
+            <div>Slack</div>
+          </StackSetting>
+          <StackSetting>
+            <img className='stackImg' src={FigmaLogo} alt='stackImg' />
+            <div>Figma</div>
           </StackSetting>
         </LanguageList>
       </LanguageArea>

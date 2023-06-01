@@ -3,7 +3,7 @@ import profile from "../assets/images/profile.png";
 
 const IntroduceContainer = styled.div`
   min-height: 36rem;
-  padding: 3.5rem 3rem 3.5rem 3rem;
+  padding: 3rem;
   border-radius: 1.3rem;
   border: none;
   background-color: white;

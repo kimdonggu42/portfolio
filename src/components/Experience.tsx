@@ -3,7 +3,7 @@ import styled from "styled-components";
 // import { FaDotCircle } from "react-icons/fa";
 
 const ExperienceContainer = styled.div`
-  padding: 3.5rem 3rem 3.5rem 3rem;
+  padding: 3rem;
   border-radius: 1.3rem;
   border: none;
   background-color: white;
@@ -35,10 +35,14 @@ export const ExperieceArea = styled.ol`
 export const ExperienceList = styled.li`
   display: flex;
   word-break: keep-all;
+
+  @media screen and (max-width: 450px) {
+    flex-direction: column;
+  }
 `;
 
 export const ListTitle = styled.div`
-  min-width: 12rem;
+  min-width: 10rem;
   margin-right: 5rem;
   /* border: 1px solid red; */
 
@@ -50,6 +54,39 @@ export const ListTitle = styled.div`
 
   > .date {
     font-size: 0.85rem;
+  }
+
+  @media screen and (max-width: 650px) {
+    margin-right: 0;
+  }
+
+  @media screen and (max-width: 450px) {
+    display: none;
+  }
+`;
+
+export const HiddenListTitle = styled.div`
+  min-width: 10rem;
+  margin-right: 5rem;
+  /* border: 1px solid red; */
+
+  > .main {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+
+    @media screen and (max-width: 450px) {
+      font-size: 0.9rem;
+    }
+  }
+
+  > .date {
+    font-size: 0.85rem;
+  }
+
+  @media screen and (min-width: 451px) {
+    display: none;
+    margin-right: 0;
   }
 `;
 
@@ -63,10 +100,11 @@ export const ListText = styled.div`
   > .subTitle {
     font-size: 1.1rem;
     font-weight: 500;
+    /* border: 1px solid blue; */
   }
 
   > .subText {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     color: #3d3f41;
   }
 `;
@@ -84,7 +122,11 @@ function Experience() {
           </ListTitle>
           <ListText>
             <div className='subTitle'>프론트엔드 개발자 양성 교육 과정</div>
-            <div className='subText'>- React, HTML, CSS, JavaScript 학습</div>
+            <HiddenListTitle>
+              <div className='main'>코드스테이츠</div>
+              <div className='date'>2022.10 ~ 2023.04</div>
+            </HiddenListTitle>
+            <div className='subText'>- HTML, CSS, JavaScript, React 학습</div>
             <div className='subText'>
               - 다수의 페어프로그래밍과 팀 프로젝트를 통해 버전 관리 및 개발 프로세스, 커뮤니케이션
               역량 강화

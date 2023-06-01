@@ -2,7 +2,7 @@ import styled from "styled-components";
 import * as Experience from "./Experience";
 
 const EducationContainer = styled.div`
-  padding: 3.5rem 3rem 3.5rem 3rem;
+  padding: 3rem;
   border-radius: 1.3rem;
   border: none;
   background-color: white;
@@ -35,6 +35,9 @@ function Education() {
           </Experience.ListTitle>
           <Experience.ListText>
             <div className='subTitle'>평택대학교</div>
+            <Experience.HiddenListTitle>
+              <div className='date'>2015.03 ~ 2021.02</div>
+            </Experience.HiddenListTitle>
             <div className='subText'>- 통계학 전공</div>
           </Experience.ListText>
         </Experience.ExperienceList>

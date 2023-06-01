@@ -2,7 +2,7 @@ import styled from "styled-components";
 import * as Experience from "./Experience";
 
 const StudyContainer = styled.div`
-  padding: 3.5rem 3rem 3.5rem 3rem;
+  padding: 3rem;
   border-radius: 1.3rem;
   border: none;
   background-color: white;
@@ -36,6 +36,10 @@ function Study() {
           </Experience.ListTitle>
           <Experience.ListText>
             <div className='subTitle'>프로그래머스 알고리즘 문제 풀이 스터디</div>
+            <Experience.HiddenListTitle>
+              <div className='main'>알고리즘 스터디</div>
+              <div className='date'>2022.11 ~ 진행중</div>
+            </Experience.HiddenListTitle>
             <div className='subText'>- 4인 스터디, 각자의 풀이 방법 발표 및 피드백</div>
             <div className='subText'>- 기본적인 정렬 알고리즘에 대한 이해</div>
             <div className='subText'>

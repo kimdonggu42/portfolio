@@ -14,7 +14,7 @@ import { HiMagnifyingGlassCircle } from "react-icons/hi2";
 import { RiGithubFill } from "react-icons/ri";
 
 const ProjectContainer = styled.div`
-  padding: 3.5rem 3rem 3.5rem 3rem;
+  padding: 3rem;
   border-radius: 1.3rem;
   border: none;
   background-color: white;
@@ -119,7 +119,7 @@ const SlideTextArea = styled.div`
 const SlideTitle = styled.div`
   display: flex;
   align-items: center;
-  font-size: 2rem;
+  font-size: 1.9rem;
   font-weight: 600;
 
   > a {
@@ -141,16 +141,17 @@ const SlideTitle = styled.div`
     > p {
       display: none;
       background-color: #222222;
-      padding: 6px;
+      padding: 0.5rem;
       text-align: center;
       width: 4.5rem;
       position: absolute;
-      border-radius: 4px;
+      border-radius: 0.5rem;
       box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 16px 0px;
-      font-size: 12px;
+      font-size: 0.7rem;
       color: white;
       font-weight: 500;
       margin-left: -0.4rem;
+      white-space: nowrap;
 
       &::before {
         position: absolute;
@@ -163,7 +164,7 @@ const SlideTitle = styled.div`
     }
 
     &:hover p {
-      top: 23.4rem;
+      top: 22.1rem;
       display: block;
     }
   }
@@ -244,22 +245,14 @@ const SlideComment = styled.div`
   display: flex;
   flex-direction: column;
   row-gap: 0.5rem;
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: #3d3f41;
 
   > .mainText {
     color: black;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: 500;
     margin-bottom: 0.5rem;
-
-    @media screen and (max-width: 650px) {
-      font-size: 1.1rem;
-    }
-  }
-
-  @media screen and (max-width: 650px) {
-    font-size: 1rem;
   }
 `;
 
@@ -424,7 +417,9 @@ function Project() {
               <li className='styledComponents'>Styled Components</li>
             </SlideTag>
             <SlideComment>
-              <p className='mainText'>Todo!t은 할 일을 등록하고 관리할 수 있는 서비스입니다.</p>
+              <p className='mainText'>
+                Todo!t은 할 일을 등록하고 관리하는 데 도움을 주고자 제작했습니다.
+              </p>
               <p>
                 - 사용자는 할 일을 등록, 수정, 삭제할 수 있으며, 완료한 일은 체크하여 완료 표시할 수
                 있습니다.

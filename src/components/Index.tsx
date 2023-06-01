@@ -122,7 +122,7 @@ const MenuList = styled.li`
   }
 
   &:hover {
-    font-size: 1.05rem;
+    font-size: 1.06rem;
   }
 `;
 
