@@ -40,7 +40,7 @@ const UnderBar = styled.div`
 
 const LanguageArea = styled.div`
   /* border: 1px solid red; */
-  margin-bottom: 3rem;
+  margin-bottom: 2.5rem;
 
   :last-child {
     margin-bottom: 0;
@@ -49,7 +49,7 @@ const LanguageArea = styled.div`
   > .stackTitle {
     font-size: 1.4rem;
     font-weight: 500;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.2rem;
 
     @media screen and (max-width: 650px) {
       font-size: 1.3rem;

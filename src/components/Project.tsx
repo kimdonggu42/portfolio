@@ -9,9 +9,11 @@ import mariple from "../assets/images/mariple.png";
 import Todoit from "../assets/images/Todoit.png";
 
 import { GrFormPrevious, GrFormNext } from "react-icons/gr";
-import { HiMagnifyingGlassCircle } from "react-icons/hi2";
+import { HiMagnifyingGlassCircle, HiOutlineMagnifyingGlassCircle } from "react-icons/hi2";
 import { RiGithubFill } from "react-icons/ri";
 import { BiLink } from "react-icons/bi";
+
+import { RxMagnifyingGlass } from "react-icons/rx";
 
 const ProjectContainer = styled.div`
   padding: 3rem;
@@ -141,18 +143,42 @@ const SlideTitle = styled.div`
     color: #454545;
     text-decoration: none;
     margin-top: 0.1rem;
+    cursor: pointer;
     /* border: 1px solid red; */
 
-    > .homepageIcon {
-      cursor: pointer;
+    > .link-icon-back {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 1.45rem;
+      height: 1.45rem;
+      color: white;
+      background-color: #454545;
+      border-radius: 5rem;
     }
 
     > .detail-project {
+      display: flex;
+      align-items: center;
       font-size: 0.8rem;
       color: white;
-      padding: 0.3rem 0.5rem 0.3rem 0.5rem;
+      padding: 0.25rem 0.7rem 0.25rem 0.3rem;
       background-color: #454545;
       border-radius: 5rem;
+
+      > .detail-icon {
+        margin-right: 0.2rem;
+      }
+
+      @media screen and (max-width: 450px) {
+        display: none;
+      }
+    }
+
+    > .hidden-detail-icon {
+      @media screen and (min-width: 451px) {
+        display: none;
+      }
     }
 
     &:hover {
@@ -285,7 +311,9 @@ function Project() {
             <SlideTitle>
               <div className='project-title'>Mariple</div>
               <Link to='https://www.mariple.com/' target='_blank'>
-                <BiLink className='homepageIcon' size={25} />
+                <div className='link-icon-back'>
+                  <BiLink className='homepageIcon' size={17} />
+                </div>
               </Link>
               <Link to='https://github.com/kimdonggu42/Mariple' target='_blank'>
                 <RiGithubFill className='homepageIcon' size={28} />
@@ -294,8 +322,11 @@ function Project() {
                 to='https://www.notion.so/Mariple-d09e017dfb30417384c8aa0107653fe2?pvs=4'
                 target='_blank'
               >
-                {/* <HiMagnifyingGlassCircle className='homepageIcon' size={28} /> */}
-                <div className='detail-project'>자세히 보기</div>
+                <div className='detail-project'>
+                  <RxMagnifyingGlass className='detail-icon' size={18} />
+                  자세히 보기
+                </div>
+                <HiMagnifyingGlassCircle className='hidden-detail-icon' size={28} />
               </Link>
             </SlideTitle>
             <SlideTag>
@@ -334,7 +365,9 @@ function Project() {
             <SlideTitle>
               saveme
               <Link to='https://save-me-bd34d.web.app/' target='_blank'>
-                <BiLink className='homepageIcon' size={25} />
+                <div className='link-icon-back'>
+                  <BiLink className='homepageIcon' size={17} />
+                </div>
               </Link>
               <Link to='https://github.com/kimdonggu42/saveme' target='_blank'>
                 <RiGithubFill className='homepageIcon' size={28} />
@@ -343,8 +376,11 @@ function Project() {
                 to='https://www.notion.so/saveme-97b2ceaac7204ceca7d5d88cbed908c6?pvs=4'
                 target='_blank'
               >
-                {/* <HiMagnifyingGlassCircle className='homepageIcon' size={28} /> */}
-                <div className='detail-project'>자세히 보기</div>
+                <div className='detail-project'>
+                  <RxMagnifyingGlass className='detail-icon' size={18} />
+                  자세히 보기
+                </div>
+                <HiMagnifyingGlassCircle className='hidden-detail-icon' size={28} />
               </Link>
             </SlideTitle>
             <SlideTag>
@@ -390,8 +426,11 @@ function Project() {
                 to='https://www.notion.so/Todo-t-4522b7df134942d7aceea8a5c682724a?pvs=4'
                 target='_blank'
               >
-                {/* <HiMagnifyingGlassCircle className='homepageIcon' size={28} /> */}
-                <div className='detail-project'>자세히 보기</div>
+                <div className='detail-project'>
+                  <RxMagnifyingGlass className='detail-icon' size={18} />
+                  자세히 보기
+                </div>
+                <HiMagnifyingGlassCircle className='hidden-detail-icon' size={28} />
               </Link>
             </SlideTitle>
             <SlideTag>

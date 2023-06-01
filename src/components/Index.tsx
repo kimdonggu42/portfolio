@@ -132,14 +132,9 @@ const MenuList = styled.li`
 
 const LinkWrapper = styled.div`
   display: flex;
-  flex-direction: row;
+  align-items: center;
   column-gap: 1.5rem;
   /* border: 1px solid red; */
-
-  @media screen and (max-width: 1275px) {
-    display: flex;
-    align-items: center;
-  }
 `;
 
 const PhoneIconArea = styled.div`
@@ -151,10 +146,6 @@ const PhoneIconArea = styled.div`
   background-color: white;
   border-radius: 5rem;
   cursor: pointer;
-
-  &:hover {
-    background-color: rgba(255, 255, 255, 0.8);
-  }
 
   > .phoneIcon {
     color: ${(props) => props.theme.color.mainColor};
@@ -192,9 +183,13 @@ const PhoneIconArea = styled.div`
       top: 5.6rem;
     }
   }
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+  }
 `;
 
-const MailIconArea = styled.div`
+const MailIconBack = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -203,10 +198,6 @@ const MailIconArea = styled.div`
   background-color: white;
   border-radius: 5rem;
   cursor: pointer;
-
-  &:hover {
-    background-color: rgba(255, 255, 255, 0.8);
-  }
 
   > .mailIcon {
     color: ${(props) => props.theme.color.mainColor};
@@ -244,9 +235,16 @@ const MailIconArea = styled.div`
       top: 5.6rem;
     }
   }
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+  }
 `;
 
 const GibhubIconArea = styled.div`
+  width: 1.9rem;
+  height: 1.9rem;
+
   > a {
     color: white;
 
@@ -255,10 +253,6 @@ const GibhubIconArea = styled.div`
 
       &:hover {
         opacity: 0.8;
-      }
-
-      @media screen and (max-width: 1275px) {
-        margin-top: 0.2rem;
       }
     }
 
@@ -298,6 +292,9 @@ const GibhubIconArea = styled.div`
 `;
 
 const BlogIconArea = styled.div`
+  width: 1.9rem;
+  height: 1.9rem;
+
   > a {
     color: white;
 
@@ -307,10 +304,6 @@ const BlogIconArea = styled.div`
 
       &:hover {
         opacity: 0.8;
-      }
-
-      @media screen and (max-width: 1275px) {
-        margin-top: 0.2rem;
       }
     }
 
@@ -517,10 +510,12 @@ function Index() {
           <IoPhonePortrait className='phoneIcon' size={30} />
           <p>010-9039-7962</p>
         </PhoneIconArea>
-        <MailIconArea>
-          <SiGmail className='mailIcon' size={30} />
-          <p>kdonggoo44@gmail.com</p>
-        </MailIconArea>
+        <Link to='mailto:kdonggoo44@gmail.com'>
+          <MailIconBack>
+            <SiGmail className='mailIcon' size={30} />
+            <p>kdonggoo44@gmail.com</p>
+          </MailIconBack>
+        </Link>
         <GibhubIconArea>
           <Link to='https://github.com/kimdonggu42' target='_blank'>
             <SiGithub className='githubIcon' size={30} />
