@@ -39,9 +39,13 @@ const LanguageArea = styled.div`
   }
 
   > .stackTitle {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     font-weight: 500;
     margin-bottom: 1rem;
+
+    @media screen and (max-width: 650px) {
+      font-size: 1.3rem;
+    }
   }
 `;
 
@@ -50,6 +54,13 @@ const LanguageList = styled.div`
   align-items: center;
   font-size: 1.2rem;
   column-gap: 2rem;
+
+  @media screen and (max-width: 650px) {
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 1rem;
+    font-size: 1.1rem;
+  }
 `;
 
 const StackSetting = styled.div`

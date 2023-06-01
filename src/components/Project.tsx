@@ -76,14 +76,13 @@ const SlideArea = styled.div`
 
 const SlideImg = styled.div`
   width: 49rem;
-  height: 20rem;
   margin: auto;
   overflow: hidden;
   border-radius: 1.3rem;
+  /* border: 1px solid red; */
 
   > img {
     width: 100%;
-    height: 100%;
     border-radius: 1.3rem;
     object-fit: cover;
     transition: 0.3s ease-in-out;
@@ -92,12 +91,29 @@ const SlideImg = styled.div`
       transform: scale(1.02);
     }
   }
+
+  @media screen and (max-width: 920px) {
+    width: 39rem;
+  }
+
+  @media screen and (max-width: 760px) {
+    width: 29rem;
+  }
+
+  @media screen and (max-width: 600px) {
+    width: 19rem;
+  }
+
+  @media screen and (max-width: 440px) {
+    width: 14rem;
+  }
 `;
 
 const SlideTextArea = styled.div`
   padding: 0 0.5rem 0 0.5rem;
   margin-top: 0.7rem;
-  height: 15rem;
+  /* height: 15rem; */
+  /* border: 1px solid orange; */
 `;
 
 const SlideTitle = styled.div`
@@ -151,14 +167,20 @@ const SlideTitle = styled.div`
       display: block;
     }
   }
+
+  @media screen and (max-width: 650px) {
+    font-size: 1.7rem;
+  }
 `;
 
 const SlideTag = styled.ul`
   display: flex;
   align-items: center;
   margin: 0.8rem 0 1rem 0;
-  column-gap: 0.5rem;
+  gap: 0.5rem;
   list-style: none;
+  flex-wrap: wrap;
+  /* border: 1px solid red; */
 
   > li {
     font-size: 0.8rem;
@@ -219,11 +241,25 @@ const SlideTag = styled.ul`
 `;
 
 const SlideComment = styled.div`
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5rem;
   font-size: 1.1rem;
   color: #3d3f41;
 
   > .mainText {
+    color: black;
+    font-size: 1.2rem;
     font-weight: 500;
+    margin-bottom: 0.5rem;
+
+    @media screen and (max-width: 650px) {
+      font-size: 1.1rem;
+    }
+  }
+
+  @media screen and (max-width: 650px) {
+    font-size: 1rem;
   }
 `;
 
@@ -288,21 +324,24 @@ function Project() {
               <li className='react'>React</li>
               <li className='redux'>Redux Toolkit</li>
               <li className='styledComponents'>Styled Components</li>
-              <li className='aws'>aws S3</li>
+              <li className='aws'>AWS</li>
             </SlideTag>
             <SlideComment>
               <p className='mainText'>
-                Mariple은 나만의 플레이리스트를 소개하거나 그 플레이리스트에 담겨있는 추억을
-                공유하는 블로그와 뮤직 플레이리스트가 결합된 서비스입니다.
+                Mariple은 나만의 플레이리스트를 소개하거나 플레이리스트에 담겨있는 추억을 공유하는
+                블로그와 뮤직 플레이리스트가 결합된 서비스입니다.
               </p>
               <p>
-                YouTube API를 사용하여 사용자가 유튜브 또는 유튜브 뮤직의 URL 추가 시 해당
-                영상(음원)의 정보를 불러와 플레이리스트로 추가할 수 있도록 했습니다.
+                - YouTube API를 활용하여 사용자가 YouTube 또는 YouTube Music의 url을 복사/붙여넣기
+                하여 플레이리스트를 추가할 수 있습니다.
               </p>
               <p>
-                현재 보고 있는 페이지가 몇 번째 페이지인지, 어떤 태그를 골라서 보고 있는지 상태를
-                로컬스토리지에 저장해 새로고침 시에도 사용자가 보고 있던 페이지가 유지되도록
-                개선했습니다.
+                - 마이페이지에서 내 정보(프로필 이미지, 닉네임, 비밀번호)를 수정할 수 있으며, 내가
+                작성한 다이어리와 댓글, 좋아요를 누른 다이어리를 확인할 수 있습니다.
+              </p>
+              <p>
+                - 내가 보고 싶은 다이어리를 편하게 찾을 수 있도록 입력한 키워드를 포함하는
+                다이어리를 검색해 주는 검색 기능을 지원합니다.
               </p>
             </SlideComment>
           </SlideTextArea>
@@ -343,14 +382,17 @@ function Project() {
                 saveme는 별도의 검색 없이 바로 내 주변의 공공 화장실을 찾아주는 서비스입니다.
               </p>
               <p>
-                Naver Maps API를 활용하여 현재 내 위치를 중심으로 하는 지도를 구현하였고, 한 화면에
-                많은 수의 마커가 표시되면 성능 저하가 발생하므로 현재 사용자가 보고 있는 화면 밖에
-                있는 마커들은 숨김 처리를 시켜주어 렌더링 성능 저하를 방지했습니다.
+                - Naver Maps API를 활용하여 개발 했으며, 서울시에 위치해 있는 사용자는 본인 주변
+                100개의 공공 화장실의 위치를 확인할 수 있습니다.
               </p>
               <p>
-                공공 화장실 데이터를 불러와 나와의 거리를 계산하는 알고리즘을 추가하여 데이터를
-                재가공했습니다. 이를 활용해 나와 제일 가까운 위치의 화장실 100개를 지도 위에 마커로
-                표시해 주었습니다.
+                - 현재 자신과 가장 가까운 화장실은 빨간색 테두리의 별도 아이콘으로 표시됩니다.
+                그리고 모든 마커 클릭 시 클릭한 해당 화장실이 위치해 있는 건물 이름 또는 화장실
+                이름을 확인할 수 있습니다.
+              </p>
+              <p>
+                - 사용자가 이동 시 좌측 상단의 버튼을 클릭하여 변경된 현재 위치를 다시 불러올 수
+                있으며, 변경된 위치를 기준으로 새로운 화장실들을 보여줍니다.
               </p>
             </SlideComment>
           </SlideTextArea>
@@ -384,10 +426,14 @@ function Project() {
             <SlideComment>
               <p className='mainText'>Todo!t은 할 일을 등록하고 관리할 수 있는 서비스입니다.</p>
               <p>
-                Context API를 이용하여 light, dark 테마를 전역 상태로 관리하여 props drilling 문제를
-                방지했습니다.
+                - 사용자는 할 일을 등록, 수정, 삭제할 수 있으며, 완료한 일은 체크하여 완료 표시할 수
+                있습니다.
               </p>
-              <p>반응형 스타일을 적용하여 다양한 사이즈의 기기에 대응할 수 있도록 했습니다.</p>
+              <p>- 등록한 할 일은 전체, 완료, 미완료한 할 일 3가지로 구분하여 볼 수 있습니다.</p>
+              <p>
+                - 등록한 할 일은 오늘을 기준으로 지나간 일, 오늘 할 일, 내일 해야 될 일 3가지로
+                구분하여 볼 수 있습니다.
+              </p>
             </SlideComment>
           </SlideTextArea>
         </SlideArea>

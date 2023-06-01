@@ -32,10 +32,12 @@ const IntroduceWrapper = styled.div`
     width: 13rem;
     height: 13rem;
     border-radius: 1.3rem;
+    margin-top: 1rem;
 
     @media screen and (max-width: 650px) {
       width: 9rem;
       height: 9rem;
+      margin-top: 0;
     }
   }
 
@@ -62,7 +64,7 @@ const KeywordArea = styled.div`
     }
 
     @media screen and (max-width: 650px) {
-      font-size: 1.2rem;
+      font-size: 1.3rem;
     }
   }
 
@@ -74,7 +76,7 @@ const KeywordArea = styled.div`
     }
 
     @media screen and (max-width: 650px) {
-      font-size: 1rem;
+      font-size: 1.1rem;
     }
   }
 
