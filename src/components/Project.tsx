@@ -9,9 +9,9 @@ import mariple from "../assets/images/mariple.png";
 import Todoit from "../assets/images/Todoit.png";
 
 import { GrFormPrevious, GrFormNext } from "react-icons/gr";
-import { BsLink } from "react-icons/bs";
 import { HiMagnifyingGlassCircle } from "react-icons/hi2";
 import { RiGithubFill } from "react-icons/ri";
+import { BiLink } from "react-icons/bi";
 
 const ProjectContainer = styled.div`
   padding: 3rem;
@@ -20,6 +20,10 @@ const ProjectContainer = styled.div`
   background-color: white;
   box-shadow: 0px 6px 15px 0px rgba(74, 99, 231, 0.1);
   margin: 0 1rem 0 1rem;
+
+  @media screen and (max-width: 450px) {
+    padding: 2rem;
+  }
 `;
 
 const ProjectTitle = styled.div`
@@ -50,6 +54,10 @@ const PrevBtn = styled.button`
   &:hover {
     background-color: #f0f0f0;
   }
+
+  @media screen and (max-width: 450px) {
+    left: -2rem;
+  }
 `;
 
 const NextBtn = styled.button`
@@ -66,6 +74,10 @@ const NextBtn = styled.button`
 
   &:hover {
     background-color: #f0f0f0;
+  }
+
+  @media screen and (max-width: 450px) {
+    right: -2rem;
   }
 `;
 
@@ -104,15 +116,14 @@ const SlideImg = styled.div`
     width: 19rem;
   }
 
-  @media screen and (max-width: 440px) {
-    width: 14rem;
+  @media screen and (max-width: 450px) {
+    width: 16rem;
   }
 `;
 
 const SlideTextArea = styled.div`
   padding: 0 0.5rem 0 0.5rem;
   margin-top: 0.7rem;
-  /* height: 15rem; */
   /* border: 1px solid orange; */
 `;
 
@@ -121,51 +132,31 @@ const SlideTitle = styled.div`
   align-items: center;
   font-size: 1.9rem;
   font-weight: 600;
+  column-gap: 1rem;
+  /* border: 1px solid red; */
 
   > a {
     display: flex;
     align-items: center;
     color: #454545;
+    text-decoration: none;
+    margin-top: 0.1rem;
+    /* border: 1px solid red; */
 
     > .homepageIcon {
-      margin-left: 1rem;
-      margin-top: 0.25rem;
       cursor: pointer;
-      /* border: 1px solid red; */
-
-      &:hover {
-        color: gray;
-      }
     }
 
-    > p {
-      display: none;
-      background-color: #222222;
-      padding: 0.5rem;
-      text-align: center;
-      width: 4.5rem;
-      position: absolute;
-      border-radius: 0.5rem;
-      box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 16px 0px;
-      font-size: 0.7rem;
+    > .detail-project {
+      font-size: 0.8rem;
       color: white;
-      font-weight: 500;
-      margin-left: -0.4rem;
-      white-space: nowrap;
-
-      &::before {
-        position: absolute;
-        content: "";
-        border: 5px solid transparent;
-        border-bottom-color: #222222;
-        top: -10px;
-        left: 1.9rem;
-      }
+      padding: 0.3rem 0.5rem 0.3rem 0.5rem;
+      background-color: #454545;
+      border-radius: 5rem;
     }
 
-    &:hover p {
-      top: 22.1rem;
-      display: block;
+    &:hover {
+      opacity: 0.8;
     }
   }
 
@@ -246,10 +237,8 @@ const SlideComment = styled.div`
   flex-direction: column;
   row-gap: 0.5rem;
   font-size: 1rem;
-  color: #3d3f41;
 
   > .mainText {
-    color: black;
     font-size: 1.1rem;
     font-weight: 500;
     margin-bottom: 0.5rem;
@@ -294,21 +283,19 @@ function Project() {
           </SlideImg>
           <SlideTextArea>
             <SlideTitle>
-              Mariple
+              <div className='project-title'>Mariple</div>
               <Link to='https://www.mariple.com/' target='_blank'>
-                <BsLink className='homepageIcon' size={25} />
-                <p>웹사이트</p>
+                <BiLink className='homepageIcon' size={25} />
               </Link>
               <Link to='https://github.com/kimdonggu42/Mariple' target='_blank'>
-                <RiGithubFill className='homepageIcon' size={25} />
-                <p>깃허브</p>
+                <RiGithubFill className='homepageIcon' size={28} />
               </Link>
               <Link
                 to='https://www.notion.so/Mariple-d09e017dfb30417384c8aa0107653fe2?pvs=4'
                 target='_blank'
               >
-                <HiMagnifyingGlassCircle className='homepageIcon' size={25} />
-                <p>자세히 보기</p>
+                {/* <HiMagnifyingGlassCircle className='homepageIcon' size={28} /> */}
+                <div className='detail-project'>자세히 보기</div>
               </Link>
             </SlideTitle>
             <SlideTag>
@@ -347,19 +334,17 @@ function Project() {
             <SlideTitle>
               saveme
               <Link to='https://save-me-bd34d.web.app/' target='_blank'>
-                <BsLink className='homepageIcon' size={25} />
-                <p>웹사이트</p>
+                <BiLink className='homepageIcon' size={25} />
               </Link>
               <Link to='https://github.com/kimdonggu42/saveme' target='_blank'>
-                <RiGithubFill className='homepageIcon' size={25} />
-                <p>깃허브</p>
+                <RiGithubFill className='homepageIcon' size={28} />
               </Link>
               <Link
                 to='https://www.notion.so/saveme-97b2ceaac7204ceca7d5d88cbed908c6?pvs=4'
                 target='_blank'
               >
-                <HiMagnifyingGlassCircle className='homepageIcon' size={25} />
-                <p>자세히 보기</p>
+                {/* <HiMagnifyingGlassCircle className='homepageIcon' size={28} /> */}
+                <div className='detail-project'>자세히 보기</div>
               </Link>
             </SlideTitle>
             <SlideTag>
@@ -372,7 +357,8 @@ function Project() {
             </SlideTag>
             <SlideComment>
               <p className='mainText'>
-                saveme는 별도의 검색 없이 바로 내 주변의 공공 화장실을 찾아주는 서비스입니다.
+                saveme는 별도의 검색 없이 바로 내 주변의 공공 화장실을 찾아주는 웹
+                애플리케이션입니다.
               </p>
               <p>
                 - Naver Maps API를 활용하여 개발 했으며, 서울시에 위치해 있는 사용자는 본인 주변
@@ -398,15 +384,14 @@ function Project() {
             <SlideTitle>
               Todo!t
               <Link to='https://github.com/kimdonggu42/sp-todolist-client-react' target='_blank'>
-                <RiGithubFill className='homepageIcon' size={25} />
-                <p>깃허브</p>
+                <RiGithubFill className='homepageIcon' size={28} />
               </Link>
               <Link
                 to='https://www.notion.so/Todo-t-4522b7df134942d7aceea8a5c682724a?pvs=4'
                 target='_blank'
               >
-                <HiMagnifyingGlassCircle className='homepageIcon' size={25} />
-                <p>자세히 보기</p>
+                {/* <HiMagnifyingGlassCircle className='homepageIcon' size={28} /> */}
+                <div className='detail-project'>자세히 보기</div>
               </Link>
             </SlideTitle>
             <SlideTag>
@@ -418,7 +403,7 @@ function Project() {
             </SlideTag>
             <SlideComment>
               <p className='mainText'>
-                Todo!t은 할 일을 등록하고 관리하는 데 도움을 주고자 제작했습니다.
+                Todo!t은 할 일을 등록하고 관리할 수 있는 웹 애플리케이션입니다.
               </p>
               <p>
                 - 사용자는 할 일을 등록, 수정, 삭제할 수 있으며, 완료한 일은 체크하여 완료 표시할 수

@@ -19,6 +19,10 @@ const StackContainer = styled.div`
   background-color: white;
   box-shadow: 0px 6px 15px 0px rgba(74, 99, 231, 0.1);
   margin: 0 1rem 0 1rem;
+
+  @media screen and (max-width: 450px) {
+    padding: 2rem;
+  }
 `;
 
 const StackTitle = styled.div`
@@ -45,7 +49,7 @@ const LanguageArea = styled.div`
   > .stackTitle {
     font-size: 1.4rem;
     font-weight: 500;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
 
     @media screen and (max-width: 650px) {
       font-size: 1.3rem;
@@ -82,6 +86,14 @@ const StackSetting = styled.div`
     color: #faae05;
     margin-left: 1rem;
     column-gap: 0.2rem;
+  }
+
+  > .styled-components {
+    /* border: 1px solid red; */
+
+    @media screen and (max-width: 398px) {
+      width: 6.5rem;
+    }
   }
 `;
 
@@ -168,7 +180,7 @@ function Stack() {
         <LanguageList>
           <StackSetting>
             <img className='stackImg' src={StyledComponentsLogo} alt='stackImg' />
-            <div>Styled Components</div>
+            <div className='styled-components'>Styled Components</div>
             <div className='starCount'>
               <BsStarFill className='starIcon' />
               <BsStarFill className='starIcon' />

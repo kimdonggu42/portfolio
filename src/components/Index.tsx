@@ -40,6 +40,10 @@ const IndexContainer = styled.nav`
     margin-bottom: 1.5rem;
     border-radius: 1.1rem;
   }
+
+  @media screen and (max-width: 450px) {
+    padding: 0 2rem 0 2rem;
+  }
 `;
 
 const ProfileWrapper = styled.div`
@@ -185,7 +189,7 @@ const PhoneIconArea = styled.div`
     display: block;
 
     @media screen and (max-width: 1275px) {
-      top: 8.5rem;
+      top: 5.6rem;
     }
   }
 `;
@@ -237,7 +241,7 @@ const MailIconArea = styled.div`
     display: block;
 
     @media screen and (max-width: 1275px) {
-      top: 8.5rem;
+      top: 5.6rem;
     }
   }
 `;
@@ -251,6 +255,10 @@ const GibhubIconArea = styled.div`
 
       &:hover {
         opacity: 0.8;
+      }
+
+      @media screen and (max-width: 1275px) {
+        margin-top: 0.2rem;
       }
     }
 
@@ -283,7 +291,7 @@ const GibhubIconArea = styled.div`
       display: block;
 
       @media screen and (max-width: 1275px) {
-        top: 8.5rem;
+        top: 5.6rem;
       }
     }
   }
@@ -299,6 +307,10 @@ const BlogIconArea = styled.div`
 
       &:hover {
         opacity: 0.8;
+      }
+
+      @media screen and (max-width: 1275px) {
+        margin-top: 0.2rem;
       }
     }
 
@@ -330,7 +342,7 @@ const BlogIconArea = styled.div`
       display: block;
 
       @media screen and (max-width: 1275px) {
-        top: 8.5rem;
+        top: 5.6rem;
       }
     }
   }
