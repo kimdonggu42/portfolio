@@ -15,7 +15,6 @@ import Todoit from "../assets/images/Todoit.png";
 import { GrFormPrevious, GrFormNext } from "react-icons/gr";
 import { RiGithubFill } from "react-icons/ri";
 import { BiLink } from "react-icons/bi";
-
 import { RxMagnifyingGlass } from "react-icons/rx";
 
 const ProjectContainer = styled.div`
@@ -165,26 +164,6 @@ const SlideTitle = styled.div`
     }
   }
 
-  /* > .detail-project {
-    display: flex;
-    align-items: center;
-    font-size: 0.8rem;
-    color: white;
-    padding: 0.25rem 0.7rem 0.25rem 0.3rem;
-    background-color: #454545;
-    border-radius: 5rem;
-    margin-top: 0.1rem;
-    cursor: pointer;
-
-    > .detail-icon {
-      margin-right: 0.2rem;
-    }
-
-    &:hover {
-      opacity: 0.8;
-    }
-  } */
-
   @media screen and (max-width: 650px) {
     font-size: 1.7rem;
   }
@@ -266,7 +245,6 @@ const SlideComment = styled.div`
   > .mainText {
     font-size: 1.1rem;
     font-weight: 500;
-    margin-bottom: 0.5rem;
   }
 
   > .detail-project {
@@ -398,19 +376,9 @@ function Project() {
               <Link to='https://github.com/kimdonggu42/Mariple' target='_blank'>
                 <RiGithubFill className='homepageIcon' size={28} />
               </Link>
-              {/* <Link
-                to='https://www.notion.so/Mariple-d09e017dfb30417384c8aa0107653fe2?pvs=4'
-                target='_blank'
-              >
-                <div className='detail-project'>
-                  <RxMagnifyingGlass className='detail-icon' size={18} />
-                  자세히 보기
-                </div>
-                <HiMagnifyingGlassCircle className='hidden-detail-icon' size={28} />
-              </Link> */}
             </SlideTitle>
             <SlideTag>
-              <li>팀 프로젝트</li>
+              <li>팀 프로젝트 BE 2, FE 1</li>
               <li className='typeScript'>TypeScript</li>
               <li className='react'>React</li>
               <li className='redux'>Redux Toolkit</li>
@@ -423,16 +391,14 @@ function Project() {
                 블로그와 뮤직 플레이리스트가 결합된 서비스입니다.
               </p>
               <p>
-                - YouTube API를 활용하여 사용자가 YouTube 또는 YouTube Music의 url을 복사/붙여넣기
-                하여 플레이리스트를 추가할 수 있습니다.
+                - 백엔드와의 협업을 통해 커뮤니케이션 능력을 향상시킬 수 있었습니다. API 명세서,
+                화면 정의서 등 필요한 명세를 문서화하여 협업하였고, 서로의 분야의 지식을 공유하면서
+                학습할 수 있었습니다.
               </p>
               <p>
-                - 마이페이지에서 내 정보(프로필 이미지, 닉네임, 비밀번호)를 수정할 수 있으며, 내가
-                작성한 다이어리와 댓글, 좋아요를 누른 다이어리를 확인할 수 있습니다.
-              </p>
-              <p>
-                - 내가 보고 싶은 다이어리를 편하게 찾을 수 있도록 입력한 키워드를 포함하는
-                다이어리를 검색해 주는 검색 기능을 지원합니다.
+                - 메인 화면에서 어떤 태그 카테고리를 보고 있었고 몇 번째 페이지의 다이어리를 보고
+                있었는지, 마이 페이지에서 어떤 탭에 위치해 있었는지 등의 상태가 사용자의 페이지 이동
+                시에 어떻게 유지되어야 자연스러울지 user-flow에 대해 고민해볼 수 있었습니다.
               </p>
               <div className='detail-project' onClick={openMaripleModalHandler}>
                 <RxMagnifyingGlass className='detail-icon' size={18} />
@@ -456,16 +422,6 @@ function Project() {
               <Link to='https://github.com/kimdonggu42/saveme' target='_blank'>
                 <RiGithubFill className='homepageIcon' size={28} />
               </Link>
-              {/* <Link
-                to='https://www.notion.so/saveme-97b2ceaac7204ceca7d5d88cbed908c6?pvs=4'
-                target='_blank'
-              >
-                <div className='detail-project'>
-                  <RxMagnifyingGlass className='detail-icon' size={18} />
-                  자세히 보기
-                </div>
-                <HiMagnifyingGlassCircle className='hidden-detail-icon' size={28} />
-              </Link> */}
             </SlideTitle>
             <SlideTag>
               <li>개인 프로젝트</li>
@@ -481,17 +437,14 @@ function Project() {
                 애플리케이션입니다.
               </p>
               <p>
-                - Naver Maps API를 활용하여 개발 했으며, 서울시에 위치해 있는 사용자는 본인 주변
-                100개의 공공 화장실의 위치를 확인할 수 있습니다.
+                - Naver Maps API를 활용해 지도를 구현해 봄으로써 서비스에 들어가는 지도 기능을
+                어떻게 구현할 수 있는지 학습할 수 있었습니다.
               </p>
               <p>
-                - 현재 자신과 가장 가까운 화장실은 빨간색 테두리의 별도 아이콘으로 표시됩니다.
-                그리고 모든 마커 클릭 시 클릭한 해당 화장실이 위치해 있는 건물 이름 또는 화장실
-                이름을 확인할 수 있습니다.
-              </p>
-              <p>
-                - 사용자가 이동 시 좌측 상단의 버튼을 클릭하여 변경된 현재 위치를 다시 불러올 수
-                있으며, 변경된 위치를 기준으로 새로운 화장실들을 보여줍니다.
+                - 프론트엔드는 사용자와 직접 맞닿아 있는 부분으로 이 서비스를 어떤 상황에서 사용하게
+                될지에 대해서 많이 생각해 보며 개발을 진행했습니다. 꼭 필요한 기능이 아니라고
+                생각되는 부분들은 제외하고 사용자 친화적이며 직관적인 UI/UX는 무엇인가에 대해 고민해
+                볼 수 있었습니다.
               </p>
               <div className='detail-project' onClick={openSavemeModalHandler}>
                 <RxMagnifyingGlass className='detail-icon' size={18} />
@@ -510,16 +463,6 @@ function Project() {
               <Link to='https://github.com/kimdonggu42/sp-todolist-client-react' target='_blank'>
                 <RiGithubFill className='homepageIcon' size={28} />
               </Link>
-              {/* <Link
-                to='https://www.notion.so/Todo-t-4522b7df134942d7aceea8a5c682724a?pvs=4'
-                target='_blank'
-              >
-                <div className='detail-project'>
-                  <RxMagnifyingGlass className='detail-icon' size={18} />
-                  자세히 보기
-                </div>
-                <HiMagnifyingGlassCircle className='hidden-detail-icon' size={28} />
-              </Link> */}
             </SlideTitle>
             <SlideTag>
               <li>개인 프로젝트</li>
@@ -533,13 +476,12 @@ function Project() {
                 Todo!t은 할 일을 등록하고 관리할 수 있는 웹 애플리케이션입니다.
               </p>
               <p>
-                - 사용자는 할 일을 등록, 수정, 삭제할 수 있으며, 완료한 일은 체크하여 완료 표시할 수
-                있습니다.
+                - 첫 리엑트 프로젝트로 Todo List를 만들어보며 기본적인 CRUD 구현 방법에 대해 학습해
+                볼 수 있었습니다.
               </p>
-              <p>- 등록한 할 일은 전체, 완료, 미완료한 할 일 3가지로 구분하여 볼 수 있습니다.</p>
               <p>
-                - 등록한 할 일은 오늘을 기준으로 지나간 일, 오늘 할 일, 내일 해야 될 일 3가지로
-                구분하여 볼 수 있습니다.
+                - Context API를 사용하여 다크모드 상태를 관리해 보며 전역적으로 관리되어야 할 상태는
+                무엇인지에 대해 생각해 볼 수 있었습니다.
               </p>
               <div className='detail-project' onClick={openTodoitModalHandler}>
                 <RxMagnifyingGlass className='detail-icon' size={18} />
