@@ -1,4 +1,8 @@
 import styled from "styled-components";
+import DetailMariple from "../pages/DetailMariple";
+import DetailSaveme from "../pages/DetailSaveme";
+import DetailTodoit from "../pages/DetailTodoit";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -9,7 +13,6 @@ import mariple from "../assets/images/mariple.png";
 import Todoit from "../assets/images/Todoit.png";
 
 import { GrFormPrevious, GrFormNext } from "react-icons/gr";
-import { HiMagnifyingGlassCircle, HiOutlineMagnifyingGlassCircle } from "react-icons/hi2";
 import { RiGithubFill } from "react-icons/ri";
 import { BiLink } from "react-icons/bi";
 
@@ -157,34 +160,30 @@ const SlideTitle = styled.div`
       border-radius: 5rem;
     }
 
-    > .detail-project {
-      display: flex;
-      align-items: center;
-      font-size: 0.8rem;
-      color: white;
-      padding: 0.25rem 0.7rem 0.25rem 0.3rem;
-      background-color: #454545;
-      border-radius: 5rem;
-
-      > .detail-icon {
-        margin-right: 0.2rem;
-      }
-
-      @media screen and (max-width: 450px) {
-        display: none;
-      }
+    &:hover {
+      opacity: 0.8;
     }
+  }
 
-    > .hidden-detail-icon {
-      @media screen and (min-width: 451px) {
-        display: none;
-      }
+  /* > .detail-project {
+    display: flex;
+    align-items: center;
+    font-size: 0.8rem;
+    color: white;
+    padding: 0.25rem 0.7rem 0.25rem 0.3rem;
+    background-color: #454545;
+    border-radius: 5rem;
+    margin-top: 0.1rem;
+    cursor: pointer;
+
+    > .detail-icon {
+      margin-right: 0.2rem;
     }
 
     &:hover {
       opacity: 0.8;
     }
-  }
+  } */
 
   @media screen and (max-width: 650px) {
     font-size: 1.7rem;
@@ -269,9 +268,90 @@ const SlideComment = styled.div`
     font-weight: 500;
     margin-bottom: 0.5rem;
   }
+
+  > .detail-project {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 7rem;
+    height: 2rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding-right: 0.35rem;
+    color: white;
+    background-color: ${(props) => props.theme.color.mainColor};
+    border-radius: 5rem;
+    margin-top: 0.1rem;
+    cursor: pointer;
+
+    > .detail-icon {
+      margin-right: 0.2rem;
+    }
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
 `;
 
 function Project() {
+  const [isMaripleModalOpen, setIsMaripleModalOpen] = useState<boolean>(false);
+  const [isSavemeModalOpen, setIsSavemeModalOpen] = useState<boolean>(false);
+  const [isTodoitModalOpen, setIsTodoitModalOpen] = useState<boolean>(false);
+
+  // Mariple 자세히 보기 모달 오픈 이벤트 핸들러
+  const openMaripleModalHandler = () => {
+    setIsMaripleModalOpen(!isMaripleModalOpen);
+    document.body.style.cssText = `
+    position: fixed;
+    top: -${window.scrollY}px;
+    overflow-y: scroll;
+    width: 100%;`;
+  };
+  // Saveme 자세히 보기 모달 오픈 이벤트 핸들러
+  const openSavemeModalHandler = () => {
+    setIsSavemeModalOpen(!isSavemeModalOpen);
+    document.body.style.cssText = `
+      position: fixed;
+      top: -${window.scrollY}px;
+      overflow-y: scroll;
+      width: 100%;`;
+  };
+
+  // 투두잇 자세히 보기 모달 오픈 이벤트 핸들러
+  const openTodoitModalHandler = () => {
+    setIsTodoitModalOpen(!isTodoitModalOpen);
+    document.body.style.cssText = `
+    position: fixed;
+    top: -${window.scrollY}px;
+    overflow-y: scroll;
+    width: 100%;`;
+  };
+
+  // Mariple 자세히 보기 모달 클로즈 이벤트 핸들러
+  const closeMaripleModalHandler = () => {
+    setIsMaripleModalOpen(!isMaripleModalOpen);
+    const scrollY = document.body.style.top;
+    document.body.style.cssText = "";
+    window.scrollTo(0, parseInt(scrollY || "0", 10) * -1);
+  };
+
+  // Mariple 자세히 보기 모달 클로즈 이벤트 핸들러
+  const closeSavemeModalHandler = () => {
+    setIsSavemeModalOpen(!isSavemeModalOpen);
+    const scrollY = document.body.style.top;
+    document.body.style.cssText = "";
+    window.scrollTo(0, parseInt(scrollY || "0", 10) * -1);
+  };
+
+  // Mariple 자세히 보기 모달 클로즈 이벤트 핸들러
+  const closeTodoitModalHandler = () => {
+    setIsTodoitModalOpen(!isTodoitModalOpen);
+    const scrollY = document.body.style.top;
+    document.body.style.cssText = "";
+    window.scrollTo(0, parseInt(scrollY || "0", 10) * -1);
+  };
+
   const PrevArrow = ({ onClick }: any) => {
     return (
       <PrevBtn onClick={onClick} type='button'>
@@ -318,7 +398,7 @@ function Project() {
               <Link to='https://github.com/kimdonggu42/Mariple' target='_blank'>
                 <RiGithubFill className='homepageIcon' size={28} />
               </Link>
-              <Link
+              {/* <Link
                 to='https://www.notion.so/Mariple-d09e017dfb30417384c8aa0107653fe2?pvs=4'
                 target='_blank'
               >
@@ -327,7 +407,7 @@ function Project() {
                   자세히 보기
                 </div>
                 <HiMagnifyingGlassCircle className='hidden-detail-icon' size={28} />
-              </Link>
+              </Link> */}
             </SlideTitle>
             <SlideTag>
               <li>팀 프로젝트</li>
@@ -354,6 +434,10 @@ function Project() {
                 - 내가 보고 싶은 다이어리를 편하게 찾을 수 있도록 입력한 키워드를 포함하는
                 다이어리를 검색해 주는 검색 기능을 지원합니다.
               </p>
+              <div className='detail-project' onClick={openMaripleModalHandler}>
+                <RxMagnifyingGlass className='detail-icon' size={18} />
+                <div className='detail-text'>자세히 보기</div>
+              </div>
             </SlideComment>
           </SlideTextArea>
         </SlideArea>
@@ -372,7 +456,7 @@ function Project() {
               <Link to='https://github.com/kimdonggu42/saveme' target='_blank'>
                 <RiGithubFill className='homepageIcon' size={28} />
               </Link>
-              <Link
+              {/* <Link
                 to='https://www.notion.so/saveme-97b2ceaac7204ceca7d5d88cbed908c6?pvs=4'
                 target='_blank'
               >
@@ -381,7 +465,7 @@ function Project() {
                   자세히 보기
                 </div>
                 <HiMagnifyingGlassCircle className='hidden-detail-icon' size={28} />
-              </Link>
+              </Link> */}
             </SlideTitle>
             <SlideTag>
               <li>개인 프로젝트</li>
@@ -409,6 +493,10 @@ function Project() {
                 - 사용자가 이동 시 좌측 상단의 버튼을 클릭하여 변경된 현재 위치를 다시 불러올 수
                 있으며, 변경된 위치를 기준으로 새로운 화장실들을 보여줍니다.
               </p>
+              <div className='detail-project' onClick={openSavemeModalHandler}>
+                <RxMagnifyingGlass className='detail-icon' size={18} />
+                <div className='detail-text'>자세히 보기</div>
+              </div>
             </SlideComment>
           </SlideTextArea>
         </SlideArea>
@@ -422,7 +510,7 @@ function Project() {
               <Link to='https://github.com/kimdonggu42/sp-todolist-client-react' target='_blank'>
                 <RiGithubFill className='homepageIcon' size={28} />
               </Link>
-              <Link
+              {/* <Link
                 to='https://www.notion.so/Todo-t-4522b7df134942d7aceea8a5c682724a?pvs=4'
                 target='_blank'
               >
@@ -431,7 +519,7 @@ function Project() {
                   자세히 보기
                 </div>
                 <HiMagnifyingGlassCircle className='hidden-detail-icon' size={28} />
-              </Link>
+              </Link> */}
             </SlideTitle>
             <SlideTag>
               <li>개인 프로젝트</li>
@@ -453,10 +541,23 @@ function Project() {
                 - 등록한 할 일은 오늘을 기준으로 지나간 일, 오늘 할 일, 내일 해야 될 일 3가지로
                 구분하여 볼 수 있습니다.
               </p>
+              <div className='detail-project' onClick={openTodoitModalHandler}>
+                <RxMagnifyingGlass className='detail-icon' size={18} />
+                <div className='detail-text'>자세히 보기</div>
+              </div>
             </SlideComment>
           </SlideTextArea>
         </SlideArea>
       </Slider>
+      {isMaripleModalOpen ? (
+        <DetailMariple closeProjectModalHandler={closeMaripleModalHandler} />
+      ) : null}
+      {isSavemeModalOpen ? (
+        <DetailSaveme closeProjectModalHandler={closeSavemeModalHandler} />
+      ) : null}
+      {isTodoitModalOpen ? (
+        <DetailTodoit closeProjectModalHandler={closeTodoitModalHandler} />
+      ) : null}
     </ProjectContainer>
   );
 }
