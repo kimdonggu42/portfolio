@@ -503,7 +503,7 @@ function Index() {
             scrollToCertificate();
           }}
         >
-          {position >= 2626 ? <MdFactCheck /> : <MdOutlineFactCheck />}
+          {position >= 2621 ? <MdFactCheck /> : <MdOutlineFactCheck />}
           <span className='el'>Certificate</span>
         </MenuList>
       </MenuWrapper>
