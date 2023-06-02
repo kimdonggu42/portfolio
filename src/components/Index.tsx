@@ -385,45 +385,47 @@ function Index() {
 
   const scrollToStack = () => {
     window.scroll({
-      top: 605,
+      top: 608,
       behavior: "smooth",
     });
   };
 
   const scrollToProjects = () => {
     window.scroll({
-      top: 1250,
+      top: 1328,
       behavior: "smooth",
     });
   };
 
   const scrollToExperience = () => {
     window.scroll({
-      top: 2060,
+      top: 2155,
       behavior: "smooth",
     });
   };
 
   const scrollToStudy = () => {
     window.scroll({
-      top: 2400,
+      top: 2498,
       behavior: "smooth",
     });
   };
 
   const scrollToEducation = () => {
     window.scroll({
-      top: 2550,
+      top: 2560,
       behavior: "smooth",
     });
   };
 
   const scrollToCertificate = () => {
     window.scroll({
-      top: 2570,
+      top: 2626,
       behavior: "smooth",
     });
   };
+
+  // console.log(window.scrollY);
 
   return (
     <IndexContainer>
@@ -441,7 +443,7 @@ function Index() {
             scrollToIntroduce();
           }}
         >
-          {position <= 604.9 ? <FaUser /> : <FaRegUser />}
+          {position <= 602.9 ? <FaUser /> : <FaRegUser />}
           <span className='el'>Introduce</span>
         </MenuList>
 
@@ -451,7 +453,7 @@ function Index() {
             scrollToStack();
           }}
         >
-          {position >= 605 && position <= 1249.9 ? <IoSettings /> : <IoSettingsOutline />}
+          {position >= 603 && position <= 1322.9 ? <IoSettings /> : <IoSettingsOutline />}
           <span className='el'>Stack</span>
         </MenuList>
 
@@ -461,7 +463,7 @@ function Index() {
             scrollToProjects();
           }}
         >
-          {position >= 1250 && position <= 2059.9 ? <BsInboxesFill /> : <BsInboxes />}
+          {position >= 1323 && position <= 2149.9 ? <BsInboxesFill /> : <BsInboxes />}
           <span className='el'>Project</span>
         </MenuList>
 
@@ -471,7 +473,7 @@ function Index() {
             scrollToExperience();
           }}
         >
-          {position >= 2060 && position <= 2399.9 ? <FaLightbulb /> : <FaRegLightbulb />}
+          {position >= 2150 && position <= 2492.9 ? <FaLightbulb /> : <FaRegLightbulb />}
           <span className='el'>Experience</span>
         </MenuList>
 
@@ -481,7 +483,7 @@ function Index() {
             scrollToStudy();
           }}
         >
-          {position >= 2400 && position <= 2549.9 ? <BsPencilFill /> : <BsPencil />}
+          {position >= 2498 && position <= 2554.9 ? <BsPencilFill /> : <BsPencil />}
           <span className='el'>Study</span>
         </MenuList>
 
@@ -491,7 +493,7 @@ function Index() {
             scrollToEducation();
           }}
         >
-          {position >= 2550 && position <= 2569.9 ? <IoSchool /> : <IoSchoolOutline />}
+          {position >= 2555 && position <= 2620.9 ? <IoSchool /> : <IoSchoolOutline />}
           <span className='el'>Education</span>
         </MenuList>
 
@@ -501,7 +503,7 @@ function Index() {
             scrollToCertificate();
           }}
         >
-          {position >= 2570 ? <MdFactCheck /> : <MdOutlineFactCheck />}
+          {position >= 2626 ? <MdFactCheck /> : <MdOutlineFactCheck />}
           <span className='el'>Certificate</span>
         </MenuList>
       </MenuWrapper>
