@@ -56,6 +56,10 @@ const CloseBtnArea = styled.div`
     border: none;
     background-color: transparent;
     cursor: pointer;
+
+    &:hover {
+      opacity: 0.7;
+    }
   }
 `;
 

@@ -66,7 +66,7 @@ const KeywordArea = styled.div`
 
     > .highlight {
       font-weight: 700;
-      background: linear-gradient(to right, ${(props) => props.theme.color.mainColor}, #0ea293);
+      background: linear-gradient(to right, ${(props) => props.theme.color.mainColor}, #62b6b7);
       color: transparent;
       background-clip: text;
       -webkit-background-clip: text;

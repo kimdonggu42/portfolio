@@ -7,18 +7,21 @@ import { Link } from "react-router-dom";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 import saveme from "../assets/images/saveme.png";
 import mariple from "../assets/images/mariple.png";
 import Todoit from "../assets/images/Todoit.png";
 
+import mariplePage from "../assets/images/mariple-page.png";
+import savemePage from "../assets/images/saveme-page.png";
+import todoitPage from "../assets/images/todoit-page.png";
+
 import { GrFormPrevious, GrFormNext } from "react-icons/gr";
 import { RiGithubFill } from "react-icons/ri";
 import { BiLink } from "react-icons/bi";
 import { RxMagnifyingGlass } from "react-icons/rx";
-
-import AOS from "aos";
-import "aos/dist/aos.css";
 
 const ProjectContainer = styled.div`
   padding: 3rem;
@@ -29,7 +32,43 @@ const ProjectContainer = styled.div`
   margin: 0 1rem 0 1rem;
 
   @media screen and (max-width: 450px) {
-    padding: 2rem;
+    padding: 2rem 2rem 3rem 2rem;
+  }
+`;
+
+const StyledSlider = styled(Slider)`
+  /* border: 1px solid red; */
+  > .slick-dots.slick-thumb {
+    /* border: 1px solid orange; */
+
+    > li {
+      width: 3.3rem;
+      height: 100%;
+      margin: 0;
+      /* border: 1px solid green; */
+
+      &.slick-active {
+        > a {
+          opacity: 1;
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+`;
+
+const CustomSlidePage = styled.a`
+  display: flex;
+  justify-content: center;
+  opacity: 0.5;
+  /* border: 1px solid red; */
+
+  > img {
+    width: 3rem;
+    height: 1.8rem;
+    object-fit: cover;
+    border-radius: 0.3rem;
+    /* border: 1px solid blue; */
   }
 `;
 
@@ -54,7 +93,7 @@ const PrevBtn = styled.button`
   border-radius: 5rem;
   background-color: transparent;
   top: 17rem;
-  left: -2.5rem;
+  left: -2.4rem;
   z-index: 999;
   cursor: pointer;
 
@@ -75,7 +114,7 @@ const NextBtn = styled.button`
   border-radius: 5rem;
   background-color: transparent;
   top: 17rem;
-  right: -2.5rem;
+  right: -2.4rem;
   z-index: 999;
   cursor: pointer;
 
@@ -244,6 +283,8 @@ const SlideComment = styled.div`
   flex-direction: column;
   row-gap: 0.5rem;
   font-size: 1rem;
+  margin-bottom: 1.5rem;
+  /* border: 1px solid skyblue; */
 
   > .mainText {
     font-size: 1.1rem;
@@ -336,7 +377,7 @@ function Project() {
   const PrevArrow = ({ onClick }: any) => {
     return (
       <PrevBtn onClick={onClick} type='button'>
-        <GrFormPrevious size={40} />
+        <GrFormPrevious size={35} />
       </PrevBtn>
     );
   };
@@ -344,13 +385,23 @@ function Project() {
   const NextArrow = ({ onClick }: any) => {
     return (
       <NextBtn onClick={onClick} type='button'>
-        <GrFormNext size={40} />
+        <GrFormNext size={35} />
       </NextBtn>
     );
   };
 
+  const slidePageArr = [mariplePage, savemePage, todoitPage];
+
   const settings = {
-    dots: false,
+    customPaging: (i: number) => {
+      return (
+        <CustomSlidePage>
+          <img src={slidePageArr[i]} alt='move-project' />
+        </CustomSlidePage>
+      );
+    },
+    dots: true,
+    dotsClass: "slick-dots slick-thumb",
     infinite: true,
     speed: 500,
     slidesToShow: 1,
@@ -370,7 +421,7 @@ function Project() {
       <ProjectContainer data-aos='fade-up'>
         <ProjectTitle>Projects</ProjectTitle>
         <UnderBar></UnderBar>
-        <Slider {...settings}>
+        <StyledSlider {...settings}>
           <SlideArea>
             <SlideImg>
               <img src={mariple} alt='mariple' />
@@ -500,7 +551,7 @@ function Project() {
               </SlideComment>
             </SlideTextArea>
           </SlideArea>
-        </Slider>
+        </StyledSlider>
       </ProjectContainer>
       {isMaripleModalOpen ? (
         <DetailMariple closeProjectModalHandler={closeMaripleModalHandler} />

@@ -533,7 +533,7 @@ function Index() {
       </LinkWrapper>
       <VerWrapper>
         <BiCopyright className='copyrightIcon' />
-        Developed by kimdonggu42
+        Developed by Donggu
       </VerWrapper>
     </IndexContainer>
   );
