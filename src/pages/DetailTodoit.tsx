@@ -25,7 +25,16 @@ const ModalView = styled.div`
   max-width: 55rem;
   padding: 1rem 3rem 5rem 3rem;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.19), 0 10px 10px rgba(0, 0, 0, 0.1);
-  overflow-y: scroll;
+  overflow: overlay;
+
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: hsla(0, 0%, 42%, 0.49);
+    border-radius: 5rem;
+  }
 
   @media screen and (max-width: 450px) {
     padding: 1rem 2rem 5rem 2rem;
