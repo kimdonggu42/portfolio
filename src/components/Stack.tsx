@@ -1,4 +1,7 @@
 import styled from "styled-components";
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 import JavaScriptLogo from "../assets/images/JavaScriptLogo.png";
 import TypeScriptLogo from "../assets/images/TypeScriptLogo.png";
@@ -98,8 +101,14 @@ const StackSetting = styled.div`
 `;
 
 function Stack() {
+  useEffect(() => {
+    AOS.init({
+      duration: 900,
+    });
+  });
+
   return (
-    <StackContainer>
+    <StackContainer data-aos='fade-up'>
       <StackTitle>Stack</StackTitle>
       <UnderBar></UnderBar>
       <LanguageArea>

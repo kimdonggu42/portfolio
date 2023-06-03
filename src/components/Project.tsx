@@ -2,7 +2,7 @@ import styled from "styled-components";
 import DetailMariple from "../pages/DetailMariple";
 import DetailSaveme from "../pages/DetailSaveme";
 import DetailTodoit from "../pages/DetailTodoit";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -16,6 +16,9 @@ import { GrFormPrevious, GrFormNext } from "react-icons/gr";
 import { RiGithubFill } from "react-icons/ri";
 import { BiLink } from "react-icons/bi";
 import { RxMagnifyingGlass } from "react-icons/rx";
+
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const ProjectContainer = styled.div`
   padding: 3rem;
@@ -356,141 +359,149 @@ function Project() {
     nextArrow: <NextArrow />,
   };
 
+  useEffect(() => {
+    AOS.init({
+      duration: 900,
+    });
+  });
+
   return (
-    <ProjectContainer>
-      <ProjectTitle>Projects</ProjectTitle>
-      <UnderBar></UnderBar>
-      <Slider {...settings}>
-        <SlideArea>
-          <SlideImg>
-            <img src={mariple} alt='mariple' />
-          </SlideImg>
-          <SlideTextArea>
-            <SlideTitle>
-              <div className='project-title'>Mariple</div>
-              <Link to='https://www.mariple.com/' target='_blank'>
-                <div className='link-icon-back'>
-                  <BiLink className='homepageIcon' size={17} />
+    <>
+      <ProjectContainer data-aos='fade-up'>
+        <ProjectTitle>Projects</ProjectTitle>
+        <UnderBar></UnderBar>
+        <Slider {...settings}>
+          <SlideArea>
+            <SlideImg>
+              <img src={mariple} alt='mariple' />
+            </SlideImg>
+            <SlideTextArea>
+              <SlideTitle>
+                <div className='project-title'>Mariple</div>
+                <Link to='https://www.mariple.com/' target='_blank'>
+                  <div className='link-icon-back'>
+                    <BiLink className='homepageIcon' size={17} />
+                  </div>
+                </Link>
+                <Link to='https://github.com/kimdonggu42/Mariple' target='_blank'>
+                  <RiGithubFill className='homepageIcon' size={28} />
+                </Link>
+              </SlideTitle>
+              <SlideTag>
+                <li>팀 프로젝트 BE 2, FE 1</li>
+                <li className='typeScript'>TypeScript</li>
+                <li className='react'>React</li>
+                <li className='redux'>Redux Toolkit</li>
+                <li className='styledComponents'>Styled Components</li>
+                <li className='aws'>AWS</li>
+              </SlideTag>
+              <SlideComment>
+                <p className='mainText'>
+                  Mariple은 나만의 플레이리스트를 소개하거나 플레이리스트에 담겨있는 추억을 공유하는
+                  블로그와 뮤직 플레이리스트가 결합된 서비스입니다.
+                </p>
+                <p>
+                  - 백엔드와의 협업을 통해 커뮤니케이션 능력을 향상시킬 수 있었습니다. API 명세서,
+                  화면 정의서 등 필요한 명세를 문서화하여 협업하였고, 서로의 분야의 지식을
+                  공유하면서 학습할 수 있었습니다.
+                </p>
+                <p>
+                  - 메인 화면에서 어떤 태그 카테고리를 보고 있었고 몇 번째 페이지의 다이어리를 보고
+                  있었는지, 마이 페이지에서 어떤 탭에 위치해 있었는지 등의 상태가 사용자의 페이지
+                  이동 시에 어떻게 유지되어야 자연스러울지 user-flow에 대해 고민해볼 수 있었습니다.
+                </p>
+                <div className='detail-project' onClick={openMaripleModalHandler}>
+                  <RxMagnifyingGlass className='detail-icon' size={18} />
+                  <div className='detail-text'>자세히 보기</div>
                 </div>
-              </Link>
-              <Link to='https://github.com/kimdonggu42/Mariple' target='_blank'>
-                <RiGithubFill className='homepageIcon' size={28} />
-              </Link>
-            </SlideTitle>
-            <SlideTag>
-              <li>팀 프로젝트 BE 2, FE 1</li>
-              <li className='typeScript'>TypeScript</li>
-              <li className='react'>React</li>
-              <li className='redux'>Redux Toolkit</li>
-              <li className='styledComponents'>Styled Components</li>
-              <li className='aws'>AWS</li>
-            </SlideTag>
-            <SlideComment>
-              <p className='mainText'>
-                Mariple은 나만의 플레이리스트를 소개하거나 플레이리스트에 담겨있는 추억을 공유하는
-                블로그와 뮤직 플레이리스트가 결합된 서비스입니다.
-              </p>
-              <p>
-                - 백엔드와의 협업을 통해 커뮤니케이션 능력을 향상시킬 수 있었습니다. API 명세서,
-                화면 정의서 등 필요한 명세를 문서화하여 협업하였고, 서로의 분야의 지식을 공유하면서
-                학습할 수 있었습니다.
-              </p>
-              <p>
-                - 메인 화면에서 어떤 태그 카테고리를 보고 있었고 몇 번째 페이지의 다이어리를 보고
-                있었는지, 마이 페이지에서 어떤 탭에 위치해 있었는지 등의 상태가 사용자의 페이지 이동
-                시에 어떻게 유지되어야 자연스러울지 user-flow에 대해 고민해볼 수 있었습니다.
-              </p>
-              <div className='detail-project' onClick={openMaripleModalHandler}>
-                <RxMagnifyingGlass className='detail-icon' size={18} />
-                <div className='detail-text'>자세히 보기</div>
-              </div>
-            </SlideComment>
-          </SlideTextArea>
-        </SlideArea>
-        <SlideArea>
-          <SlideImg>
-            <img src={saveme} alt='saveme' />
-          </SlideImg>
-          <SlideTextArea>
-            <SlideTitle>
-              saveme
-              <Link to='https://save-me-bd34d.web.app/' target='_blank'>
-                <div className='link-icon-back'>
-                  <BiLink className='homepageIcon' size={17} />
+              </SlideComment>
+            </SlideTextArea>
+          </SlideArea>
+          <SlideArea>
+            <SlideImg>
+              <img src={saveme} alt='saveme' />
+            </SlideImg>
+            <SlideTextArea>
+              <SlideTitle>
+                saveme
+                <Link to='https://save-me-bd34d.web.app/' target='_blank'>
+                  <div className='link-icon-back'>
+                    <BiLink className='homepageIcon' size={17} />
+                  </div>
+                </Link>
+                <Link to='https://github.com/kimdonggu42/saveme' target='_blank'>
+                  <RiGithubFill className='homepageIcon' size={28} />
+                </Link>
+              </SlideTitle>
+              <SlideTag>
+                <li>개인 프로젝트</li>
+                <li className='typeScript'>TypeScript</li>
+                <li className='react'>React</li>
+                <li className='recoil'>Recoil</li>
+                <li className='styledComponents'>Styled Components</li>
+                <li className='firebase'>Firebase</li>
+              </SlideTag>
+              <SlideComment>
+                <p className='mainText'>
+                  saveme는 별도의 검색 없이 바로 내 주변의 공공 화장실을 찾아주는 웹
+                  애플리케이션입니다.
+                </p>
+                <p>
+                  - Naver Maps API를 활용해 지도를 구현해 봄으로써 서비스에 들어가는 지도 기능을
+                  어떻게 구현할 수 있는지 학습할 수 있었습니다.
+                </p>
+                <p>
+                  - 프론트엔드는 사용자와 직접 맞닿아 있는 부분으로 이 서비스를 어떤 상황에서
+                  사용하게 될지에 대해서 많이 생각해 보며 개발을 진행했습니다. 꼭 필요한 기능이
+                  아니라고 생각되는 부분들은 제외하고 사용자 친화적이며 직관적인 UI/UX는 무엇인가에
+                  대해 고민해 볼 수 있었습니다.
+                </p>
+                <div className='detail-project' onClick={openSavemeModalHandler}>
+                  <RxMagnifyingGlass className='detail-icon' size={18} />
+                  <div className='detail-text'>자세히 보기</div>
                 </div>
-              </Link>
-              <Link to='https://github.com/kimdonggu42/saveme' target='_blank'>
-                <RiGithubFill className='homepageIcon' size={28} />
-              </Link>
-            </SlideTitle>
-            <SlideTag>
-              <li>개인 프로젝트</li>
-              <li className='typeScript'>TypeScript</li>
-              <li className='react'>React</li>
-              <li className='recoil'>Recoil</li>
-              <li className='styledComponents'>Styled Components</li>
-              <li className='firebase'>Firebase</li>
-            </SlideTag>
-            <SlideComment>
-              <p className='mainText'>
-                saveme는 별도의 검색 없이 바로 내 주변의 공공 화장실을 찾아주는 웹
-                애플리케이션입니다.
-              </p>
-              <p>
-                - Naver Maps API를 활용해 지도를 구현해 봄으로써 서비스에 들어가는 지도 기능을
-                어떻게 구현할 수 있는지 학습할 수 있었습니다.
-              </p>
-              <p>
-                - 프론트엔드는 사용자와 직접 맞닿아 있는 부분으로 이 서비스를 어떤 상황에서 사용하게
-                될지에 대해서 많이 생각해 보며 개발을 진행했습니다. 꼭 필요한 기능이 아니라고
-                생각되는 부분들은 제외하고 사용자 친화적이며 직관적인 UI/UX는 무엇인가에 대해 고민해
-                볼 수 있었습니다.
-              </p>
-              <div className='detail-project' onClick={openSavemeModalHandler}>
-                <RxMagnifyingGlass className='detail-icon' size={18} />
-                <div className='detail-text'>자세히 보기</div>
-              </div>
-            </SlideComment>
-          </SlideTextArea>
-        </SlideArea>
-        <SlideArea>
-          <SlideImg>
-            <img src={Todoit} alt='todoit' />
-          </SlideImg>
-          <SlideTextArea>
-            <SlideTitle>
-              Todo!t
-              <Link to='https://github.com/kimdonggu42/sp-todolist-client-react' target='_blank'>
-                <RiGithubFill className='homepageIcon' size={28} />
-              </Link>
-            </SlideTitle>
-            <SlideTag>
-              <li>개인 프로젝트</li>
-              <li className='javaScript'>JavaScript</li>
-              <li className='react'>React</li>
-              <li className='recoil'>Context API</li>
-              <li className='styledComponents'>Styled Components</li>
-            </SlideTag>
-            <SlideComment>
-              <p className='mainText'>
-                Todo!t은 할 일을 등록하고 관리할 수 있는 웹 애플리케이션입니다.
-              </p>
-              <p>
-                - 첫 리엑트 프로젝트로 Todo List를 만들어보며 기본적인 CRUD 구현 방법에 대해 학습해
-                볼 수 있었습니다.
-              </p>
-              <p>
-                - Context API를 사용하여 다크모드 상태를 관리해 보며 전역적으로 관리되어야 할 상태는
-                무엇인지에 대해 생각해 볼 수 있었습니다.
-              </p>
-              <div className='detail-project' onClick={openTodoitModalHandler}>
-                <RxMagnifyingGlass className='detail-icon' size={18} />
-                <div className='detail-text'>자세히 보기</div>
-              </div>
-            </SlideComment>
-          </SlideTextArea>
-        </SlideArea>
-      </Slider>
+              </SlideComment>
+            </SlideTextArea>
+          </SlideArea>
+          <SlideArea>
+            <SlideImg>
+              <img src={Todoit} alt='todoit' />
+            </SlideImg>
+            <SlideTextArea>
+              <SlideTitle>
+                Todo!t
+                <Link to='https://github.com/kimdonggu42/sp-todolist-client-react' target='_blank'>
+                  <RiGithubFill className='homepageIcon' size={28} />
+                </Link>
+              </SlideTitle>
+              <SlideTag>
+                <li>개인 프로젝트</li>
+                <li className='javaScript'>JavaScript</li>
+                <li className='react'>React</li>
+                <li className='recoil'>Context API</li>
+                <li className='styledComponents'>Styled Components</li>
+              </SlideTag>
+              <SlideComment>
+                <p className='mainText'>
+                  Todo!t은 할 일을 등록하고 관리할 수 있는 웹 애플리케이션입니다.
+                </p>
+                <p>
+                  - 첫 리엑트 프로젝트로 Todo List를 만들어보며 기본적인 CRUD 구현 방법에 대해
+                  학습해 볼 수 있었습니다.
+                </p>
+                <p>
+                  - Context API를 사용하여 다크모드 상태를 관리해 보며 전역적으로 관리되어야 할
+                  상태는 무엇인지에 대해 생각해 볼 수 있었습니다.
+                </p>
+                <div className='detail-project' onClick={openTodoitModalHandler}>
+                  <RxMagnifyingGlass className='detail-icon' size={18} />
+                  <div className='detail-text'>자세히 보기</div>
+                </div>
+              </SlideComment>
+            </SlideTextArea>
+          </SlideArea>
+        </Slider>
+      </ProjectContainer>
       {isMaripleModalOpen ? (
         <DetailMariple closeProjectModalHandler={closeMaripleModalHandler} />
       ) : null}
@@ -500,7 +511,7 @@ function Project() {
       {isTodoitModalOpen ? (
         <DetailTodoit closeProjectModalHandler={closeTodoitModalHandler} />
       ) : null}
-    </ProjectContainer>
+    </>
   );
 }
 

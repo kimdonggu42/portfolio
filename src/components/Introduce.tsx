@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import profile from "../assets/images/profile.png";
+import TypeIt from "typeit-react";
 
 const IntroduceContainer = styled.div`
   min-height: 36rem;
@@ -61,10 +62,14 @@ const KeywordArea = styled.div`
 
   > .mainSentence {
     font-size: 1.4rem;
+    font-weight: 600;
 
     > .highlight {
-      font-weight: 600;
-      background-color: #fff5b8;
+      font-weight: 700;
+      background: linear-gradient(to right, ${(props) => props.theme.color.mainColor}, #0ea293);
+      color: transparent;
+      background-clip: text;
+      -webkit-background-clip: text;
     }
 
     @media screen and (max-width: 650px) {
@@ -101,8 +106,16 @@ function Introduce() {
           <div className='mainSentence'>
             안녕하세요 👋🏻
             <br />
-            <span className='highlight'>주도적인 자세로 문제 해결</span>
-            하기 좋아하는 김동구입니다.
+            <TypeIt
+              className='highlight'
+              options={{
+                speed: 80,
+                cursor: false,
+              }}
+            >
+              주도적인 자세로 문제를 해결하는
+            </TypeIt>
+            &nbsp;김동구입니다.
           </div>
           <div className='subSentence'>
             끝난 프로젝트라도&nbsp;
@@ -118,7 +131,7 @@ function Introduce() {
             있도록 고민합니다.
           </div>
           <div className='subSentence'>
-            담당한 부분만 해결하고 끝이 아닌,{" "}
+            담당한 부분만 해결하고 끝이 아닌,
             <span className='highlight'>함께 고민하며 같이 성장</span>할 수 있도록 노력합니다.
           </div>
         </KeywordArea>

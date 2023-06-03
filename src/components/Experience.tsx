@@ -1,6 +1,7 @@
 import styled from "styled-components";
-
-// import { FaDotCircle } from "react-icons/fa";
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const ExperienceContainer = styled.div`
   padding: 3rem;
@@ -113,8 +114,14 @@ export const ListText = styled.div`
 `;
 
 function Experience() {
+  useEffect(() => {
+    AOS.init({
+      duration: 900,
+    });
+  });
+
   return (
-    <ExperienceContainer>
+    <ExperienceContainer data-aos='fade-up'>
       <ExperienceTitle>Experience</ExperienceTitle>
       <UnderBar></UnderBar>
       <ExperieceArea>

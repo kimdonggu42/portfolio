@@ -23,6 +23,7 @@ const ModalView = styled.div`
   width: 90vw;
   height: 90vh;
   max-width: 55rem;
+  max-height: 100rem;
   padding: 1rem 3rem 5rem 3rem;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.19), 0 10px 10px rgba(0, 0, 0, 0.1);
   overflow: overlay;

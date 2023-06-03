@@ -1,5 +1,8 @@
 import styled from "styled-components";
 import * as Experience from "./Experience";
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const StudyContainer = styled.div`
   padding: 3rem;
@@ -28,8 +31,14 @@ const UnderBar = styled.div`
 `;
 
 function Study() {
+  useEffect(() => {
+    AOS.init({
+      duration: 900,
+    });
+  });
+
   return (
-    <StudyContainer>
+    <StudyContainer data-aos='fade-up'>
       <StudyTitle>Study</StudyTitle>
       <UnderBar></UnderBar>
       <Experience.ExperieceArea>
