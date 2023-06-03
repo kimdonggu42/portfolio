@@ -399,28 +399,28 @@ function Index() {
 
   const scrollToExperience = () => {
     window.scroll({
-      top: 2155,
+      top: 2080,
       behavior: "smooth",
     });
   };
 
   const scrollToStudy = () => {
     window.scroll({
-      top: 2498,
+      top: 2423,
       behavior: "smooth",
     });
   };
 
   const scrollToEducation = () => {
     window.scroll({
-      top: 2560,
+      top: 2510,
       behavior: "smooth",
     });
   };
 
   const scrollToCertificate = () => {
     window.scroll({
-      top: 2626,
+      top: 2550,
       behavior: "smooth",
     });
   };
@@ -463,7 +463,7 @@ function Index() {
             scrollToProjects();
           }}
         >
-          {position >= 1323 && position <= 2149.9 ? <BsInboxesFill /> : <BsInboxes />}
+          {position >= 1323 && position <= 2074.9 ? <BsInboxesFill /> : <BsInboxes />}
           <span className='el'>Project</span>
         </MenuList>
 
@@ -473,7 +473,7 @@ function Index() {
             scrollToExperience();
           }}
         >
-          {position >= 2150 && position <= 2492.9 ? <FaLightbulb /> : <FaRegLightbulb />}
+          {position >= 2075 && position <= 2417.9 ? <FaLightbulb /> : <FaRegLightbulb />}
           <span className='el'>Experience</span>
         </MenuList>
 
@@ -483,7 +483,7 @@ function Index() {
             scrollToStudy();
           }}
         >
-          {position >= 2498 && position <= 2554.9 ? <BsPencilFill /> : <BsPencil />}
+          {position >= 2420 && position <= 2504.9 ? <BsPencilFill /> : <BsPencil />}
           <span className='el'>Study</span>
         </MenuList>
 
@@ -493,7 +493,7 @@ function Index() {
             scrollToEducation();
           }}
         >
-          {position >= 2555 && position <= 2620.9 ? <IoSchool /> : <IoSchoolOutline />}
+          {position >= 2505 && position <= 2544.9 ? <IoSchool /> : <IoSchoolOutline />}
           <span className='el'>Education</span>
         </MenuList>
 
@@ -503,7 +503,7 @@ function Index() {
             scrollToCertificate();
           }}
         >
-          {position >= 2621 ? <MdFactCheck /> : <MdOutlineFactCheck />}
+          {position >= 2545 ? <MdFactCheck /> : <MdOutlineFactCheck />}
           <span className='el'>Certificate</span>
         </MenuList>
       </MenuWrapper>

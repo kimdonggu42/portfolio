@@ -61,7 +61,7 @@ const KeywordArea = styled.div`
   /* border: 1px solid blue; */
 
   > .mainSentence {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     font-weight: 600;
 
     > .highlight {
@@ -73,7 +73,7 @@ const KeywordArea = styled.div`
     }
 
     @media screen and (max-width: 650px) {
-      font-size: 1.3rem;
+      font-size: 1.4rem;
     }
   }
 
@@ -131,7 +131,7 @@ function Introduce() {
             있도록 고민합니다.
           </div>
           <div className='subSentence'>
-            담당한 부분만 해결하고 끝이 아닌,
+            담당한 부분만 해결하고 끝이 아닌,&nbsp;
             <span className='highlight'>함께 고민하며 같이 성장</span>할 수 있도록 노력합니다.
           </div>
         </KeywordArea>

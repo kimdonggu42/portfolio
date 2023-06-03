@@ -81,7 +81,7 @@ export const HiddenListTitle = styled.div`
     margin-bottom: 0.5rem;
 
     @media screen and (max-width: 450px) {
-      font-size: 0.9rem;
+      font-size: 1rem;
     }
   }
 

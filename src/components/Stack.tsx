@@ -53,10 +53,6 @@ const LanguageArea = styled.div`
     font-size: 1.4rem;
     font-weight: 500;
     margin-bottom: 1.2rem;
-
-    @media screen and (max-width: 650px) {
-      font-size: 1.3rem;
-    }
   }
 `;
 
@@ -70,7 +66,6 @@ const LanguageList = styled.div`
     flex-direction: column;
     align-items: flex-start;
     row-gap: 1rem;
-    font-size: 1.1rem;
   }
 `;
 
