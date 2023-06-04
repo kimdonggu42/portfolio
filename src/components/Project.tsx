@@ -480,8 +480,8 @@ function Project() {
               </SlideTag>
               <SlideComment>
                 <p className='mainText'>
-                  saveme는 별도의 검색 없이 바로 내 주변의 공공 화장실을 찾아주는 웹
-                  애플리케이션입니다.
+                  saveme는 Naver Maps API를 이용하여 제작한 별도의 검색 없이 바로 내 주변의 공공
+                  화장실을 찾아주는 웹 애플리케이션입니다.
                 </p>
                 <div className='detail-project' onClick={openSavemeModalHandler}>
                   <RxMagnifyingGlass className='detail-icon' size={18} />
