@@ -185,8 +185,8 @@ function DetailTodo({ closeProjectModalHandler }: any) {
           <div className='underbar'></div>
           <ServiceIntroduceText>
             <div>
-              - 첫 리엑트 프로젝트로 Todo List를 만들어보며 기본적인 CRUD 구현 방법에 대해 학습해 볼
-              수 있었습니다.
+              - 첫 개인 프로젝트로 todo app을 만들어보며 기본적인 CRUD 및 서버와의 통신에 대해
+              학습한 내용을 적용해 보고 실제 동작하는 앱을 만들어 볼 수 있었습니다.
             </div>
             <div>
               - Context API를 사용하여 다크모드 상태를 관리해 보며 전역적으로 관리되어야 할 상태는

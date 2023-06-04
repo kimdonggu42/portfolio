@@ -141,7 +141,6 @@ function DetailMariple({ closeProjectModalHandler }: any) {
             <MdClose size={35} />
           </button>
         </CloseBtnArea>
-
         <ServiceIntroduceArea>
           <div className='title'>🎤 주요 기능</div>
           <div className='underbar'></div>
@@ -234,8 +233,10 @@ function DetailMariple({ closeProjectModalHandler }: any) {
               시에 어떻게 유지되어야 자연스러울지 user-flow에 대해 고민해볼 수 있었습니다.
             </div>
             <div>
-              - react-slick 라이브러리를 사용해 캐러셀을 구현해 보며 화면에서 각 컴포넌트들이 어떻게
-              조화롭게 보일지 고민해 볼 수 있었습니다.
+              - 프로젝트 전체적으로 사용되는 컬러, 폰트 크기/굵기, 테마 등 공통 스타일들을 하나의
+              파일에서 관리하고, props를 통해 각 컴포넌트에 적용을 시켜주었습니다. 이를 통해 공통
+              스타일 파일에서 수정 시 모든 컴포넌트에 일괄 반영되도록 했으며, 유지 보수성을 높일 수
+              있었습니다.
             </div>
             <div>
               - AWS S3를 이용해 클라이언트를 배포하고 Route53으로 도메인 구매 및 호스팅 영역 생성,

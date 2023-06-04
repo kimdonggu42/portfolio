@@ -53,7 +53,9 @@ function Activity() {
               <div className='main'>알고리즘 스터디</div>
               <div className='date'>2022.11 ~ 진행중</div>
             </Experience.HiddenListTitle>
-            <div className='subText'>- 4인 스터디, 각자의 풀이 방법 발표 및 피드백</div>
+            <div className='subText'>
+              - 매주 5개의 알고리즘 문제를 풀고 각자의 풀이 방법 공유 및 피드백
+            </div>
             <div className='subText'>- 기본적인 정렬 알고리즘에 대한 이해</div>
             <div className='subText'>
               - 모든 값을 살펴봐야 하는 검색 알고리즘 구현 시 O(log n)의 시간 복잡도를 가지는 이진
