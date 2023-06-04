@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-const StudyContainer = styled.div`
+const ActivityContainer = styled.div`
   padding: 3rem;
   border-radius: 1.3rem;
   border: none;
@@ -17,20 +17,20 @@ const StudyContainer = styled.div`
   }
 `;
 
-const StudyTitle = styled.div`
+const ActivityTitle = styled.div`
   font-size: 1.7rem;
   font-weight: 600;
 `;
 
 const UnderBar = styled.div`
-  width: 4.7rem;
+  width: 5.9rem;
   height: 0.3rem;
   margin: 0.5rem 0 3rem 0;
   border-radius: 50px;
   background-color: ${(props) => props.theme.color.mainColor};
 `;
 
-function Study() {
+function Activity() {
   useEffect(() => {
     AOS.init({
       duration: 900,
@@ -38,8 +38,8 @@ function Study() {
   });
 
   return (
-    <StudyContainer data-aos='fade-up'>
-      <StudyTitle>Study</StudyTitle>
+    <ActivityContainer data-aos='fade-up'>
+      <ActivityTitle>Activity</ActivityTitle>
       <UnderBar></UnderBar>
       <Experience.ExperieceArea>
         <Experience.ExperienceList>
@@ -62,8 +62,8 @@ function Study() {
           </Experience.ListText>
         </Experience.ExperienceList>
       </Experience.ExperieceArea>
-    </StudyContainer>
+    </ActivityContainer>
   );
 }
 
-export default Study;
+export default Activity;

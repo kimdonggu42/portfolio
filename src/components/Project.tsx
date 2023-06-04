@@ -22,6 +22,7 @@ import { GrFormPrevious, GrFormNext } from "react-icons/gr";
 import { RiGithubFill } from "react-icons/ri";
 import { BiLink } from "react-icons/bi";
 import { RxMagnifyingGlass } from "react-icons/rx";
+import { SiVelog } from "react-icons/si";
 
 const ProjectContainer = styled.div`
   padding: 3rem;
@@ -189,6 +190,10 @@ const SlideTitle = styled.div`
     margin-top: 0.1rem;
     cursor: pointer;
     /* border: 1px solid red; */
+
+    > .velog-icon {
+      border-radius: 5rem;
+    }
 
     > .link-icon-back {
       display: flex;
@@ -433,6 +438,12 @@ function Project() {
                 <Link to='https://github.com/kimdonggu42/Mariple' target='_blank'>
                   <RiGithubFill className='homepageIcon' size={28} />
                 </Link>
+                <Link
+                  to='https://velog.io/@donggoo/series/Team-Project-%EB%82%98%EB%A7%8C%EC%9D%98-%EC%9E%91%EC%9D%80-%EC%9D%8C%EC%95%85-%EB%8B%A4%EC%9D%B4%EC%96%B4%EB%A6%AC'
+                  target='_blank'
+                >
+                  <SiVelog className='velog-icon' size={24} />
+                </Link>
               </SlideTitle>
               <SlideTag>
                 <li>팀 프로젝트 BE 2, FE 1</li>
@@ -469,6 +480,9 @@ function Project() {
                 <Link to='https://github.com/kimdonggu42/saveme' target='_blank'>
                   <RiGithubFill className='homepageIcon' size={28} />
                 </Link>
+                <Link to='https://velog.io/@donggoo/series/Solo-Project-saveme' target='_blank'>
+                  <SiVelog className='velog-icon' size={24} />
+                </Link>
               </SlideTitle>
               <SlideTag>
                 <li>개인 프로젝트</li>
@@ -499,6 +513,12 @@ function Project() {
                 Todo!t
                 <Link to='https://github.com/kimdonggu42/sp-todolist-client-react' target='_blank'>
                   <RiGithubFill className='homepageIcon' size={28} />
+                </Link>
+                <Link
+                  to='https://velog.io/@donggoo/series/Solo-Project-%EB%A6%AC%EC%95%A1%ED%8A%B8%EB%A1%9C-%EB%82%98%EB%A7%8C%EC%9D%98-%ED%88%AC%EB%91%90%EB%A6%AC%EC%8A%A4%ED%8A%B8-%EB%A7%8C%EB%93%A4%EA%B8%B0'
+                  target='_blank'
+                >
+                  <SiVelog className='velog-icon' size={24} />
                 </Link>
               </SlideTitle>
               <SlideTag>

@@ -4,7 +4,7 @@ import Introduce from "../components/Introduce";
 import Stack from "../components/Stack";
 import Project from "../components/Project";
 import Experience from "../components/Experience";
-import Study from "../components/Study";
+import Activity from "../components/Activity";
 import Education from "../components/Education";
 import Certificate from "../components/Certificate";
 
@@ -39,7 +39,7 @@ function Main() {
         <Stack />
         <Project />
         <Experience />
-        <Study />
+        <Activity />
         <Education />
         <Certificate />
       </InfoWrapper>

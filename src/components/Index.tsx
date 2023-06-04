@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import emoji from "../assets/images/emoji.png";
 
 import { FaUser, FaRegUser, FaLightbulb, FaRegLightbulb } from "react-icons/fa";
-import { BsInboxesFill, BsInboxes, BsPencilFill, BsPencil } from "react-icons/bs";
+import { BsInboxesFill, BsInboxes } from "react-icons/bs";
 import {
   IoSettings,
   IoSettingsOutline,
@@ -16,6 +16,7 @@ import {
 import { MdFactCheck, MdOutlineFactCheck } from "react-icons/md";
 import { SiGithub, SiVelog, SiGmail } from "react-icons/si";
 import { BiCopyright } from "react-icons/bi";
+import { RiFireFill, RiFireLine } from "react-icons/ri";
 
 const IndexContainer = styled.nav`
   width: 17rem;
@@ -483,8 +484,8 @@ function Index() {
             scrollToStudy();
           }}
         >
-          {position >= 2420 && position <= 2504.9 ? <BsPencilFill /> : <BsPencil />}
-          <span className='el'>Study</span>
+          {position >= 2420 && position <= 2504.9 ? <RiFireFill /> : <RiFireLine />}
+          <span className='el'>Activity</span>
         </MenuList>
 
         <MenuList
