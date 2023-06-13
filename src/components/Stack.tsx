@@ -126,7 +126,7 @@ function Stack() {
             <div className='starCount'>
               <BsStarFill className='starIcon' />
               <BsStarFill className='starIcon' />
-              <BsStarHalf className='starIcon' />
+              <BsStar className='starIcon' />
               <BsStar className='starIcon' />
               <BsStar className='starIcon' />
             </div>
@@ -160,7 +160,7 @@ function Stack() {
             <div className='starCount'>
               <BsStarFill className='starIcon' />
               <BsStarFill className='starIcon' />
-              <BsStar className='starIcon' />
+              <BsStarHalf className='starIcon' />
               <BsStar className='starIcon' />
               <BsStar className='starIcon' />
             </div>
@@ -171,7 +171,7 @@ function Stack() {
             <div className='starCount'>
               <BsStarFill className='starIcon' />
               <BsStarFill className='starIcon' />
-              <BsStar className='starIcon' />
+              <BsStarHalf className='starIcon' />
               <BsStar className='starIcon' />
               <BsStar className='starIcon' />
             </div>
