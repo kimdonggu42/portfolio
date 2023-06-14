@@ -2,7 +2,7 @@ import styled from "styled-components";
 import profile from "../assets/images/profile.png";
 import TypeIt from "typeit-react";
 
-const IntroduceContainer = styled.div`
+const IntroduceContainer = styled.section`
   min-height: 36rem;
   padding: 3rem;
   border-radius: 1.3rem;

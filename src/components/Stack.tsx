@@ -15,7 +15,7 @@ import FigmaLogo from "../assets/images/FigmaLogo.png";
 
 import { BsStarFill, BsStarHalf, BsStar } from "react-icons/bs";
 
-const StackContainer = styled.div`
+const StackContainer = styled.section`
   padding: 3rem;
   border-radius: 1.3rem;
   border: none;
@@ -133,7 +133,6 @@ function Stack() {
           </StackSetting>
         </LanguageList>
       </LanguageArea>
-
       <LanguageArea>
         <div className='stackTitle'>Library & Framework</div>
         <LanguageList>
@@ -150,7 +149,6 @@ function Stack() {
           </StackSetting>
         </LanguageList>
       </LanguageArea>
-
       <LanguageArea>
         <div className='stackTitle'>State Management</div>
         <LanguageList>
@@ -160,7 +158,7 @@ function Stack() {
             <div className='starCount'>
               <BsStarFill className='starIcon' />
               <BsStarFill className='starIcon' />
-              <BsStarHalf className='starIcon' />
+              <BsStar className='starIcon' />
               <BsStar className='starIcon' />
               <BsStar className='starIcon' />
             </div>
@@ -171,14 +169,13 @@ function Stack() {
             <div className='starCount'>
               <BsStarFill className='starIcon' />
               <BsStarFill className='starIcon' />
-              <BsStarHalf className='starIcon' />
+              <BsStar className='starIcon' />
               <BsStar className='starIcon' />
               <BsStar className='starIcon' />
             </div>
           </StackSetting>
         </LanguageList>
       </LanguageArea>
-
       <LanguageArea>
         <div className='stackTitle'>Styling</div>
         <LanguageList>
@@ -188,14 +185,13 @@ function Stack() {
             <div className='starCount'>
               <BsStarFill className='starIcon' />
               <BsStarFill className='starIcon' />
-              <BsStarFill className='starIcon' />
+              <BsStarHalf className='starIcon' />
               <BsStar className='starIcon' />
               <BsStar className='starIcon' />
             </div>
           </StackSetting>
         </LanguageList>
       </LanguageArea>
-
       <LanguageArea>
         <div className='stackTitle'>Cooperation Tool</div>
         <LanguageList>

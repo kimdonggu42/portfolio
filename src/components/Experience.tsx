@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-const ExperienceContainer = styled.div`
+const ExperienceContainer = styled.section`
   padding: 3rem;
   border-radius: 1.3rem;
   border: none;

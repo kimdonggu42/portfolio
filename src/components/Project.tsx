@@ -421,7 +421,7 @@ function Project() {
   });
 
   return (
-    <>
+    <section>
       <ProjectContainer data-aos='fade-up'>
         <ProjectTitle>Projects</ProjectTitle>
         <UnderBar></UnderBar>
@@ -569,7 +569,7 @@ function Project() {
       {isTodoitModalOpen ? (
         <DetailTodoit closeProjectModalHandler={closeTodoitModalHandler} />
       ) : null}
-    </>
+    </section>
   );
 }
 

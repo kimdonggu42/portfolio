@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-const EducationContainer = styled.div`
+const EducationContainer = styled.section`
   padding: 3rem;
   border-radius: 1.3rem;
   border: none;
