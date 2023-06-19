@@ -147,14 +147,14 @@ function DetailTodo({ closeProjectModalHandler }: any) {
           <div className='underbar'></div>
           <ServiceIntroduceText>
             <div>
-              - 사용자는 할 일을 등록, 수정, 삭제할 수 있으며, 완료한 일은 체크하여 완료 표시할 수
-              있습니다.
+              - 로그인 한 사용자는 할 일을 등록, 수정, 삭제할 수 있으며, 완료한 일은 체크하여 완료
+              표시할 수 있습니다.
             </div>
-            <div>- 등록한 할 일은 전체, 완료, 미완료한 할 일 3가지로 구분하여 볼 수 있습니다</div>
             <div>
-              - 등록한 할 일은 오늘을 기준으로 지나간 일, 오늘 할 일, 내일 해야 될 일 3가지로
-              구분하여 볼 수 있습니다.
+              - 등록 시 선택한 완료 기한 일에 따라 오늘을 기준으로 지나간 할 일, 오늘 할 일, 해야 할
+              일로 구분하여 볼 수 있습니다.
             </div>
+            <div>- 중요 표시한 할 일은 화면 우측에 별도로 노출되어 강조시켜 줍니다.</div>
           </ServiceIntroduceText>
         </ServiceIntroduceArea>
         <DevelopArea>
@@ -162,21 +162,38 @@ function DetailTodo({ closeProjectModalHandler }: any) {
           <div className='underbar'></div>
           <DevelopText>
             <div className='maintext'>todo CRUD</div>
-            <div className='lasttext'>
-              - 할 일 등록, 불러오기, 수정, 삭제가 가능하도록 구현했습니다.
+            <div>
+              - Firestore를 활용하여 사용자가 할 일을 등록, 수정, 삭제 할 수 있도록 구현했습니다.
             </div>
-            <div className='maintext'>완료한 todo 상태관리</div>
+            <div>
+              - 로그인 시 받은 유저 id를 할 일 등록 시 해당 문서(document)에 추가하고,
+              문서(document)의 유저 id와 현재 로그인 되어 있는 사용자의 유저 id를 비교하여 본인이
+              등록한 데이터만 보이도록 했습니다.
+            </div>
             <div className='lasttext'>
-              - 완료한 일을 체크할 경우 체크 상태를 로컬 스토리지에 저장하여 유지되도록 했습니다.
+              - get() 대신 onSnapshot() 메서드를 활용하여 데이터가 변경될 때마다 문서(document)
+              스냅샷을 업데이트하여 실시간으로 DB를 불러오도록 했습니다.
+            </div>
+            <div className='maintext'>회원가입 & 로그인</div>
+            <div className='lasttext'>
+              - Firebase의 Authentication을 활용하여 이메일을 이용한 회원가입, 로그인을
+              구현했습니다.
+            </div>
+            <div className='maintext'>페이지 라우팅</div>
+            <div className='lasttext'>
+              - 로그인하지 않았을 경우와 잘못된 경로로 접속 시도 시 로그인 페이지로 리다이렉트
+              되도록 했으며, 로그인 되어 있을 경우 회원가입 페이지 또는 로그인 페이지 접속 시도 시
+              루트 페이지(todo 페이지)로 리다이렉트 되도록 라우터 가드를 적용했습니다.
             </div>
             <div className='maintext'>반응형 웹</div>
             <div className='lasttext'>
-              - 반응형 스타일을 적용하여 다양한 사이즈의 기기에 대응할 수 있도록 했습니다.
+              - 모바일, 태블릿, PC 등 다양한 화면 사이즈에 대응할 수 있도록 반응형 웹으로
+              개발했습니다.
             </div>
-            <div className='maintext'>다크모드</div>
+            <div className='maintext'>서버 통신 로직 분리</div>
             <div className='lasttext'>
-              - Context API를 이용하여 light, dark 테마를 전역 상태로 관리하여 props drilling 문제를
-              방지했습니다.
+              - todo CRUD, 회원가입, 로그인/로그아웃과 같이 서버와 통신하는 로직을 Custom Hook으로
+              만들어 UI 컴포넌트로부터 분리 및 반복되는 로직을 최소화했습니다.
             </div>
           </DevelopText>
         </DevelopArea>
@@ -185,12 +202,14 @@ function DetailTodo({ closeProjectModalHandler }: any) {
           <div className='underbar'></div>
           <ServiceIntroduceText>
             <div>
-              - 첫 개인 프로젝트로 todo app을 만들어보며 기본적인 CRUD 및 서버와의 통신에 대해
-              학습한 내용을 적용해 보고 실제 동작하는 앱을 만들어 볼 수 있었습니다.
+              - 기존에 JSON 서버로 개발했던 프로젝트를 Firebase의 Authentication와 Firestore를
+              이용한 리펙토링을 진행하면서 별도의 서버 개발 시간을 줄여 프론트엔드에 더 집중할 수
+              있도록 돕는 유용한 서비스라는 생각이 들었습니다.
             </div>
             <div>
-              - Context API를 사용하여 다크모드 상태를 관리해 보며 전역적으로 관리되어야 할 상태는
-              무엇인지에 대해 생각해 볼 수 있었습니다.
+              - 그동안 사용자가 잘못된 페이지로 접속 시도 시 올바른 경로로 리다이렉트 시켜주는
+              부분을 미처 생각하지 못하고 있었는데 로그인 여부에 따른 루트 페이지 리다이렉트를
+              설정하며 라우트 가드의 중요성을 느끼게 되었습니다.
             </div>
           </ServiceIntroduceText>
         </GrowingArea>

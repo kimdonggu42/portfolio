@@ -175,9 +175,10 @@ function DetailMariple({ closeProjectModalHandler }: any) {
               상황별 알림이 뜨도록 했습니다.
             </div>
             <div>
-              - react lazy를 통해 컴포넌트를 동적으로 import하여 초기 렌더링 지연시간을 감소시키고,
-              suspense를 통해 렌더링 완료 전까지 로딩 화면을 사용자에게 보여줌으로써 시각적인
-              피드백을 줄 수 있도록 했습니다.
+              - react lazy를 통해 컴포넌트를 동적으로 import하여 초기 렌더링 지연시간을 기존
+              643ms에서 544ms로 감소시켰고, Lighthouse Performance 점수도 76점에서 85점으로 향상
+              시켰습니다. 그리고 suspense를 통해 렌더링 완료 전까지 로딩 화면을 사용자에게
+              보여줌으로써 시각적인 피드백을 줄 수 있도록 했습니다.
             </div>
             <div className='lasttext'>
               - 반응형 스타일을 적용하여 다양한 사이즈의 기기에 대응할 수 있도록 했습니다.

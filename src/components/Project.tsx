@@ -12,7 +12,7 @@ import "aos/dist/aos.css";
 
 import saveme from "../assets/images/saveme.png";
 import mariple from "../assets/images/mariple.png";
-import Todoit from "../assets/images/Todoit.png";
+import todoit from "../assets/images/todoit.png";
 
 import mariplePage from "../assets/images/mariple-page.png";
 import savemePage from "../assets/images/saveme-page.png";
@@ -394,7 +394,7 @@ function Project() {
     );
   };
 
-  const slidePageArr = [mariplePage, savemePage, todoitPage];
+  const slidePageArr = [mariplePage, todoitPage, savemePage];
 
   const settings = {
     customPaging: (i: number) => {
@@ -455,7 +455,6 @@ function Project() {
                 <li className='react'>React</li>
                 <li className='redux'>Redux Toolkit</li>
                 <li className='styledComponents'>Styled Components</li>
-                <li className='aws'>AWS</li>
               </SlideTag>
               <SlideComment>
                 <div>
@@ -474,6 +473,54 @@ function Project() {
               </SlideComment>
             </SlideTextArea>
           </SlideArea>
+
+          <SlideArea>
+            <SlideImg>
+              <img src={todoit} alt='todoit' />
+            </SlideImg>
+            <SlideTextArea>
+              <SlideTitle>
+                Todo!t
+                <Link to='https://todoit-35f1e.web.app/' target='_blank'>
+                  <div className='link-icon-back'>
+                    <BiLink className='homepageIcon' size={17} />
+                  </div>
+                </Link>
+                <Link to='https://github.com/kimdonggu42/Todoit' target='_blank'>
+                  <RiGithubFill className='homepageIcon' size={28} />
+                </Link>
+                <Link
+                  to='https://velog.io/@donggoo/Todot-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EB%A6%AC%ED%8C%A9%ED%86%A0%EB%A7%81-%ED%9A%8C%EA%B3%A0'
+                  target='_blank'
+                >
+                  <SiVelog className='velog-icon' size={24} />
+                </Link>
+              </SlideTitle>
+              <SlideTag>
+                <li>개인 프로젝트</li>
+                <li>2023.05 ~ 2023.06</li>
+                <li className='typeScript'>TypeScript</li>
+                <li className='react'>React</li>
+                <li className='recoil'>Context API</li>
+                <li className='styledComponents'>Styled Components</li>
+                <li className='firebase'>Firebase</li>
+              </SlideTag>
+              <SlideComment>
+                <div>
+                  <span className='mainText'>
+                    Todo!t은 할 일을 등록하고 관리할 수 있는 웹 애플리케이션
+                  </span>
+                  입니다. Firebase를 이용해 개발하였으며, Firebase의 Authentication을 활용하여 유저
+                  정보를, 그리고 Firestore를 활용하여 todo 데이터를 관리하였습니다.
+                </div>
+                <div className='detail-project' onClick={openTodoitModalHandler}>
+                  <RxMagnifyingGlass className='detail-icon' size={18} />
+                  <div className='detail-text'>자세히 보기</div>
+                </div>
+              </SlideComment>
+            </SlideTextArea>
+          </SlideArea>
+
           <SlideArea>
             <SlideImg>
               <img src={saveme} alt='saveme' />
@@ -500,7 +547,6 @@ function Project() {
                 <li className='react'>React</li>
                 <li className='recoil'>Recoil</li>
                 <li className='styledComponents'>Styled Components</li>
-                <li className='firebase'>Firebase</li>
               </SlideTag>
               <SlideComment>
                 <div>
@@ -513,45 +559,6 @@ function Project() {
                   좋을 것 같다는 생각이 들어 개발하게 되었습니다.
                 </div>
                 <div className='detail-project' onClick={openSavemeModalHandler}>
-                  <RxMagnifyingGlass className='detail-icon' size={18} />
-                  <div className='detail-text'>자세히 보기</div>
-                </div>
-              </SlideComment>
-            </SlideTextArea>
-          </SlideArea>
-          <SlideArea>
-            <SlideImg>
-              <img src={Todoit} alt='todoit' />
-            </SlideImg>
-            <SlideTextArea>
-              <SlideTitle>
-                Todo!t
-                <Link to='https://github.com/kimdonggu42/sp-todolist-client-react' target='_blank'>
-                  <RiGithubFill className='homepageIcon' size={28} />
-                </Link>
-                <Link
-                  to='https://velog.io/@donggoo/series/Solo-Project-%EB%A6%AC%EC%95%A1%ED%8A%B8%EB%A1%9C-%EB%82%98%EB%A7%8C%EC%9D%98-%ED%88%AC%EB%91%90%EB%A6%AC%EC%8A%A4%ED%8A%B8-%EB%A7%8C%EB%93%A4%EA%B8%B0'
-                  target='_blank'
-                >
-                  <SiVelog className='velog-icon' size={24} />
-                </Link>
-              </SlideTitle>
-              <SlideTag>
-                <li>개인 프로젝트</li>
-                <li>2023.01 ~ 2023.02</li>
-                <li className='javaScript'>JavaScript</li>
-                <li className='react'>React</li>
-                <li className='recoil'>Context API</li>
-                <li className='styledComponents'>Styled Components</li>
-              </SlideTag>
-              <SlideComment>
-                <div>
-                  <span className='mainText'>
-                    Todo!t은 할 일을 등록하고 관리할 수 있는 웹 애플리케이션
-                  </span>
-                  입니다.
-                </div>
-                <div className='detail-project' onClick={openTodoitModalHandler}>
                   <RxMagnifyingGlass className='detail-icon' size={18} />
                   <div className='detail-text'>자세히 보기</div>
                 </div>
