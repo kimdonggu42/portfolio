@@ -232,54 +232,6 @@ const SlideTag = styled.ul`
     border-radius: 5rem;
     border: 1px solid ${(props) => props.theme.color.mainColor};
     font-weight: 500;
-
-    &.javaScript {
-      color: white;
-      background-color: #f7df1e;
-      border: 1px solid #f7df1e;
-    }
-
-    &.typeScript {
-      color: white;
-      background-color: #3178c6;
-      border: 1px solid #3178c6;
-    }
-
-    &.react {
-      color: white;
-      background-color: #61dafb;
-      border: 1px solid #61dafb;
-    }
-
-    &.recoil {
-      color: white;
-      background-color: black;
-      border: 1px solid black;
-    }
-
-    &.styledComponents {
-      color: white;
-      background-color: #db7093;
-      border: 1px solid #db7093;
-    }
-
-    &.redux {
-      color: white;
-      background-color: #764abc;
-      border: 1px solid #764abc;
-    }
-
-    &.firebase {
-      color: white;
-      background-color: #ffca28;
-      border: 1px solid #ffca28;
-    }
-
-    &.aws {
-      color: white;
-      background-color: #569a31;
-      border: 1px solid #569a31;
-    }
   }
 `;
 
@@ -451,10 +403,10 @@ function Project() {
               <SlideTag>
                 <li>팀 프로젝트 BE 2, FE 1</li>
                 <li>2023.04 ~ 2023.05</li>
-                <li className='typeScript'>TypeScript</li>
-                <li className='react'>React</li>
-                <li className='redux'>Redux Toolkit</li>
-                <li className='styledComponents'>Styled Components</li>
+                <li>TypeScript</li>
+                <li>React</li>
+                <li>Redux Toolkit</li>
+                <li>Styled Components</li>
               </SlideTag>
               <SlideComment>
                 <div>
@@ -499,11 +451,11 @@ function Project() {
               <SlideTag>
                 <li>개인 프로젝트</li>
                 <li>2023.05 ~ 2023.06</li>
-                <li className='typeScript'>TypeScript</li>
-                <li className='react'>React</li>
-                <li className='recoil'>Context API</li>
-                <li className='styledComponents'>Styled Components</li>
-                <li className='firebase'>Firebase</li>
+                <li>TypeScript</li>
+                <li>React</li>
+                <li>Context API</li>
+                <li>Styled Components</li>
+                <li>Firebase</li>
               </SlideTag>
               <SlideComment>
                 <div>
@@ -543,10 +495,10 @@ function Project() {
               <SlideTag>
                 <li>개인 프로젝트</li>
                 <li>2023.05</li>
-                <li className='typeScript'>TypeScript</li>
-                <li className='react'>React</li>
-                <li className='recoil'>Recoil</li>
-                <li className='styledComponents'>Styled Components</li>
+                <li>TypeScript</li>
+                <li>React</li>
+                <li>Recoil</li>
+                <li>Styled Components</li>
               </SlideTag>
               <SlideComment>
                 <div>
