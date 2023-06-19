@@ -24,7 +24,7 @@ const ModalView = styled.div`
   height: 90vh;
   max-width: 55rem;
   max-height: 100rem;
-  padding: 1rem 3rem 5rem 3rem;
+  padding: 0 3rem 4rem 3rem;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.19), 0 10px 10px rgba(0, 0, 0, 0.1);
   overflow: overlay;
 
@@ -45,7 +45,10 @@ const ModalView = styled.div`
 const CloseBtnArea = styled.div`
   display: flex;
   justify-content: right;
-  margin-bottom: 1rem;
+  position: sticky;
+  top: 0;
+  padding-top: 1rem;
+  background-color: white;
 
   > .close-btn {
     display: flex;
