@@ -432,7 +432,7 @@ function Project() {
             </SlideImg>
             <SlideTextArea>
               <SlideTitle>
-                Todo!t
+                Todoit
                 <Link to='https://todoit-35f1e.web.app/' target='_blank'>
                   <div className='link-icon-back'>
                     <BiLink className='homepageIcon' size={17} />
@@ -460,7 +460,7 @@ function Project() {
               <SlideComment>
                 <div>
                   <span className='mainText'>
-                    Todo!t은 할 일을 등록하고 관리할 수 있는 웹 애플리케이션
+                    Todoit은 할 일을 등록하고 관리할 수 있는 웹 애플리케이션
                   </span>
                   입니다. Firebase를 이용해 개발하였으며, Firebase의 Authentication을 활용하여 유저
                   정보를, 그리고 Firestore를 활용하여 todo 데이터를 관리하였습니다.

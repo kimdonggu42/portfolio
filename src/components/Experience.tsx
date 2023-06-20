@@ -136,12 +136,11 @@ function Experience() {
               <div className='main'>코드스테이츠</div>
               <div className='date'>2022.10 ~ 2023.04</div>
             </HiddenListTitle>
-            <div className='subText'>- HTML, CSS, JavaScript, React 학습</div>
+            <div className='subText'>- HTML, CSS, JavaScript, React 외 다수 학습</div>
             <div className='subText'>
               - 다수의 페어프로그래밍과 팀 프로젝트를 통해 버전 관리 및 개발 프로세스, 커뮤니케이션
               역량 강화
             </div>
-            <div className='subText'>- 다양한 알고리즘 및 CS 지식학습</div>
           </ListText>
         </ExperienceList>
       </ExperieceArea>

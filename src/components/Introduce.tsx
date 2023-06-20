@@ -123,16 +123,16 @@ function Introduce() {
             좋아합니다.
           </div>
           <div className='subSentence'>
-            <span className='highlight'>협업 능력과 커뮤니케이션 능력</span>은 개발 능력 못지않게
-            중요하다고 생각합니다.
+            담당한 부분만 해결하고 끝이 아닌,&nbsp;
+            <span className='highlight'>함께 고민하며 같이 성장</span>할 수 있도록 노력합니다.
           </div>
           <div className='subSentence'>
             항상 사용자 경험을 생각하며 <span className='highlight'>더 나은 경험</span>을 제공할 수
             있도록 고민합니다.
           </div>
           <div className='subSentence'>
-            담당한 부분만 해결하고 끝이 아닌,&nbsp;
-            <span className='highlight'>함께 고민하며 같이 성장</span>할 수 있도록 노력합니다.
+            <span className='highlight'>협업 능력과 커뮤니케이션 능력</span>은 개발 능력 못지않게
+            중요하다고 생각합니다.
           </div>
         </KeywordArea>
       </IntroduceWrapper>

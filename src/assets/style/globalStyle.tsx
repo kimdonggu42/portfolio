@@ -11,6 +11,10 @@ const GlobalStyle = createGlobalStyle`
     font-size : 62.5%;
     background-color: #f5f6ff;
   }
+
+  button {
+    cursor: pointer;
+  }
 `;
 
 export default GlobalStyle;
