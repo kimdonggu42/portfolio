@@ -86,19 +86,28 @@ export const SectionTitleBottomLine = styled.div`
 export const SectionContentArea = styled.div`
   display: flex;
   flex-direction: column;
-  row-gap: 0.5rem;
+  row-gap: 1rem;
   line-height: 1.5;
   /* border: 1px solid red; */
 `;
 
-export const SectionContentTitle = styled.div`
-  font-size: 1.1rem;
-  font-weight: 600;
+export const SectionContentSubArea = styled.div`
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5rem;
+  /* border: 1px solid lime; */
 `;
 
-export const SectionContentDetail = styled.div`
+export const SectionContentSubTitle = styled.div`
+  font-size: 1.1rem;
+  font-weight: 600;
+  /* border: 1px solid blue; */
+`;
+
+export const SectionContentSubDetail = styled.div`
   display: flex;
   column-gap: 0.5rem;
+  /* border: 1px solid skyblue; */
 
   > .dot {
     min-width: 1rem;
