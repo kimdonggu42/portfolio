@@ -1,7 +1,7 @@
-import GlobalStyle from "./assets/style/globalStyle";
+import GlobalStyle from "./assets/styles/GlobalStyle";
 import Main from "./pages/Main";
 import { ThemeProvider } from "styled-components";
-import { lightMode } from "./assets/style/commonStyle";
+import { lightMode } from "./assets/styles/commonStyle";
 
 function App() {
   return (

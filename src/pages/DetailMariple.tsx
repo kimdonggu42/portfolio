@@ -1,182 +1,76 @@
-import styled from "styled-components";
+import * as Styled from "../assets/styles/DetailModalStyle";
 
 import { MdClose } from "react-icons/md";
 import { RxDotFilled } from "react-icons/rx";
 
-const DetailModalBack = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  z-index: 999;
-  background-color: rgba(0, 0, 0, 0.4);
-`;
-
-const DetailModalView = styled.div`
-  font-size: 1rem;
-  font-weight: 500;
-  word-break: keep-all;
-  width: 90vw;
-  height: 90vh;
-  max-width: 55rem;
-  max-height: 100rem;
-  padding: 0 3rem 2rem 3rem;
-  border-radius: 1.3rem;
-  background-color: white;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.19), 0 10px 10px rgba(0, 0, 0, 0.1);
-  overflow: overlay;
-
-  &::-webkit-scrollbar {
-    width: 0.5rem;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background-color: hsla(0, 0%, 42%, 0.49);
-    border-radius: 5rem;
-  }
-
-  @media screen and (max-width: 450px) {
-    padding: 0 2rem 2rem 2rem;
-  }
-`;
-
-const CloseBtnArea = styled.div`
-  display: flex;
-  justify-content: right;
-  position: sticky;
-  top: 0;
-  padding-top: 1rem;
-  background-color: white;
-  /* border: 1px solid red; */
-`;
-
-const CloseBtn = styled.button`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 2.5rem;
-  height: 2.5rem;
-  border: none;
-  background-color: transparent;
-
-  &:hover {
-    opacity: 0.7;
-  }
-`;
-
-const SectionArea = styled.div`
-  margin-bottom: 2rem;
-  border: 1px solid blue;
-`;
-
-const SectionTitle = styled.div`
-  font-size: 1.4rem;
-  font-weight: 700;
-`;
-
-const SectionTitleBottomLine = styled.div`
-  width: 7rem;
-  height: 0.3rem;
-  margin: 0.5rem 0 1rem 0;
-  border-radius: 5rem;
-  background-color: ${(props) => props.theme.color.mainColor};
-`;
-
-const SectionContentArea = styled.div`
-  display: flex;
-  flex-direction: column;
-  row-gap: 0.5rem;
-  line-height: 1.5;
-  border: 1px solid red;
-`;
-
-const SectionContentTitle = styled.div`
-  font-size: 1.1rem;
-  font-weight: 600;
-`;
-
-const SectionContentDetail = styled.div`
-  display: flex;
-  column-gap: 0.5rem;
-
-  > .dot {
-    min-width: 1rem;
-    max-width: 1rem;
-  }
-`;
-
 function DetailMariple({ closeProjectModalHandler }: any) {
   return (
-    <DetailModalBack>
-      <DetailModalView>
-        <CloseBtnArea>
-          <CloseBtn onClick={closeProjectModalHandler}>
+    <Styled.DetailModalBack>
+      <Styled.DetailModalView>
+        <Styled.CloseBtnArea>
+          <Styled.CloseBtn onClick={closeProjectModalHandler}>
             <MdClose size={35} />
-          </CloseBtn>
-        </CloseBtnArea>
+          </Styled.CloseBtn>
+        </Styled.CloseBtnArea>
 
-        <SectionArea>
-          <SectionTitle>🎤 주요 기능</SectionTitle>
-          <SectionTitleBottomLine></SectionTitleBottomLine>
-          <SectionContentArea>
-            <SectionContentDetail>
+        <Styled.SectionArea>
+          <Styled.SectionTitle>🎤 주요 기능</Styled.SectionTitle>
+          <Styled.SectionTitleBottomLine></Styled.SectionTitleBottomLine>
+          <Styled.SectionContentArea>
+            <Styled.SectionContentDetail>
               <RxDotFilled className='dot' size={25} />
               <div>
                 YouTube API를 활용하여 사용자가 YouTube 또는 YouTube Music의 url을 복사/붙여넣기
                 하여 플레이리스트를 추가할 수 있습니다.
               </div>
-            </SectionContentDetail>
-            <SectionContentDetail>
+            </Styled.SectionContentDetail>
+            <Styled.SectionContentDetail>
               <RxDotFilled className='dot' size={25} />
               <div>
                 마이페이지에서 내 정보(프로필 이미지, 닉네임, 비밀번호)를 수정할 수 있으며, 내가
                 작성한 다이어리와 댓글, 좋아요를 누른 다이어리를 확인할 수 있습니다.
               </div>
-            </SectionContentDetail>
-            <SectionContentDetail>
+            </Styled.SectionContentDetail>
+            <Styled.SectionContentDetail>
               <RxDotFilled className='dot' size={25} />
               <div>
                 내가 보고 싶은 다이어리를 편하게 찾을 수 있도록 입력한 키워드를 포함하는 다이어리를
                 검색해 주는 검색 기능을 지원합니다.
               </div>
-            </SectionContentDetail>
-          </SectionContentArea>
-        </SectionArea>
+            </Styled.SectionContentDetail>
+          </Styled.SectionContentArea>
+        </Styled.SectionArea>
 
-        <SectionArea>
-          <SectionTitle>💻 개발 내용</SectionTitle>
-          <SectionTitleBottomLine></SectionTitleBottomLine>
-          <SectionContentArea>
-            <SectionContentTitle>플레이리스트 CRUD</SectionContentTitle>
-            <SectionContentDetail>
+        <Styled.SectionArea>
+          <Styled.SectionTitle>💻 개발 내용</Styled.SectionTitle>
+          <Styled.SectionTitleBottomLine></Styled.SectionTitleBottomLine>
+          <Styled.SectionContentArea>
+            <Styled.SectionContentTitle>플레이리스트 CRUD</Styled.SectionContentTitle>
+            <Styled.SectionContentDetail>
               <RxDotFilled className='dot' size={25} />
               <div>
                 Open API(Youtube)를 사용하여 사용자가 등록하고자 하는 영상 또는 음원의 링크를
                 복사/붙여넣기 하여 추가 시 해당 url의 썸네일, 제목, 채널명(가수명)이 추가되도록
                 했습니다.
               </div>
-            </SectionContentDetail>
-            <SectionContentDetail>
+            </Styled.SectionContentDetail>
+            <Styled.SectionContentDetail>
               <RxDotFilled className='dot' size={25} />
               <div>
                 사용자가 붙여넣기 한 전체 url 중 id만 정규표현식으로 필터링하여 사용자가 id만 골라서
                 복사/붙여넣기 해야 하는 불편함을 줄였습니다.
               </div>
-            </SectionContentDetail>
-            <SectionContentTitle>UX 사용성 개선</SectionContentTitle>
-            <SectionContentDetail>
+            </Styled.SectionContentDetail>
+            <Styled.SectionContentTitle>UX 사용성 개선</Styled.SectionContentTitle>
+            <Styled.SectionContentDetail>
               <RxDotFilled className='dot' size={25} />
               <div>
                 회원가입, 로그인, 다이어리 미입력 부분, 올바른 URL인지 검증 및 중복된 플레이리스트
                 추가 방지 등의 상황에서 유효성 검사를 실시하여 사용자가 직관적으로 인지할 수 있도록
                 각 상황별 알림이 뜨도록 했습니다.
               </div>
-            </SectionContentDetail>
-            <SectionContentDetail>
+            </Styled.SectionContentDetail>
+            <Styled.SectionContentDetail>
               <RxDotFilled className='dot' size={25} />
               <div>
                 react lazy를 통해 컴포넌트를 동적으로 import하여 초기 렌더링 지연시간을 기존
@@ -184,88 +78,88 @@ function DetailMariple({ closeProjectModalHandler }: any) {
                 시켰습니다. 그리고 suspense를 통해 렌더링 완료 전까지 로딩 화면을 사용자에게
                 보여줌으로써 시각적인 피드백을 줄 수 있도록 했습니다.
               </div>
-            </SectionContentDetail>
-            <SectionContentDetail>
+            </Styled.SectionContentDetail>
+            <Styled.SectionContentDetail>
               <RxDotFilled className='dot' size={25} />
               <div>반응형 스타일을 적용하여 다양한 사이즈의 기기에 대응할 수 있도록 했습니다.</div>
-            </SectionContentDetail>
-            <SectionContentTitle>페이지네이션</SectionContentTitle>
-            <SectionContentDetail>
+            </Styled.SectionContentDetail>
+            <Styled.SectionContentTitle>페이지네이션</Styled.SectionContentTitle>
+            <Styled.SectionContentDetail>
               <RxDotFilled className='dot' size={25} />
               <div>
                 선택한 태그가 있는 다이어리만 필터링해서 보여줄 경우 페이지네이션 컴포넌트도 필터링
                 된 다이어리의 개수에 맞춰 페이지 수가 조절되도록 조건부 렌더링을 적용했습니다.
               </div>
-            </SectionContentDetail>
-            <SectionContentDetail>
+            </Styled.SectionContentDetail>
+            <Styled.SectionContentDetail>
               <RxDotFilled className='dot' size={25} />
               <div>
                 현재 보고 있는 페이지가 몇 번째 페이지인지, 어떤 태그를 골라서 보고 있는지 상태를
                 로컬스토리지에 저장해 새로고침 시에도 사용자가 보고 있던 페이지가 유지되도록
                 개선했습니다.
               </div>
-            </SectionContentDetail>
-            <SectionContentTitle>다이어리 검색 & 필터링</SectionContentTitle>
-            <SectionContentDetail>
+            </Styled.SectionContentDetail>
+            <Styled.SectionContentTitle>다이어리 검색 & 필터링</Styled.SectionContentTitle>
+            <Styled.SectionContentDetail>
               <RxDotFilled className='dot' size={25} />
               <div>
                 사용자가 입력한 키워드가 다이어리 제목 또는 본문에 포함되는지를 확인하여 포함되어
                 있는 다이어리만 보여주도록 검색 기능을 추가했습니다.
               </div>
-            </SectionContentDetail>
-            <SectionContentDetail>
+            </Styled.SectionContentDetail>
+            <Styled.SectionContentDetail>
               <RxDotFilled className='dot' size={25} />
               <div>선택한 태그가 포함되어 있는 다이어리만 필터링해서 볼 수 있도록 했습니다.</div>
-            </SectionContentDetail>
-            <SectionContentTitle>다크모드</SectionContentTitle>
-            <SectionContentDetail>
+            </Styled.SectionContentDetail>
+            <Styled.SectionContentTitle>다크모드</Styled.SectionContentTitle>
+            <Styled.SectionContentDetail>
               <RxDotFilled className='dot' size={25} />
               <div>
                 Redux Toolkit을 이용하여 light, dark 테마를 전역 상태로 관리하여 props drilling
                 문제를 방지했습니다.
               </div>
-            </SectionContentDetail>
-            <SectionContentDetail>
+            </Styled.SectionContentDetail>
+            <Styled.SectionContentDetail>
               <RxDotFilled className='dot' size={25} />
               <div>
                 styled-components의 ThemeProvider로 해당 상태를 props로 받아 전역 스타일을
                 적용했습니다. 이를 통해 스타일을 하나의 파일에서 관리하여 스타일의 통일성을 유지할
                 수 있도록 했습니다.
               </div>
-            </SectionContentDetail>
-            <SectionContentTitle>공통 컴포넌트 모듈화</SectionContentTitle>
-            <SectionContentDetail>
+            </Styled.SectionContentDetail>
+            <Styled.SectionContentTitle>공통 컴포넌트 모듈화</Styled.SectionContentTitle>
+            <Styled.SectionContentDetail>
               <RxDotFilled className='dot' size={25} />
               <div>
                 서비스에 공통적으로 사용되는 Modal, Scroll Top Button, Skeleton, Spinner와 같은
                 컴포넌트들을 모듈화하여 전역적으로 사용할 수 있도록 함과 동시에 재사용성과
                 유지보수성을 높였습니다.
               </div>
-            </SectionContentDetail>
-          </SectionContentArea>
-        </SectionArea>
+            </Styled.SectionContentDetail>
+          </Styled.SectionContentArea>
+        </Styled.SectionArea>
 
-        <SectionArea>
-          <SectionTitle>📈 성장 경험</SectionTitle>
-          <SectionTitleBottomLine></SectionTitleBottomLine>
-          <SectionContentArea>
-            <SectionContentDetail>
+        <Styled.SectionArea>
+          <Styled.SectionTitle>📈 성장 경험</Styled.SectionTitle>
+          <Styled.SectionTitleBottomLine></Styled.SectionTitleBottomLine>
+          <Styled.SectionContentArea>
+            <Styled.SectionContentDetail>
               <RxDotFilled className='dot' size={25} />
               <div>
                 백엔드와의 협업을 통해 커뮤니케이션 능력을 향상시킬 수 있었습니다. API 명세서, 화면
                 정의서 등 필요한 명세를 문서화하여 협업하였고, 서로의 분야의 지식을 공유하면서
                 학습할 수 있었습니다.
               </div>
-            </SectionContentDetail>
-            <SectionContentDetail>
+            </Styled.SectionContentDetail>
+            <Styled.SectionContentDetail>
               <RxDotFilled className='dot' size={25} />
               <div>
                 메인 화면에서 어떤 태그 카테고리를 보고 있었고 몇 번째 페이지의 다이어리를 보고
                 있었는지, 마이 페이지에서 어떤 탭에 위치해 있었는지 등의 상태가 사용자의 페이지 이동
                 시에 어떻게 유지되어야 자연스러울지 user-flow에 대해 고민해볼 수 있었습니다.
               </div>
-            </SectionContentDetail>
-            <SectionContentDetail>
+            </Styled.SectionContentDetail>
+            <Styled.SectionContentDetail>
               <RxDotFilled className='dot' size={25} />
               <div>
                 프로젝트 전체적으로 사용되는 컬러, 폰트 크기/굵기, 테마 등 공통 스타일들을 하나의
@@ -273,19 +167,19 @@ function DetailMariple({ closeProjectModalHandler }: any) {
                 스타일 파일에서 수정 시 모든 컴포넌트에 일괄 반영되도록 했으며, 유지 보수성을 높일
                 수 있었습니다.
               </div>
-            </SectionContentDetail>
-            <SectionContentDetail>
+            </Styled.SectionContentDetail>
+            <Styled.SectionContentDetail>
               <RxDotFilled className='dot' size={25} />
               <div>
                 AWS S3를 이용해 클라이언트를 배포하고 Route53으로 도메인 구매 및 호스팅 영역 생성,
                 CloudFront를 통해 HTTPS 호스팅 적용과 SPA 배포 시 발생하는 404, 403 에러를 200 응답
                 코드로 전환하는 등 최종 배포하기까지의 과정을 직접 구현해 볼 수 있었습니다.
               </div>
-            </SectionContentDetail>
-          </SectionContentArea>
-        </SectionArea>
-      </DetailModalView>
-    </DetailModalBack>
+            </Styled.SectionContentDetail>
+          </Styled.SectionContentArea>
+        </Styled.SectionArea>
+      </Styled.DetailModalView>
+    </Styled.DetailModalBack>
   );
 }
 

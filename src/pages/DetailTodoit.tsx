@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 import { MdClose } from "react-icons/md";
 
-const ModalBack = styled.div`
+const DetailModalBack = styled.div`
   position: fixed;
   z-index: 999;
   top: 0;
@@ -138,7 +138,7 @@ const GrowingArea = styled.div`
 
 function DetailTodo({ closeProjectModalHandler }: any) {
   return (
-    <ModalBack>
+    <DetailModalBack>
       <ModalView>
         <CloseBtnArea>
           <button className='close-btn' onClick={closeProjectModalHandler}>
@@ -217,7 +217,7 @@ function DetailTodo({ closeProjectModalHandler }: any) {
           </ServiceIntroduceText>
         </GrowingArea>
       </ModalView>
-    </ModalBack>
+    </DetailModalBack>
   );
 }
 

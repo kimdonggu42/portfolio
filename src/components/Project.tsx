@@ -519,15 +519,9 @@ function Project() {
           </SlideArea>
         </StyledSlider>
       </ProjectContainer>
-      {isMaripleModalOpen ? (
-        <DetailMariple closeProjectModalHandler={closeMaripleModalHandler} />
-      ) : null}
-      {isSavemeModalOpen ? (
-        <DetailSaveme closeProjectModalHandler={closeSavemeModalHandler} />
-      ) : null}
-      {isTodoitModalOpen ? (
-        <DetailTodoit closeProjectModalHandler={closeTodoitModalHandler} />
-      ) : null}
+      {isMaripleModalOpen && <DetailMariple closeProjectModalHandler={closeMaripleModalHandler} />}
+      {isSavemeModalOpen && <DetailSaveme closeProjectModalHandler={closeSavemeModalHandler} />}
+      {isTodoitModalOpen && <DetailTodoit closeProjectModalHandler={closeTodoitModalHandler} />}
     </section>
   );
 }
