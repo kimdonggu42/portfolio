@@ -21,7 +21,7 @@ export const DetailModalView = styled.div`
   height: 90vh;
   max-width: 55rem;
   max-height: 100rem;
-  padding: 0 3rem 2rem 3rem;
+  padding: 0 3rem 1.5rem 3rem;
   border-radius: 1.3rem;
   background-color: white;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.19), 0 10px 10px rgba(0, 0, 0, 0.1);
@@ -37,7 +37,7 @@ export const DetailModalView = styled.div`
   }
 
   @media screen and (max-width: 450px) {
-    padding: 0 2rem 2rem 2rem;
+    padding: 0 2rem 1.5rem 2rem;
   }
 `;
 
@@ -46,9 +46,14 @@ export const CloseBtnArea = styled.div`
   justify-content: right;
   position: sticky;
   top: 0;
-  padding-top: 1rem;
+  margin: 0 -2.5rem 0 -2.5rem;
+  padding-top: 0.5rem;
   background-color: white;
   /* border: 1px solid red; */
+
+  @media screen and (max-width: 450px) {
+    margin: 0 -1.5rem 0 -1.5rem;
+  }
 `;
 
 export const CloseBtn = styled.button`

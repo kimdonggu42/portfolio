@@ -9,7 +9,7 @@ function DetailMariple({ closeProjectModalHandler }: any) {
       <Styled.DetailModalView>
         <Styled.CloseBtnArea>
           <Styled.CloseBtn onClick={closeProjectModalHandler}>
-            <MdClose size={35} />
+            <MdClose size={30} />
           </Styled.CloseBtn>
         </Styled.CloseBtnArea>
 
