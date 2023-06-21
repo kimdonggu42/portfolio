@@ -21,8 +21,8 @@ function DetailMariple({ closeProjectModalHandler }: any) {
               <Styled.SectionContentSubDetail>
                 <RxDotFilled className='dot' size={25} />
                 <div>
-                  YouTube API를 활용하여 사용자가 YouTube 또는 YouTube Music의 url을 복사/붙여넣기
-                  하여 플레이리스트를 추가할 수 있습니다.
+                  YouTube 또는 YouTube Music의 url을 복사/붙여넣기 하여 플레이리스트를 추가할 수
+                  있습니다.
                 </div>
               </Styled.SectionContentSubDetail>
               <Styled.SectionContentSubDetail>
@@ -36,7 +36,7 @@ function DetailMariple({ closeProjectModalHandler }: any) {
                 <RxDotFilled className='dot' size={25} />
                 <div>
                   내가 보고 싶은 다이어리를 편하게 찾을 수 있도록 입력한 키워드를 포함하는
-                  다이어리를 검색해 주는 검색 기능을 지원합니다.
+                  다이어리를 찾아주는 검색 기능을 지원합니다.
                 </div>
               </Styled.SectionContentSubDetail>
             </Styled.SectionContentSubArea>
@@ -52,42 +52,15 @@ function DetailMariple({ closeProjectModalHandler }: any) {
               <Styled.SectionContentSubDetail>
                 <RxDotFilled className='dot' size={25} />
                 <div>
-                  Open API(Youtube)를 사용하여 사용자가 등록하고자 하는 영상 또는 음원의 링크를
-                  복사/붙여넣기 하여 추가 시 해당 url의 썸네일, 제목, 채널명(가수명)이 추가되도록
-                  했습니다.
+                  Open API(Youtube)를 이용하여 사용자가 추가한 url의 썸네일, 제목, 채널명(가수명)를
+                  불러와 플레이리스트를 등록, 수정, 삭제할 수 있도록 했습니다.
                 </div>
               </Styled.SectionContentSubDetail>
               <Styled.SectionContentSubDetail>
                 <RxDotFilled className='dot' size={25} />
                 <div>
-                  사용자가 붙여넣기 한 전체 url 중 id만 정규표현식으로 필터링하여 사용자가 id만
-                  골라서 복사/붙여넣기 해야 하는 불편함을 줄였습니다.
-                </div>
-              </Styled.SectionContentSubDetail>
-            </Styled.SectionContentSubArea>
-            <Styled.SectionContentSubArea>
-              <Styled.SectionContentSubTitle>UX 사용성 개선</Styled.SectionContentSubTitle>
-              <Styled.SectionContentSubDetail>
-                <RxDotFilled className='dot' size={25} />
-                <div>
-                  회원가입, 로그인, 다이어리 미입력 부분, 올바른 URL인지 검증 및 중복된 플레이리스트
-                  추가 방지 등의 상황에서 유효성 검사를 실시하여 사용자가 직관적으로 인지할 수
-                  있도록 각 상황별 알림이 뜨도록 했습니다.
-                </div>
-              </Styled.SectionContentSubDetail>
-              <Styled.SectionContentSubDetail>
-                <RxDotFilled className='dot' size={25} />
-                <div>
-                  react lazy를 통해 컴포넌트를 동적으로 import하여 초기 렌더링 지연시간을 기존
-                  643ms에서 544ms로 감소시켰고, Lighthouse Performance 점수도 76점에서 85점으로 향상
-                  시켰습니다. 그리고 suspense를 통해 렌더링 완료 전까지 로딩 화면을 사용자에게
-                  보여줌으로써 시각적인 피드백을 줄 수 있도록 했습니다.
-                </div>
-              </Styled.SectionContentSubDetail>
-              <Styled.SectionContentSubDetail>
-                <RxDotFilled className='dot' size={25} />
-                <div>
-                  반응형 스타일을 적용하여 다양한 사이즈의 기기에 대응할 수 있도록 했습니다.
+                  사용자가 추가한 전체 url 중 api 요청 시 필요한 id만 정규표현식으로 필터링하여
+                  사용자가 id만 정확히 선택하여 복사/붙여넣기 해야 하는 불편함을 줄였습니다.
                 </div>
               </Styled.SectionContentSubDetail>
             </Styled.SectionContentSubArea>
@@ -96,17 +69,16 @@ function DetailMariple({ closeProjectModalHandler }: any) {
               <Styled.SectionContentSubDetail>
                 <RxDotFilled className='dot' size={25} />
                 <div>
-                  선택한 태그가 있는 다이어리만 필터링해서 보여줄 경우 페이지네이션 컴포넌트도
-                  필터링 된 다이어리의 개수에 맞춰 페이지 수가 조절되도록 조건부 렌더링을
-                  적용했습니다.
+                  별도의 라이브러리 없이 페이지네이션을 직접 구현했으며, 검색, 필터링과 같이 전체
+                  데이터의 개수가 변할 때마다 변경된 데이터의 개수에 맞게 조건부 렌더링으로 페이지
+                  수가 조절되도록 했습니다.
                 </div>
               </Styled.SectionContentSubDetail>
               <Styled.SectionContentSubDetail>
                 <RxDotFilled className='dot' size={25} />
                 <div>
-                  현재 보고 있는 페이지가 몇 번째 페이지인지, 어떤 태그를 골라서 보고 있는지 상태를
-                  로컬스토리지에 저장해 새로고침 시에도 사용자가 보고 있던 페이지가 유지되도록
-                  개선했습니다.
+                  현재 사용자가 보고 있는 페이지 상태(번호)가 변경될 때마다 로컬스토리지에 저장하여
+                  페이지 이동 또는 새로고침 시 초기화되지 않도록 했습니다.
                 </div>
               </Styled.SectionContentSubDetail>
             </Styled.SectionContentSubArea>
@@ -115,13 +87,9 @@ function DetailMariple({ closeProjectModalHandler }: any) {
               <Styled.SectionContentSubDetail>
                 <RxDotFilled className='dot' size={25} />
                 <div>
-                  사용자가 입력한 키워드가 다이어리 제목 또는 본문에 포함되는지를 확인하여 포함되어
-                  있는 다이어리만 보여주도록 검색 기능을 추가했습니다.
+                  사용자가 입력한 키워드가 다이어리 제목 또는 본문에 있는지 확인하여 포함되어 있는
+                  다이어리만 보여주도록 검색 기능을 추가했습니다.
                 </div>
-              </Styled.SectionContentSubDetail>
-              <Styled.SectionContentSubDetail>
-                <RxDotFilled className='dot' size={25} />
-                <div>선택한 태그가 포함되어 있는 다이어리만 필터링해서 볼 수 있도록 했습니다.</div>
               </Styled.SectionContentSubDetail>
             </Styled.SectionContentSubArea>
             <Styled.SectionContentSubArea>
@@ -129,16 +97,30 @@ function DetailMariple({ closeProjectModalHandler }: any) {
               <Styled.SectionContentSubDetail>
                 <RxDotFilled className='dot' size={25} />
                 <div>
-                  Redux Toolkit을 이용하여 light, dark 테마를 전역 상태로 관리하여 props drilling
-                  문제를 방지했습니다.
+                  공통적으로 사용되는 컬러, 폰트 크기를 한곳에서 관리하여 유지보수성을 향상시켰고,
+                  Styled Components의 ThemeProvider를 이용해 불필요한 props drilling 없이 모든
+                  컴포넌트에게 효율적으로 스타일 요소를 전달할 수 있도록 했습니다.
+                </div>
+              </Styled.SectionContentSubDetail>
+            </Styled.SectionContentSubArea>
+            <Styled.SectionContentSubArea>
+              <Styled.SectionContentSubTitle>UX 사용성 개선</Styled.SectionContentSubTitle>
+              <Styled.SectionContentSubDetail>
+                <RxDotFilled className='dot' size={25} />
+                <div>
+                  react lazy의 dynamic import를 사용해 초기 렌더링 지연시간을 기존 643ms에서 544ms로
+                  감소시켰고, Lighthouse Performance 점수도 76점에서 85점으로 향상시켰습니다. 그리고
+                  suspense를 통해 렌더링 완료 전까지 로딩 화면을 사용자에게 보여줌으로써 시각적인
+                  피드백을 줄 수 있도록 했습니다.
                 </div>
               </Styled.SectionContentSubDetail>
               <Styled.SectionContentSubDetail>
                 <RxDotFilled className='dot' size={25} />
                 <div>
-                  styled-components의 ThemeProvider로 해당 상태를 props로 받아 전역 스타일을
-                  적용했습니다. 이를 통해 스타일을 하나의 파일에서 관리하여 스타일의 통일성을 유지할
-                  수 있도록 했습니다.
+                  회원가입/로그인 시 서버로부터 받는 response의 응답 코드 별로 메시지를 다르게 하여
+                  어떤 부분이 잘못 입력되었는지 사용자가 인지할 수 있게 하였고, 플레이리스트 url
+                  추가 시 이미 추가했거나 잘못된 url인 경우에도 상황에 맞는 알림이 발생하도록
+                  했습니다.
                 </div>
               </Styled.SectionContentSubDetail>
             </Styled.SectionContentSubArea>
