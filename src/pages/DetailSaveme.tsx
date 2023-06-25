@@ -1,9 +1,10 @@
 import * as Styled from "../assets/styles/DetailModalStyle";
+import { DetailProjectModalInterface } from "../util/type";
 
 import { MdClose } from "react-icons/md";
 import { RxDotFilled } from "react-icons/rx";
 
-function DetailMariple({ closeProjectModalHandler }: any) {
+function DetailMariple({ closeProjectModalHandler }: DetailProjectModalInterface) {
   return (
     <Styled.DetailModalBack>
       <Styled.DetailModalView>
@@ -49,12 +50,12 @@ function DetailMariple({ closeProjectModalHandler }: any) {
           <Styled.SectionTitleBottomLine></Styled.SectionTitleBottomLine>
           <Styled.SectionContentArea>
             <Styled.SectionContentSubArea>
-              <Styled.SectionContentSubTitle>지도 구현</Styled.SectionContentSubTitle>
+              <Styled.SectionContentSubTitle>지도 렌더링</Styled.SectionContentSubTitle>
               <Styled.SectionContentSubDetail>
                 <RxDotFilled className='dot' size={25} />
                 <div>
-                  Naver Maps API를 이용하여 현재 내 위치를 중심으로 하는 지도를 생성하고, 내 위치를
-                  마커로 표시했습니다.
+                  Open API(Naver Maps)를 이용하여 현재 내 위치를 중심으로 하는 지도를 생성하고, 내
+                  위치를 마커로 표시했습니다.
                 </div>
               </Styled.SectionContentSubDetail>
               <Styled.SectionContentSubDetail>
@@ -64,10 +65,6 @@ function DetailMariple({ closeProjectModalHandler }: any) {
                   담긴 프로퍼티를 추가하여 데이터를 재가공했습니다. 이를 활용해 나와 제일 가까운
                   위치의 화장실 100개를 지도 위에 마커로 표시해 주었습니다.
                 </div>
-              </Styled.SectionContentSubDetail>
-              <Styled.SectionContentSubDetail>
-                <RxDotFilled className='dot' size={25} />
-                <div>axios instance를 생성하여 url, header의 반복 작성을 줄였습니다.</div>
               </Styled.SectionContentSubDetail>
             </Styled.SectionContentSubArea>
             <Styled.SectionContentSubArea>
@@ -86,9 +83,8 @@ function DetailMariple({ closeProjectModalHandler }: any) {
               <Styled.SectionContentSubDetail>
                 <RxDotFilled className='dot' size={25} />
                 <div>
-                  초기 지도 렌더링 시와 사용자 위치 변경으로 인한 지도 리렌더링 시에 현재 내 위치
-                  정보 요청, 주변 화장실 정보 요청 2단계로 로딩 안내 문구를 세분화하였습니다. 이를
-                  통하여 사용자가 현재 어떤 정보를 불러오고 있는 상태인지 인지할 수 있도록 했습니다.
+                  현재 사용자가 있는 위치 정보 요청과 화장실 위치 데이터 요청 상태를 분리하여 현재
+                  어떤 데이터를 불러오고 있는지 사용자가 인지할 수 있도록 개선했습니다.
                 </div>
               </Styled.SectionContentSubDetail>
             </Styled.SectionContentSubArea>

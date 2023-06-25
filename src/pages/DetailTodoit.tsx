@@ -1,9 +1,10 @@
 import * as Styled from "../assets/styles/DetailModalStyle";
+import { DetailProjectModalInterface } from "../util/type";
 
 import { MdClose } from "react-icons/md";
 import { RxDotFilled } from "react-icons/rx";
 
-function DetailMariple({ closeProjectModalHandler }: any) {
+function DetailMariple({ closeProjectModalHandler }: DetailProjectModalInterface) {
   return (
     <Styled.DetailModalBack>
       <Styled.DetailModalView>
@@ -122,7 +123,8 @@ function DetailMariple({ closeProjectModalHandler }: any) {
                 <div>
                   기존에 JSON 서버로 개발했던 프로젝트를 Firebase의 Authentication와 Firestore를
                   이용한 리펙토링을 진행하면서 별도의 서버 개발 시간을 줄여 프론트엔드에 더 집중할
-                  수 있도록 돕는 유용한 서비스라는 생각이 들었습니다.
+                  수 있도록 돕는 유용한 서비스라는 생각이 들었고, 서버리스 개발 능력을 키울 수
+                  있었습니다.
                 </div>
               </Styled.SectionContentSubDetail>
               <Styled.SectionContentSubDetail>

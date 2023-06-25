@@ -1,9 +1,10 @@
 import * as Styled from "../assets/styles/DetailModalStyle";
+import { DetailProjectModalInterface } from "../util/type";
 
 import { MdClose } from "react-icons/md";
 import { RxDotFilled } from "react-icons/rx";
 
-function DetailMariple({ closeProjectModalHandler }: any) {
+function DetailMariple({ closeProjectModalHandler }: DetailProjectModalInterface) {
   return (
     <Styled.DetailModalBack>
       <Styled.DetailModalView>
