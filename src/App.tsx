@@ -1,4 +1,4 @@
-import GlobalStyle from "./assets/styles/GlobalStyle";
+import GlobalStyle from "./assets/styles/globalStyle";
 import Main from "./pages/Main";
 import { ThemeProvider } from "styled-components";
 import { lightMode } from "./assets/styles/commonStyle";

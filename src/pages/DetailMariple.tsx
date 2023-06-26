@@ -1,4 +1,4 @@
-import * as Styled from "../assets/styles/DetailModalStyle";
+import * as Styled from "../assets/styles/detailModalStyle";
 import { DetailProjectModalInterface } from "../util/type";
 
 import { MdClose } from "react-icons/md";

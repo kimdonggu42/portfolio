@@ -286,6 +286,7 @@ function Project() {
     overflow-y: scroll;
     width: 100%;`;
   };
+
   // Saveme 자세히 보기 모달 오픈 이벤트 핸들러
   const openSavemeModalHandler = () => {
     setIsSavemeModalOpen(!isSavemeModalOpen);
