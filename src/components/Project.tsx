@@ -443,7 +443,7 @@ function Project() {
                   <RiGithubFill className='homepageIcon' size={28} />
                 </Link>
                 <Link
-                  to='https://velog.io/@donggoo/Todot-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EB%A6%AC%ED%8C%A9%ED%86%A0%EB%A7%81-%ED%9A%8C%EA%B3%A0'
+                  to='https://velog.io/@donggoo/series/Solo-Project-%EB%A6%AC%EC%95%A1%ED%8A%B8%EB%A1%9C-%EB%82%98%EB%A7%8C%EC%9D%98-%ED%88%AC%EB%91%90%EB%A6%AC%EC%8A%A4%ED%8A%B8-%EB%A7%8C%EB%93%A4%EA%B8%B0'
                   target='_blank'
                 >
                   <SiVelog className='velog-icon' size={24} />
@@ -460,9 +460,7 @@ function Project() {
               </SlideTag>
               <SlideComment>
                 <div>
-                  <span className='mainText'>
-                    Todoit은 할 일을 등록하고 관리할 수 있는 웹 애플리케이션
-                  </span>
+                  <span className='mainText'>Todoit은 할 일을 등록하고 관리할 수 있는 서비스</span>
                   입니다. Firebase를 이용해 개발하였으며, Firebase의 Authentication을 활용하여 유저
                   정보를, 그리고 Firestore를 활용하여 todo 데이터를 관리하였습니다.
                 </div>
@@ -504,8 +502,7 @@ function Project() {
               <SlideComment>
                 <div>
                   <span className='mainText'>
-                    saveme는 Naver Maps API를 이용하여 제작한 별도의 검색 없이 바로 내 주변의 공공
-                    화장실을 찾아주는 웹 애플리케이션
+                    saveme는 별도의 검색 없이 바로 내 주변의 공공 화장실을 찾아주는 서비스
                   </span>
                   입니다. 일반적인 지도 서비스들은 실행 후 별도의 조작이 필요하지만, 외부에서 갑자기
                   화장실이 급할 때 내가 별도의 조작을 하지 않아도 바로 주변의 화장실을 찾아 주면
