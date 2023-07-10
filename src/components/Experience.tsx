@@ -23,7 +23,7 @@ const ExperienceTitle = styled.div`
 `;
 
 const UnderBar = styled.div`
-  width: 8.7rem;
+  width: 9.5rem;
   height: 0.3rem;
   margin: 0.5rem 0 3rem 0;
   border-radius: 50px;
@@ -146,7 +146,7 @@ function Experience() {
 
   return (
     <ExperienceContainer data-aos='fade-up'>
-      <ExperienceTitle>Experience</ExperienceTitle>
+      <ExperienceTitle>Experiences</ExperienceTitle>
       <UnderBar></UnderBar>
       <ExperieceArea>
         <ExperienceList>

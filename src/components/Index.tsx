@@ -105,7 +105,7 @@ const MenuWrapper = styled.ul`
   font-weight: 500;
   list-style: none;
   row-gap: 0.5rem;
-  margin: 2.5rem 0 10rem 0;
+  margin: 2rem 0 10rem 0;
   /* border: 1px solid red; */
 
   @media screen and (max-width: 1275px) {
@@ -117,9 +117,10 @@ const MenuList = styled.li`
   display: flex;
   align-items: center;
   width: 10rem;
-  height: 2rem;
+  height: 2.2rem;
   transition: 0.2s ease-in-out;
   cursor: pointer;
+  /* border: 1px solid red; */
 
   > .el {
     margin-left: 1.1rem;
@@ -444,7 +445,7 @@ function Index() {
           }}
         >
           {position <= 602.9 ? <FaUser /> : <FaRegUser />}
-          <span className='el'>Introduce</span>
+          <span className='el'>About Me</span>
         </MenuList>
 
         <MenuList
@@ -454,7 +455,7 @@ function Index() {
           }}
         >
           {position >= 603 && position <= 1322.9 ? <IoSettings /> : <IoSettingsOutline />}
-          <span className='el'>Stack</span>
+          <span className='el'>Stacks</span>
         </MenuList>
 
         <MenuList
@@ -464,7 +465,7 @@ function Index() {
           }}
         >
           {position >= 1323 && position <= 2074.9 ? <BsInboxesFill /> : <BsInboxes />}
-          <span className='el'>Project</span>
+          <span className='el'>Projects</span>
         </MenuList>
 
         <MenuList
@@ -474,7 +475,7 @@ function Index() {
           }}
         >
           {position >= 2075 && position <= 2417.9 ? <FaLightbulb /> : <FaRegLightbulb />}
-          <span className='el'>Experience</span>
+          <span className='el'>Experiences</span>
         </MenuList>
 
         {/* <MenuList

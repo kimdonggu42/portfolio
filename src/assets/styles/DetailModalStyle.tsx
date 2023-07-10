@@ -15,7 +15,6 @@ export const DetailModalBack = styled.div`
 
 export const DetailModalView = styled.div`
   font-size: 1rem;
-  font-weight: 500;
   word-break: keep-all;
   width: 90vw;
   height: 90vh;

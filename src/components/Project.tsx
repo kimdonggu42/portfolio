@@ -239,9 +239,9 @@ const SlideComment = styled.div`
   display: flex;
   flex-direction: column;
   row-gap: 0.5rem;
-  font-size: 1.1rem;
+  font-size: 1rem;
   margin-bottom: 3rem;
-  line-height: 1.4;
+  line-height: 1.5;
   /* border: 1px solid skyblue; */
 
   > div > .mainText {

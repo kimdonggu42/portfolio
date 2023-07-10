@@ -28,7 +28,7 @@ const StackTitle = styled.div`
 `;
 
 const UnderBar = styled.div`
-  width: 4.5rem;
+  width: 5.3rem;
   height: 0.3rem;
   margin: 0.5rem 0 3rem 0;
   border-radius: 5rem;
@@ -102,7 +102,7 @@ function Stack() {
 
   return (
     <StackContainer data-aos='fade-up'>
-      <StackTitle>Stack</StackTitle>
+      <StackTitle>Stacks</StackTitle>
       <UnderBar></UnderBar>
       <LanguageArea>
         <div className='stackTitle'>Language</div>
