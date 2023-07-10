@@ -241,6 +241,7 @@ const SlideComment = styled.div`
   row-gap: 0.5rem;
   font-size: 1.1rem;
   margin-bottom: 3rem;
+  line-height: 1.4;
   /* border: 1px solid skyblue; */
 
   > div > .mainText {

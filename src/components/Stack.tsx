@@ -86,6 +86,7 @@ const StackDetailTitleArea = styled.div`
 
 const StackDetailInfo = styled.div`
   font-size: 1rem;
+  line-height: 1.5;
 
   > .bold {
     font-weight: 600;
@@ -113,7 +114,7 @@ function Stack() {
             </StackDetailTitleArea>
             <StackDetailInfo>
               런타임에 컴파일되는 <span className='bold'>JavaScript의 동작 방식을 이해</span>하고
-              있으며
+              있으며&nbsp;
               <span className='bold'>ES6 문법 사용에 익숙</span>합니다.
             </StackDetailInfo>
           </StackSetting>
@@ -138,7 +139,7 @@ function Stack() {
               <div className='stackDetailTitle'>React</div>
             </StackDetailTitleArea>
             <StackDetailInfo>
-              전역 상태 관리 툴을 활용하여 재사용 가능한 컴포넌트 기반의
+              전역 상태 관리 툴을 활용하여 재사용 가능한 컴포넌트 기반의&nbsp;
               <span className='bold'>Single Page Application을 제작</span>할 수 있습니다.
             </StackDetailInfo>
           </StackSetting>
@@ -153,7 +154,7 @@ function Stack() {
               <div className='stackDetailTitle'>Redux</div>
             </StackDetailTitleArea>
             <StackDetailInfo>
-              Redux, Redux Toolkit을 이용해
+              Redux, Redux Toolkit을 이용해&nbsp;
               <span className='bold'>하나의 store에서 전역 상태관리</span>를 할 수 있습니다.
             </StackDetailInfo>
           </StackSetting>
@@ -164,7 +165,7 @@ function Stack() {
             </StackDetailTitleArea>
             <StackDetailInfo>
               Context를 구독하고 있는 모든 요소들이 렌더링 되는 Context API와 달리, setter 함수만
-              필요한 경우 atom을 구독하지 않게 하여
+              필요한 경우 atom을 구독하지 않게 하여&nbsp;
               <span className='bold'>불필요한 리렌더링을 방지</span>할 수 있습니다.
             </StackDetailInfo>
           </StackSetting>

@@ -117,5 +117,6 @@ export const SectionContentSubDetail = styled.div`
   > .dot {
     min-width: 1rem;
     max-width: 1rem;
+    /* border: 1px solid red; */
   }
 `;
