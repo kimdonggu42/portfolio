@@ -105,7 +105,8 @@ const MenuWrapper = styled.ul`
   font-weight: 500;
   list-style: none;
   row-gap: 0.5rem;
-  margin: 2.5rem 0 2.5rem 0;
+  margin: 2.5rem 0 10rem 0;
+  /* border: 1px solid red; */
 
   @media screen and (max-width: 1275px) {
     display: none;
