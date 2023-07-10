@@ -44,7 +44,7 @@ const LanguageArea = styled.div`
   }
 
   > .stackTitle {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     font-weight: 500;
     margin-bottom: 1.2rem;
   }

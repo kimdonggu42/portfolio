@@ -95,10 +95,10 @@ const KeywordArea = styled.div`
   }
 `;
 
-function Introduce() {
+function About() {
   return (
     <IntroduceContainer>
-      <IntroduceTitle>Introduce</IntroduceTitle>
+      <IntroduceTitle>About Me</IntroduceTitle>
       <UnderBar></UnderBar>
       <IntroduceWrapper>
         <img src={profile} alt='프로필' />
@@ -140,4 +140,4 @@ function Introduce() {
   );
 }
 
-export default Introduce;
+export default About;

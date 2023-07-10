@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import Index from "../components/Index";
-import Introduce from "../components/Introduce";
+import About from "../components/About";
 import Stack from "../components/Stack";
 import Project from "../components/Project";
 import Experience from "../components/Experience";
@@ -35,7 +35,7 @@ function Main() {
     <MainContainer>
       <Index />
       <InfoWrapper>
-        <Introduce />
+        <About />
         <Stack />
         <Project />
         <Experience />

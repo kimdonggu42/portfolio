@@ -59,6 +59,11 @@ export const ListTitle = styled.div`
 
   > .date {
     font-size: 0.85rem;
+
+    > .point {
+      font-weight: 500;
+      color: ${(props) => props.theme.color.mainColor};
+    }
   }
 
   @media screen and (max-width: 650px) {
@@ -87,6 +92,11 @@ export const HiddenListTitle = styled.div`
 
   > .date {
     font-size: 0.85rem;
+
+    > .point {
+      font-weight: 500;
+      color: ${(props) => props.theme.color.mainColor};
+    }
   }
 
   @media screen and (min-width: 451px) {
@@ -125,6 +135,31 @@ function Experience() {
       <ExperienceTitle>Experience</ExperienceTitle>
       <UnderBar></UnderBar>
       <ExperieceArea>
+        <ExperienceList>
+          <ListTitle>
+            <div className='main'>OSSCA</div>
+            <div className='date'>
+              2023.07 ~ <span className='point'>진행중</span>
+            </div>
+          </ListTitle>
+          <ListText>
+            <div className='subTitle'>2023 오픈소스 컨트리뷰션 아카데미(OSSCA)</div>
+            <HiddenListTitle>
+              <div className='main'>OSSCA</div>
+              <div className='date'>
+                2023.07 ~ <span className='point'>진행중</span>
+              </div>
+            </HiddenListTitle>
+            <div className='subText'>
+              - 13주 동안 오픈소스 프로젝트에 직접 기여하고 참여할 수 있는 멘토링 중심의 교육
+              프로그램
+            </div>
+            <div className='subText'>
+              - Git 내부의 Metadata를 분석하고 시각화하는 Githru-vscode-ext 프로젝트의 멘티로 활동
+            </div>
+          </ListText>
+        </ExperienceList>
+
         <ExperienceList>
           <ListTitle>
             <div className='main'>구름톤 6기</div>
