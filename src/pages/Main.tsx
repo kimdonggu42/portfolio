@@ -39,9 +39,9 @@ function Main() {
         <Stack />
         <Project />
         <Experience />
-        <Activity />
+        {/* <Activity />
         <Education />
-        <Certificate />
+        <Certificate /> */}
       </InfoWrapper>
     </MainContainer>
   );

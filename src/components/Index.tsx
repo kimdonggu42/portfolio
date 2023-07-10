@@ -1,9 +1,7 @@
 import styled from "styled-components";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-
 import emoji from "../assets/images/emoji.png";
-
 import { FaUser, FaRegUser, FaLightbulb, FaRegLightbulb } from "react-icons/fa";
 import { BsInboxesFill, BsInboxes } from "react-icons/bs";
 import {
@@ -405,26 +403,26 @@ function Index() {
     });
   };
 
-  const scrollToStudy = () => {
-    window.scroll({
-      top: 2423,
-      behavior: "smooth",
-    });
-  };
+  // const scrollToStudy = () => {
+  //   window.scroll({
+  //     top: 2423,
+  //     behavior: "smooth",
+  //   });
+  // };
 
-  const scrollToEducation = () => {
-    window.scroll({
-      top: 2510,
-      behavior: "smooth",
-    });
-  };
+  // const scrollToEducation = () => {
+  //   window.scroll({
+  //     top: 2510,
+  //     behavior: "smooth",
+  //   });
+  // };
 
-  const scrollToCertificate = () => {
-    window.scroll({
-      top: 2550,
-      behavior: "smooth",
-    });
-  };
+  // const scrollToCertificate = () => {
+  //   window.scroll({
+  //     top: 2550,
+  //     behavior: "smooth",
+  //   });
+  // };
 
   // console.log(window.scrollY);
 
@@ -478,7 +476,7 @@ function Index() {
           <span className='el'>Experience</span>
         </MenuList>
 
-        <MenuList
+        {/* <MenuList
           onClick={() => {
             selectMenuHandler(4);
             scrollToStudy();
@@ -486,9 +484,9 @@ function Index() {
         >
           {position >= 2420 && position <= 2504.9 ? <RiFireFill /> : <RiFireLine />}
           <span className='el'>Activity</span>
-        </MenuList>
+        </MenuList> */}
 
-        <MenuList
+        {/* <MenuList
           onClick={() => {
             selectMenuHandler(5);
             scrollToEducation();
@@ -496,9 +494,9 @@ function Index() {
         >
           {position >= 2505 && position <= 2544.9 ? <IoSchool /> : <IoSchoolOutline />}
           <span className='el'>Education</span>
-        </MenuList>
+        </MenuList> */}
 
-        <MenuList
+        {/* <MenuList
           onClick={() => {
             selectMenuHandler(6);
             scrollToCertificate();
@@ -506,7 +504,7 @@ function Index() {
         >
           {position >= 2545 ? <MdFactCheck /> : <MdOutlineFactCheck />}
           <span className='el'>Certificate</span>
-        </MenuList>
+        </MenuList> */}
       </MenuWrapper>
       <LinkWrapper>
         <PhoneIconArea>
