@@ -104,12 +104,12 @@ export const ListText = styled.div`
 
   > .subTitle {
     font-size: 1.1rem;
-    font-weight: 500;
+    font-weight: 600;
     /* border: 1px solid blue; */
   }
 
   > .subText {
-    font-size: 0.95rem;
+    font-size: 1rem;
   }
 `;
 
@@ -127,13 +127,32 @@ function Experience() {
       <ExperieceArea>
         <ExperienceList>
           <ListTitle>
-            <div className='main'>코드스테이츠</div>
+            <div className='main'>구름톤 6기</div>
+            <div className='date'>2023.07</div>
+          </ListTitle>
+          <ListText>
+            <div className='subTitle'>카카오와 구름이 함께 개최하는 해커톤</div>
+            <HiddenListTitle>
+              <div className='main'>구름톤 6기</div>
+              <div className='date'>2023.07</div>
+            </HiddenListTitle>
+            <div className='subText'>- 3박 4일 동안 교육과 해커톤 진행</div>
+            <div className='subText'>
+              - 단기간에 기획, 개발, 배포까지 진행하며 빠른 MVP 제작 경험
+            </div>
+            <div className='subText'>- 기획자, 디자이너와 함께 협업하며 실전 역량 향상</div>
+          </ListText>
+        </ExperienceList>
+
+        <ExperienceList>
+          <ListTitle>
+            <div className='main'>코드스테이츠 42기</div>
             <div className='date'>2022.10 ~ 2023.04</div>
           </ListTitle>
           <ListText>
             <div className='subTitle'>프론트엔드 개발자 양성 교육 과정</div>
             <HiddenListTitle>
-              <div className='main'>코드스테이츠</div>
+              <div className='main'>코드스테이츠 42기</div>
               <div className='date'>2022.10 ~ 2023.04</div>
             </HiddenListTitle>
             <div className='subText'>- HTML, CSS, JavaScript, React 외 다수 학습</div>
