@@ -1,8 +1,10 @@
 import styled from "styled-components";
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { RxDotFilled } from "react-icons/rx";
+import { TbCertificate } from "react-icons/tb";
 
 const ExperienceContainer = styled.section`
   padding: 3rem;
@@ -48,7 +50,7 @@ export const ExperienceList = styled.li`
 `;
 
 export const ListTitle = styled.div`
-  min-width: 10rem;
+  min-width: 12rem;
   margin-right: 5rem;
   /* border: 1px solid red; */
 
@@ -71,13 +73,42 @@ export const ListTitle = styled.div`
     margin-right: 0;
   }
 
-  @media screen and (max-width: 450px) {
+  @media screen and (max-width: 500px) {
     display: none;
   }
 `;
 
+const LinkTitle = styled.div`
+  display: flex;
+  column-gap: 0.8rem;
+  /* border: 1px solid red; */
+
+  > .main {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+
+    @media screen and (max-width: 500px) {
+      font-size: 1rem;
+    }
+  }
+
+  > a {
+    color: ${(props) => props.theme.color.mainColor};
+  }
+
+  > .date {
+    font-size: 0.85rem;
+
+    > .point {
+      font-weight: 500;
+      color: ${(props) => props.theme.color.mainColor};
+    }
+  }
+`;
+
 export const HiddenListTitle = styled.div`
-  min-width: 10rem;
+  min-width: 12rem;
   margin-right: 5rem;
   /* border: 1px solid red; */
 
@@ -86,7 +117,7 @@ export const HiddenListTitle = styled.div`
     font-weight: 600;
     margin-bottom: 0.5rem;
 
-    @media screen and (max-width: 450px) {
+    @media screen and (max-width: 500px) {
       font-size: 1rem;
     }
   }
@@ -100,7 +131,7 @@ export const HiddenListTitle = styled.div`
     }
   }
 
-  @media screen and (min-width: 451px) {
+  @media screen and (min-width: 501px) {
     display: none;
     margin-right: 0;
   }
@@ -182,13 +213,23 @@ function Experience() {
 
         <ExperienceList>
           <ListTitle>
-            <div className='main'>구름톤 6기</div>
+            <LinkTitle>
+              <div className='main'>구름톤 6기</div>
+              <Link to='/pdf/9oormthon.pdf' target='_blank' rel='noreferrer'>
+                <TbCertificate size={20} />
+              </Link>
+            </LinkTitle>
             <div className='date'>2023.07</div>
           </ListTitle>
           <ListText>
             <div className='subTitle'>카카오와 구름이 함께 개최하는 해커톤</div>
             <HiddenListTitle>
-              <div className='main'>구름톤 6기</div>
+              <LinkTitle>
+                <div className='main'>구름톤 6기</div>
+                <Link to='/pdf/9oormthon.pdf' target='_blank'>
+                  <TbCertificate size={20} />
+                </Link>
+              </LinkTitle>
               <div className='date'>2023.07</div>
             </HiddenListTitle>
             <DetailText>
@@ -210,13 +251,23 @@ function Experience() {
 
         <ExperienceList>
           <ListTitle>
-            <div className='main'>코드스테이츠 42기</div>
+            <LinkTitle>
+              <div className='main'>코드스테이츠 42기</div>
+              <Link to='/pdf/codestates.pdf' target='_blank'>
+                <TbCertificate size={20} />
+              </Link>
+            </LinkTitle>
             <div className='date'>2022.10 ~ 2023.04</div>
           </ListTitle>
           <ListText>
             <div className='subTitle'>프론트엔드 개발자 양성 교육 과정</div>
             <HiddenListTitle>
-              <div className='main'>코드스테이츠 42기</div>
+              <LinkTitle>
+                <div className='main'>코드스테이츠 42기</div>
+                <Link to='/pdf/codestates.pdf' target='_blank'>
+                  <TbCertificate size={20} />
+                </Link>
+              </LinkTitle>
               <div className='date'>2022.10 ~ 2023.04</div>
             </HiddenListTitle>
             <DetailText>
