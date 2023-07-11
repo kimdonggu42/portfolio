@@ -43,96 +43,52 @@ function DetailHankkihaku({ closeProjectModalHandler }: DetailProjectModalInterf
           <Styled.SectionTitleBottomLine></Styled.SectionTitleBottomLine>
           <Styled.SectionContentArea>
             <Styled.SectionContentSubArea>
-              <Styled.SectionContentSubTitle>플레이리스트 CRUD</Styled.SectionContentSubTitle>
+              <Styled.SectionContentSubTitle>
+                모임 탐색 및 선택 페이지
+              </Styled.SectionContentSubTitle>
               <Styled.SectionContentSubDetail>
                 <RxDotFilled className='dot' size={25} />
                 <div>
-                  Open API(Youtube)를 이용하여 사용자가 추가한 url의 썸네일, 제목, 채널명(가수명)를
-                  불러와 플레이리스트를 등록, 수정, 삭제할 수 있도록 했습니다.
+                  Kakao Maps API를 이용하여 현재 내 위치를 중심으로 하는 지도를 생성하고 현재 내
+                  위치를 마커로 표시했습니다.
                 </div>
               </Styled.SectionContentSubDetail>
               <Styled.SectionContentSubDetail>
                 <RxDotFilled className='dot' size={25} />
                 <div>
-                  사용자가 추가한 전체 url 중 api 요청 시 필요한 id만 정규표현식으로 필터링하여
-                  사용자가 id만 정확히 선택하여 복사/붙여넣기 해야 하는 불편함을 줄였습니다.
-                </div>
-              </Styled.SectionContentSubDetail>
-            </Styled.SectionContentSubArea>
-            <Styled.SectionContentSubArea>
-              <Styled.SectionContentSubTitle>페이지네이션</Styled.SectionContentSubTitle>
-              <Styled.SectionContentSubDetail>
-                <RxDotFilled className='dot' size={25} />
-                <div>
-                  별도의 라이브러리 없이 페이지네이션을 직접 구현했으며, 검색, 필터링과 같이 전체
-                  데이터의 개수가 변할 때마다 변경된 데이터의 개수에 맞게 조건부 렌더링으로 페이지
-                  수가 조절되도록 했습니다.
+                  마커 클릭 시 커스텀 한 인포윈도우를 보여주기 위해 kakao.maps.InfoWindow 객체를
+                  사용하지 않고 한 개의 커스텀 인포윈도우에서 클릭한 마커의 정보만 바꿔서 보여주는
+                  방식으로 구현했습니다.
                 </div>
               </Styled.SectionContentSubDetail>
               <Styled.SectionContentSubDetail>
                 <RxDotFilled className='dot' size={25} />
                 <div>
-                  현재 사용자가 보고 있는 페이지 상태(번호)가 변경될 때마다 로컬스토리지에 저장하여
-                  페이지 이동 또는 새로고침 시 초기화되지 않도록 했습니다.
+                  마커의 정보를 state로 관리하여 사용자가 마커를 클릭할 때마다 state 값이 변경되도록
+                  했습니다. 클릭 이벤트 발생 시 해당 마커의 정보로 state를 변경하며 인포윈도우 닫기
+                  이벤트 발생 시 state의 값을 초기화 했습니다.
                 </div>
               </Styled.SectionContentSubDetail>
             </Styled.SectionContentSubArea>
             <Styled.SectionContentSubArea>
-              <Styled.SectionContentSubTitle>다이어리 검색 & 필터링</Styled.SectionContentSubTitle>
+              <Styled.SectionContentSubTitle>모임 상세 페이지</Styled.SectionContentSubTitle>
               <Styled.SectionContentSubDetail>
                 <RxDotFilled className='dot' size={25} />
                 <div>
-                  사용자가 입력한 키워드가 다이어리 제목 또는 본문에 있는지 확인하여 포함되어 있는
-                  다이어리만 보여주도록 검색 기능을 추가했습니다.
-                </div>
-              </Styled.SectionContentSubDetail>
-            </Styled.SectionContentSubArea>
-            <Styled.SectionContentSubArea>
-              <Styled.SectionContentSubTitle>다크모드</Styled.SectionContentSubTitle>
-              <Styled.SectionContentSubDetail>
-                <RxDotFilled className='dot' size={25} />
-                <div>
-                  공통적으로 사용되는 컬러, 폰트 크기를 한곳에서 관리하여 유지보수성을 향상시켰고,
-                  Styled Components의 ThemeProvider를 이용해 불필요한 props drilling 없이 모든
-                  컴포넌트에게 효율적으로 스타일 요소를 전달할 수 있도록 했습니다.
-                </div>
-              </Styled.SectionContentSubDetail>
-            </Styled.SectionContentSubArea>
-            <Styled.SectionContentSubArea>
-              <Styled.SectionContentSubTitle>UX 사용성 개선</Styled.SectionContentSubTitle>
-              <Styled.SectionContentSubDetail>
-                <RxDotFilled className='dot' size={25} />
-                <div>
-                  react lazy의 dynamic import를 사용해 초기 렌더링 지연시간을 기존 643ms에서 544ms로
-                  감소시켰고, Lighthouse Performance 점수도 76점에서 85점으로 향상시켰습니다. 그리고
-                  suspense를 통해 렌더링 완료 전까지 로딩 화면을 사용자에게 보여줌으로써 시각적인
-                  피드백을 줄 수 있도록 했습니다.
+                  클릭한 마커의 id를 state로 관리하여 인포윈도우 클릭 시 해당하는 마커의 정보를
+                  보여주는 상세 페이지로 이동하도록 동적 라우팅을 적용했습니다.
                 </div>
               </Styled.SectionContentSubDetail>
               <Styled.SectionContentSubDetail>
                 <RxDotFilled className='dot' size={25} />
                 <div>
-                  회원가입/로그인 시 서버로부터 받는 response의 응답 코드 별로 메시지를 다르게 하여
-                  어떤 부분이 잘못 입력되었는지 사용자가 인지할 수 있게 하였고, 플레이리스트 url
-                  추가 시 이미 추가했거나 잘못된 url인 경우에도 상황에 맞는 알림이 발생하도록
-                  했습니다.
-                </div>
-              </Styled.SectionContentSubDetail>
-            </Styled.SectionContentSubArea>
-            <Styled.SectionContentSubArea>
-              <Styled.SectionContentSubTitle>공통 컴포넌트 모듈화</Styled.SectionContentSubTitle>
-              <Styled.SectionContentSubDetail>
-                <RxDotFilled className='dot' size={25} />
-                <div>
-                  서비스에 공통적으로 사용되는 Modal, Scroll Top Button, Skeleton, Spinner와 같은
-                  컴포넌트들을 모듈화하여 전역적으로 사용할 수 있도록 함과 동시에 재사용성과
-                  유지보수성을 높였습니다.
+                  상세 페이지에서 useParams hook을 통해 현재 url 파라미터와 동일한 id의 데이터만
+                  불러오도록 했습니다.
                 </div>
               </Styled.SectionContentSubDetail>
             </Styled.SectionContentSubArea>
           </Styled.SectionContentArea>
         </Styled.SectionArea>
-
         <Styled.SectionArea>
           <Styled.SectionTitle>📈 성장 경험</Styled.SectionTitle>
           <Styled.SectionTitleBottomLine></Styled.SectionTitleBottomLine>
@@ -141,34 +97,32 @@ function DetailHankkihaku({ closeProjectModalHandler }: DetailProjectModalInterf
               <Styled.SectionContentSubDetail>
                 <RxDotFilled className='dot' size={25} />
                 <div>
-                  백엔드와의 협업을 통해 커뮤니케이션 능력을 향상시킬 수 있었습니다. API 명세서,
-                  화면 정의서 등 필요한 명세를 문서화하여 협업하였고, 서로의 분야의 지식을
-                  공유하면서 학습할 수 있었습니다.
+                  비개발직 군(기획자, 디자이너)과 협업을 하며 서로의 업무 영역과 역할을 이해하고
+                  존중하는 태도를 배울 수 있었습니다. 기술적으로 해결할 수 있는 부분과 그렇지 않은
+                  부분에 대해 함께 논의하며 서비스를 개선해나갔습니다.
                 </div>
               </Styled.SectionContentSubDetail>
               <Styled.SectionContentSubDetail>
                 <RxDotFilled className='dot' size={25} />
                 <div>
-                  메인 화면에서 어떤 태그 카테고리를 보고 있었고 몇 번째 페이지의 다이어리를 보고
-                  있었는지, 마이 페이지에서 어떤 탭에 위치해 있었는지 등의 상태가 사용자의 페이지
-                  이동 시에 어떻게 유지되어야 자연스러울지 user-flow에 대해 고민해볼 수 있었습니다.
+                  단기간에 기획, 개발, 배포까지 빠르게 MVP를 제작해 보며 최대한 많은 기능을 담는 게
+                  아닌, 사용자에게 구체적인 가치를 제공하려고 노력했습니다.
                 </div>
               </Styled.SectionContentSubDetail>
               <Styled.SectionContentSubDetail>
                 <RxDotFilled className='dot' size={25} />
                 <div>
-                  프로젝트 전체적으로 사용되는 컬러, 폰트 크기/굵기, 테마 등 공통 스타일들을 하나의
-                  파일에서 관리하고, props를 통해 각 컴포넌트에 적용을 시켜주었습니다. 이를 통해
-                  공통 스타일 파일에서 수정 시 모든 컴포넌트에 일괄 반영되도록 했으며, 유지 보수성을
-                  높일 수 있었습니다.
+                  협업을 효과적으로 수행하게 위하여 Figma를 공동 작업 도구로 사용했습니다. Figma를
+                  사용하여 디자인 리소스를 공유하고, 디자인 변경 사항이나 개선 사항에 대한 빠른
+                  피드백을 주고받을 수 있었습니다.
                 </div>
               </Styled.SectionContentSubDetail>
               <Styled.SectionContentSubDetail>
                 <RxDotFilled className='dot' size={25} />
                 <div>
-                  AWS S3를 이용해 클라이언트를 배포하고 Route53으로 도메인 구매 및 호스팅 영역 생성,
-                  CloudFront를 통해 HTTPS 호스팅 적용과 SPA 배포 시 발생하는 404, 403 에러를 200
-                  응답 코드로 전환하는 등 최종 배포하기까지의 과정을 직접 구현해 볼 수 있었습니다.
+                  디자인 시스템을 따라 스타일 요소들을 상수로 관리하여 디자인과 코드의 일관성을
+                  유지할 수 있도록 했습니다. 이를 통해 디자이너와 협력하여 디자인 시스템을 개발하고
+                  문서화하는 능력을 향상시킬 수 있었습니다.
                 </div>
               </Styled.SectionContentSubDetail>
             </Styled.SectionContentSubArea>
