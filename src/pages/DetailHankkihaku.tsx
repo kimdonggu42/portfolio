@@ -22,23 +22,17 @@ function DetailHankkihaku({ closeProjectModalHandler }: DetailProjectModalInterf
               <Styled.SectionContentSubDetail>
                 <RxDotFilled className='dot' size={25} />
                 <div>
-                  YouTube 또는 YouTube Music의 url을 복사/붙여넣기 하여 플레이리스트를 추가할 수
+                  모임에 대한 일정, 제작할 요리, 요리 금액을 설정하여 원하는 모임을 개최할 수
                   있습니다.
                 </div>
               </Styled.SectionContentSubDetail>
               <Styled.SectionContentSubDetail>
                 <RxDotFilled className='dot' size={25} />
-                <div>
-                  마이페이지에서 내 정보(프로필 이미지, 닉네임, 비밀번호)를 수정할 수 있으며, 내가
-                  작성한 다이어리와 댓글, 좋아요를 누른 다이어리를 확인할 수 있습니다.
-                </div>
+                <div>내 주변에 있는 제주도만의 특색 있는 요리 모임을 찾을 수 있습니다.</div>
               </Styled.SectionContentSubDetail>
               <Styled.SectionContentSubDetail>
                 <RxDotFilled className='dot' size={25} />
-                <div>
-                  내가 보고 싶은 다이어리를 편하게 찾을 수 있도록 입력한 키워드를 포함하는
-                  다이어리를 찾아주는 검색 기능을 지원합니다.
-                </div>
+                <div>모임에 대한 후기를 작성하여 다른 사용자들에게 경험을 공유할 수 있습니다.</div>
               </Styled.SectionContentSubDetail>
             </Styled.SectionContentSubArea>
           </Styled.SectionContentArea>

@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import profile from "../assets/images/profile.png";
+import aboutme from "../assets/images/AboutMe.png";
 import TypeIt from "typeit-react";
 
 const IntroduceContainer = styled.section`
@@ -36,7 +37,7 @@ const IntroduceWrapper = styled.div`
   > img {
     width: 13rem;
     height: 13rem;
-    border-radius: 1.3rem;
+    /* border-radius: 1.3rem; */
     margin-top: 1rem;
 
     @media screen and (max-width: 650px) {
@@ -55,7 +56,7 @@ const KeywordArea = styled.div`
   display: flex;
   flex-direction: column;
   font-weight: 500;
-  margin-left: 3rem;
+  margin-left: 2.5rem;
   row-gap: 1rem;
   word-break: keep-all;
   /* border: 1px solid blue; */
@@ -105,7 +106,7 @@ function About() {
       <IntroduceTitle>About Me</IntroduceTitle>
       <UnderBar></UnderBar>
       <IntroduceWrapper>
-        <img src={profile} alt='프로필' />
+        <img src={aboutme} alt='프로필' />
         <KeywordArea>
           <div className='mainSentence'>
             안녕하세요 👋🏻
