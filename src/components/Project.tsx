@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import DetailHankkihaku from "../pages/DetailHankkihaku";
 import DetailMariple from "../pages/DetailMariple";
 import DetailSaveme from "../pages/DetailSaveme";
 import DetailTodoit from "../pages/DetailTodoit";
@@ -10,13 +11,15 @@ import "slick-carousel/slick/slick-theme.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-import saveme from "../assets/images/saveme.png";
+import hankkihaku from "../assets/images/hankkihaku.png";
 import mariple from "../assets/images/mariple.png";
 import todoit from "../assets/images/todoit.png";
+import saveme from "../assets/images/saveme.png";
 
 import mariplePage from "../assets/images/mariple-page.png";
 import savemePage from "../assets/images/saveme-page.png";
 import todoitPage from "../assets/images/todoit-page.png";
+import hankkihakuPage from "../assets/images/hankkihaku-page.png";
 
 import { GrFormPrevious, GrFormNext } from "react-icons/gr";
 import { RiGithubFill } from "react-icons/ri";
@@ -274,9 +277,20 @@ const SlideComment = styled.div`
 `;
 
 function Project() {
+  const [isHankkihakuModalOpen, setIsHankkihakuModalOpen] = useState<boolean>(false);
   const [isMaripleModalOpen, setIsMaripleModalOpen] = useState<boolean>(false);
   const [isSavemeModalOpen, setIsSavemeModalOpen] = useState<boolean>(false);
   const [isTodoitModalOpen, setIsTodoitModalOpen] = useState<boolean>(false);
+
+  // Hankkihaku 자세히 보기 모달 오픈 이벤트 핸들러
+  const openHankkihakuModalHandler = () => {
+    setIsHankkihakuModalOpen(!isHankkihakuModalOpen);
+    document.body.style.cssText = `
+      position: fixed;
+      top: -${window.scrollY}px;
+      overflow-y: scroll;
+      width: 100%;`;
+  };
 
   // Mariple 자세히 보기 모달 오픈 이벤트 핸들러
   const openMaripleModalHandler = () => {
@@ -306,6 +320,14 @@ function Project() {
     top: -${window.scrollY}px;
     overflow-y: scroll;
     width: 100%;`;
+  };
+
+  // Hankkihaku 자세히 보기 모달 클로즈 이벤트 핸들러
+  const closeHankkihakuModalHandler = () => {
+    setIsHankkihakuModalOpen(!isHankkihakuModalOpen);
+    const scrollY = document.body.style.top;
+    document.body.style.cssText = "";
+    window.scrollTo(0, parseInt(scrollY || "0", 10) * -1);
   };
 
   // Mariple 자세히 보기 모달 클로즈 이벤트 핸들러
@@ -348,7 +370,7 @@ function Project() {
     );
   };
 
-  const slidePageArr = [mariplePage, todoitPage, savemePage];
+  const slidePageArr = [hankkihakuPage, mariplePage, todoitPage, savemePage];
 
   const settings = {
     customPaging: (i: number) => {
@@ -382,6 +404,54 @@ function Project() {
         <StyledSlider {...settings}>
           <SlideArea>
             <SlideImg>
+              <img src={hankkihaku} alt='hankkihaku' />
+            </SlideImg>
+            <SlideTextArea>
+              <SlideTitle>
+                <div className='project-title'>한끼 하쿠</div>
+                {/* <Link to='https://www.mariple.com/' target='_blank'>
+                  <div className='link-icon-back'>
+                    <BiLink className='homepageIcon' size={17} />
+                  </div>
+                </Link> */}
+                <Link to='https://github.com/GochiHankkiHaku/FrontEnd' target='_blank'>
+                  <RiGithubFill className='homepageIcon' size={28} />
+                </Link>
+                {/* <Link
+                  to='https://velog.io/@donggoo/series/Team-Project-%EB%82%98%EB%A7%8C%EC%9D%98-%EC%9E%91%EC%9D%80-%EC%9D%8C%EC%95%85-%EB%8B%A4%EC%9D%B4%EC%96%B4%EB%A6%AC'
+                  target='_blank'
+                >
+                  <SiVelog className='velog-icon' size={24} />
+                </Link> */}
+              </SlideTitle>
+              <SlideTag>
+                <li>팀 프로젝트</li>
+                <li>기획자 1, 디자이너 1, 백엔드 2, 프론트엔드 1</li>
+                <li>2023.07</li>
+                <li>TypeScript</li>
+                <li>React</li>
+                <li>Styled Components</li>
+              </SlideTag>
+              <SlideComment>
+                <div>
+                  <span className='mainText'>
+                    한 끼 하쿠는 한 끼 할까의 제주 방언으로 제주도에 거주하는 주민과 방문객이
+                    함께하는 식사를 통해 연결되는 O2O 모임 서비스
+                  </span>
+                  입니다. 푸드 쉐어링을 통해 외로움과 고독감에 노출되는 고령인구를 O2O 모임 기능을
+                  통해 사회적 연결을 도모하고자 했고, 이와 함께 제주도 관광의 문제점인 획일화된 여행
+                  콘텐츠 대신 새로운 식도락 콘텐츠를 형성하고자 했습니다.
+                </div>
+                <div className='detail-project' onClick={openHankkihakuModalHandler}>
+                  <RxMagnifyingGlass className='detail-icon' size={18} />
+                  <div className='detail-text'>자세히 보기</div>
+                </div>
+              </SlideComment>
+            </SlideTextArea>
+          </SlideArea>
+
+          <SlideArea>
+            <SlideImg>
               <img src={mariple} alt='mariple' />
             </SlideImg>
             <SlideTextArea>
@@ -403,7 +473,8 @@ function Project() {
                 </Link>
               </SlideTitle>
               <SlideTag>
-                <li>팀 프로젝트 BE 2, FE 1</li>
+                <li>팀 프로젝트</li>
+                <li>백엔드 2, 프론트엔드 1</li>
                 <li>2023.04 ~ 2023.05</li>
                 <li>TypeScript</li>
                 <li>React</li>
@@ -518,6 +589,9 @@ function Project() {
           </SlideArea>
         </StyledSlider>
       </ProjectContainer>
+      {isHankkihakuModalOpen && (
+        <DetailHankkihaku closeProjectModalHandler={closeHankkihakuModalHandler} />
+      )}
       {isMaripleModalOpen && <DetailMariple closeProjectModalHandler={closeMaripleModalHandler} />}
       {isSavemeModalOpen && <DetailSaveme closeProjectModalHandler={closeSavemeModalHandler} />}
       {isTodoitModalOpen && <DetailTodoit closeProjectModalHandler={closeTodoitModalHandler} />}
