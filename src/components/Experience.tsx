@@ -32,7 +32,7 @@ const UnderBar = styled.div`
   background-color: ${(props) => props.theme.color.mainColor};
 `;
 
-export const ExperieceArea = styled.ol`
+export const ExperieceArea = styled.ul`
   display: flex;
   flex-direction: column;
   row-gap: 3rem;
