@@ -215,7 +215,7 @@ function Experience() {
           <ListTitle>
             <LinkTitle>
               <div className='main'>구름톤 6기</div>
-              <Link to='/pdf/9oormthon.pdf' target='_blank' rel='noreferrer'>
+              <Link to='/certificate/9oormthon.pdf' target='_blank' rel='noreferrer'>
                 <TbCertificate size={20} />
               </Link>
             </LinkTitle>
@@ -226,7 +226,7 @@ function Experience() {
             <HiddenListTitle>
               <LinkTitle>
                 <div className='main'>구름톤 6기</div>
-                <Link to='/pdf/9oormthon.pdf' target='_blank'>
+                <Link to='/certificate/9oormthon.pdf' target='_blank'>
                   <TbCertificate size={20} />
                 </Link>
               </LinkTitle>
@@ -253,7 +253,7 @@ function Experience() {
           <ListTitle>
             <LinkTitle>
               <div className='main'>코드스테이츠 42기</div>
-              <Link to='/pdf/codestates.pdf' target='_blank'>
+              <Link to='/certificate/codestates.pdf' target='_blank'>
                 <TbCertificate size={20} />
               </Link>
             </LinkTitle>
@@ -264,7 +264,7 @@ function Experience() {
             <HiddenListTitle>
               <LinkTitle>
                 <div className='main'>코드스테이츠 42기</div>
-                <Link to='/pdf/codestates.pdf' target='_blank'>
+                <Link to='/certificate/codestates.pdf' target='_blank'>
                   <TbCertificate size={20} />
                 </Link>
               </LinkTitle>

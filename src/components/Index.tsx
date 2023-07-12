@@ -377,7 +377,7 @@ function Index() {
     setCurrentMenu(index);
   };
 
-  const scrollToIntroduce = () => {
+  const scrollToAboutMe = () => {
     window.scroll({
       top: 0,
       behavior: "smooth",
@@ -386,21 +386,21 @@ function Index() {
 
   const scrollToStack = () => {
     window.scroll({
-      top: 608,
+      top: 609,
       behavior: "smooth",
     });
   };
 
   const scrollToProjects = () => {
     window.scroll({
-      top: 1328,
+      top: 1473,
       behavior: "smooth",
     });
   };
 
   const scrollToExperience = () => {
     window.scroll({
-      top: 2080,
+      top: 2209.9,
       behavior: "smooth",
     });
   };
@@ -441,7 +441,7 @@ function Index() {
         <MenuList
           onClick={() => {
             selectMenuHandler(0);
-            scrollToIntroduce();
+            scrollToAboutMe();
           }}
         >
           {position <= 602.9 ? <FaUser /> : <FaRegUser />}
@@ -454,7 +454,7 @@ function Index() {
             scrollToStack();
           }}
         >
-          {position >= 603 && position <= 1322.9 ? <IoSettings /> : <IoSettingsOutline />}
+          {position >= 603 && position <= 1455.9 ? <IoSettings /> : <IoSettingsOutline />}
           <span className='el'>Stacks</span>
         </MenuList>
 
@@ -464,7 +464,7 @@ function Index() {
             scrollToProjects();
           }}
         >
-          {position >= 1323 && position <= 2074.9 ? <BsInboxesFill /> : <BsInboxes />}
+          {position >= 1455.9 && position <= 2157.9 ? <BsInboxesFill /> : <BsInboxes />}
           <span className='el'>Projects</span>
         </MenuList>
 
@@ -474,7 +474,7 @@ function Index() {
             scrollToExperience();
           }}
         >
-          {position >= 2075 && position <= 2417.9 ? <FaLightbulb /> : <FaRegLightbulb />}
+          {position >= 2158 && position <= 2209.9 ? <FaLightbulb /> : <FaRegLightbulb />}
           <span className='el'>Experiences</span>
         </MenuList>
 
