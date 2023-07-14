@@ -165,6 +165,10 @@ const DetailText = styled.div`
   > .subText {
     font-size: 1rem;
     line-height: 1.5;
+
+    > .bold {
+      font-weight: 600;
+    }
   }
 `;
 
@@ -198,14 +202,15 @@ function Experience() {
             <DetailText>
               <RxDotFilled className='dot' size={25} />
               <div className='subText'>
-                13주 동안 오픈소스 프로젝트에 직접 기여하고 참여할 수 있는 멘토링 중심의 교육
-                프로그램
+                13주 동안 <span className='bold'>오픈소스 프로젝트에 직접 기여하고 참여</span>할 수
+                있는 멘토링 중심의 협업 프로그램
               </div>
             </DetailText>
             <DetailText>
               <RxDotFilled className='dot' size={25} />
               <div className='subText'>
-                Git 내부의 Metadata를 분석하고 시각화하는 Githru-vscode-ext 프로젝트의 멘티로 활동
+                Git 내부의 Metadata를 분석하고 시각화하는{" "}
+                <span className='bold'>Githru-vscode-ext</span> 프로젝트의 멘티로 활동
               </div>
             </DetailText>
           </ListText>
@@ -239,12 +244,15 @@ function Experience() {
             <DetailText>
               <RxDotFilled className='dot' size={25} />
               <div className='subText'>
-                단기간에 기획, 개발, 배포까지 진행하며 빠른 MVP 제작 경험
+                단기간에 기획, 개발, 배포까지 진행하며{" "}
+                <span className='bold'>빠른 MVP 제작 경험</span>
               </div>
             </DetailText>
             <DetailText>
               <RxDotFilled className='dot' size={25} />
-              <div className='subText'>기획자, 디자이너와 함께 협업하며 실전 역량 향상</div>
+              <div className='subText'>
+                기획자, 디자이너와 <span className='bold'>함께 협업하며 실전 역량 향상</span>
+              </div>
             </DetailText>
           </ListText>
         </ExperienceList>
@@ -277,8 +285,8 @@ function Experience() {
             <DetailText>
               <RxDotFilled className='dot' size={25} />
               <div className='subText'>
-                다수의 페어프로그래밍과 팀 프로젝트를 통해 버전 관리 및 개발 프로세스, 커뮤니케이션
-                역량 강화
+                다수의 페어프로그래밍과 팀 프로젝트를 통해{" "}
+                <span className='bold'>버전 관리 및 개발 프로세스, 커뮤니케이션 역량 강화</span>
               </div>
             </DetailText>
           </ListText>
