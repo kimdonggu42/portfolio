@@ -474,7 +474,7 @@ function Index() {
             scrollToExperience();
           }}
         >
-          {position >= 2158 && position <= 2209.9 ? <FaLightbulb /> : <FaRegLightbulb />}
+          {position >= 2158 ? <FaLightbulb /> : <FaRegLightbulb />}
           <span className='el'>Experiences</span>
         </MenuList>
 
